@@ -1,0 +1,65 @@
+info : {		\
+	hwver : 8001,	\
+	pver : 16,	\
+	sver : 1023,	\
+	fver : 39,	\
+	model : "Phantom Miro M310",	\
+	sensor : 62,	\
+	snsversion : 0,	\
+	snsserial : 0,	\
+	occver : 0,	\
+	tally : 0,	\
+	kernel : 425,	\
+	swver : 14967,	\
+	xver : 840,	\
+	serial : 17277,	\
+	memsz : 12288,	\
+	cfa : 0,	\
+	filter : 0,	\
+	maxcines : 17,	\
+	name : "17277",	\
+	kernsz : 24,	\
+	xmax : 1280,	\
+	ymax : 800,	\
+	xinc : 64,	\
+	yinc : 8,	\
+	xblock : 8,	\
+	yblock : 8,	\
+	winx : 32,	\
+	winy : 8,	\
+	pixps : 17857,	\
+	rotps : 196427,	\
+	fotps : 553567,	\
+	minfrate : 24,	\
+	tmodel : 4,	\
+	maxrate : 1000000,	\
+	expdead : 427,	\
+	minexp : 1000,	\
+	magtp : 720000000,	\
+	cinemem : 12181,	\
+	mdepths : 0x1000,	\
+	rtobyteps : 3200,	\
+	rtopacket : 160,	\
+	rtopacketovhead : 12,	\
+	rtofrovhead : 1900,	\
+	rto_channels : 0,	\
+	snstemp : 30,	\
+	tepower : 54,	\
+	camtemp : 52,	\
+	fanpower : 28,	\
+	batti : 0,	\
+	battv : 271,	\
+	battstate : 0,	\
+	batttimer : 0,	\
+	vbatt : 0.2645052632,	\
+	vcdina : 0.3747157895,	\
+	vcdinb : 23.95976842,	\
+	genlockstatus : 0,	\
+	features : "bref blk4 burst edr attach earlyimg notify atrig aexp cf quiet shtr",	\
+	imgformats : "8 8R P16 P16R P10",	\
+	videosystems : "0 1",	\
+	basechroma : 1,	\
+	baseei : 13000,	\
+	setup : "Donal_Std_Rad_2000fps" 	\
+}
+

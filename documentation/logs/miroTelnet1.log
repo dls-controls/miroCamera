@@ -1,0 +1,580 @@
+Script started on Fri 23 Sep 2016 15:12:49 BST
+]0;bvf81224@cs03r-sc-serv-18:~[?1034h[bvf81224@cs03r-sc-serv-18 ~]$ telnet outgoing[K[K[K[K[K[K[K[K 172.23.240.96 7115
+Trying 172.23.240.96...
+Connected to lab63-vrmiro310-cam.diamond.ac.uk (172.23.240.96).
+Escape character is '^]'.
+get info.snstemp
+snstemp : 29
+get info
+info : {		\
+	hwver : 8001,	\
+	pver : 16,	\
+	sver : 1023,	\
+	fver : 39,	\
+	model : "Phantom Miro M310",	\
+	sensor : 62,	\
+	snsversion : 0,	\
+	snsserial : 0,	\
+	occver : 0,	\
+	tally : 0,	\
+	kernel : 425,	\
+	swver : 14967,	\
+	xver : 840,	\
+	serial : 17277,	\
+	memsz : 12288,	\
+	cfa : 0,	\
+	filter : 0,	\
+	maxcines : 17,	\
+	name : "17277",	\
+	kernsz : 24,	\
+	xmax : 1280,	\
+	ymax : 800,	\
+	xinc : 64,	\
+	yinc : 8,	\
+	xblock : 8,	\
+	yblock : 8,	\
+	winx : 32,	\
+	winy : 8,	\
+	pixps : 17857,	\
+	rotps : 196427,	\
+	fotps : 553567,	\
+	minfrate : 24,	\
+	tmodel : 4,	\
+	maxrate : 1000000,	\
+	expdead : 427,	\
+	minexp : 1000,	\
+	magtp : 720000000,	\
+	cinemem : 12181,	\
+	mdepths : 0x1000,	\
+	rtobyteps : 3200,	\
+	rtopacket : 160,	\
+	rtopacketovhead : 12,	\
+	rtofrovhead : 1900,	\
+	rto_channels : 0,	\
+	snstemp : 29,	\
+	tepower : 54,	\
+	camtemp : 52,	\
+	fanpower : 30,	\
+	batti : 0,	\
+	battv : 271,	\
+	battstate : 0,	\
+	batttimer : 0,	\
+	vbatt : 0.2645052632,	\
+	vcdina : 0.3857368421,	\
+	vcdinb : 23.95976842,	\
+	genlockstatus : 0,	\
+	features : "bref blk4 burst edr attach earlyimg notify atrig aexp cf quiet shtr",	\
+	imgformats : "8 8R P16 P16R P10",	\
+	videosystems : "0 1",	\
+	basechroma : 1,	\
+	baseei : 13000,	\
+	setup : "Donal_Std_Rad_2000fps" 	\
+}
+get cam
+cam : {		\
+	syncimg : 0,	\
+	master : 0,	\
+	tcmode : 0,	\
+	trigpol : 1,	\
+	trigfilt : 1,	\
+	frdelay : 0,	\
+	startonacq : 1,	\
+	aux1mode : 0,	\
+	aux2mode : 0,	\
+	memgateen : 1,	\
+	rtoen : 0,	\
+	membpp : 12,	\
+	tsformat : 1,	\
+	longready : 0,	\
+	dark : 0,	\
+	quiet : 0,	\
+	tsetsns : 30,	\
+	tsetcam : 50,	\
+	apoffdis : 0,	\
+	rtotfr : 0,	\
+	cines : 16,	\
+	battarm : 0,	\
+	battmode : 0,	\
+	wtrarmdelay : 0,	\
+	wtrarmtime : 0,	\
+	poffdelay : 10,	\
+	readygate : 0,	\
+	timezone : -3600,	\
+	lang : "en_US",	\
+	occset : "" 	\
+}
+get defc
+defc : {		\
+	res : 1280 x 504,	\
+	rate : 1080,	\
+	exp : 925482,	\
+	shoff : 0,	\
+	edrexp : 0,	\
+	ptframes : 820,	\
+	bcount : 0,	\
+	bperiod : 307692,	\
+	hqenable : 0,	\
+	frcount : 820,	\
+	ramp : "",	\
+	frsize : 40336,	\
+	decimation : 1,	\
+	aexpmode : 0,	\
+	aexpcomp : -0.1605,	\
+	meta : {		\
+		ox : -160,	\
+		oy : -120,	\
+		w : 1,	\
+		h : 1,	\
+		ow : 1280,	\
+		oh : 504,	\
+		crop : 0,	\
+		resize : 0 	\
+	} 	\
+}
+get auto
+auto : {		\
+	videoplay : 0,	\
+	flashsave : 0,	\
+	filesave : 1,	\
+	acqrestart : 1,	\
+	bref : 0,	\
+	firstframe : -2147483648,	\
+	lastframe : 2147483646,	\
+	format : 272,	\
+	loops : 0,	\
+	speed : 0,	\
+	progress : 0,	\
+	bref_progress : 0,	\
+	fseq : 429,	\
+	trigger : {		\
+		x : 0,	\
+		y : -52,	\
+		w : 1280,	\
+		h : 400,	\
+		speed : 1087,	\
+		area : 1,	\
+		threshold : 1,	\
+		mode : 0 	\
+	} 	\
+}
+get cf
+cf : {		\
+	state : 4,	\
+	action : 0,	\
+	size : 246127884,	\
+	used : 61423112,	\
+	progress : 0,	\
+	errcode : 0 	\
+}
+get c0
+c0 : {		\
+	res : 1280 x 800,	\
+	rate : 100,	\
+	exp : 1000000,	\
+	shoff : 0,	\
+	edrexp : 0,	\
+	ptframes : 10,	\
+	bcount : 0,	\
+	bperiod : 0,	\
+	hqenable : 0,	\
+	frcount : 0,	\
+	ramp : "",	\
+	state : { RDY DEF PRE },	\
+	start : 0x2A0400,	\
+	len : 0x1D4C00,	\
+	frsize : 64016,	\
+	frspace : 1920000,	\
+	firstfr : 0,	\
+	lastfr : 0,	\
+	format : 0,	\
+	decimation : 0,	\
+	in : 0,	\
+	out : 0,	\
+	aexpmode : 0,	\
+	aexpcomp : 0,	\
+	trigtime : {		\
+		secs : 0,	\
+		frac : 0 	\
+	},	\
+	cam : {		\
+		syncimg : 0,	\
+		master : 0,	\
+		tcmode : 0,	\
+		trigpol : 0,	\
+		trigfilt : 0,	\
+		frdelay : 0,	\
+		startonacq : 0,	\
+		aux1mode : 0,	\
+		aux2mode : 0,	\
+		memgateen : 0,	\
+		membpp : 12,	\
+		tsformat : 0 	\
+	},	\
+	info : {		\
+		hwver : 0,	\
+		sver : 0,	\
+		fver : 0,	\
+		pver : 0,	\
+		model : "",	\
+		sensor : 0,	\
+		snsversion : 0,	\
+		snsserial : 0,	\
+		kernel : 0,	\
+		swver : 0,	\
+		xver : 0,	\
+		serial : 0,	\
+		cfa : 0,	\
+		filter : 0,	\
+		name : "",	\
+		mdepths : 0x0,	\
+		genlockstatus : 0,	\
+		snstemp : 0,	\
+		camtemp : 0,	\
+		features : "" 	\
+	},	\
+	adj : {		\
+		red : 0,	\
+		green : 0,	\
+		blue : 0,	\
+		wbtemp : 0,	\
+		wbcc : 0,	\
+		wbred : 0,	\
+		wbblue : 0,	\
+		edgeg : 0,	\
+		edger : 0,	\
+		edgeth : 0,	\
+		gamma : 0,	\
+		rgamma : 0,	\
+		bgamma : 0,	\
+		toe : 0,	\
+		gain : 0,	\
+		offset : 0,	\
+		flare : 0,	\
+		hue : 0,	\
+		sat : 0,	\
+		rped : 0,	\
+		gped : 0,	\
+		bped : 0,	\
+		tone : "",	\
+		mmsat : "",	\
+		mmhue : "",	\
+		chroma : 0,	\
+		matrix : 0,	\
+		log : 0,	\
+		sdimin : 0,	\
+		sdimax : 0,	\
+		cmatrix : "",	\
+		umatrix : "",	\
+		filter : "" 	\
+	},	\
+	meta : {		\
+		name : "",	\
+		uuid : "",	\
+		system : 0,	\
+		pbrate : 0,	\
+		tcrate : 0,	\
+		trigtc : "",	\
+		pax : 0,	\
+		pay : 0,	\
+		paox : 0,	\
+		paoy : 0,	\
+		vox : 0,	\
+		voy : 0,	\
+		vw : 0,	\
+		vh : 0,	\
+		vow : 0,	\
+		voh : 0,	\
+		ox : 0,	\
+		oy : 0,	\
+		w : 0,	\
+		h : 0,	\
+		ow : 0,	\
+		oh : 0,	\
+		crop : 0,	\
+		resize : 0,	\
+		lens : "",	\
+		fstop : 0,	\
+		flen : 0,	\
+		gps : "",	\
+		comment : "",	\
+		xset : "" 	\
+	} 	\
+}
+get c1
+c1 : {		\
+	res : 1280 x 504,	\
+	rate : 1080,	\
+	exp : 925482,	\
+	shoff : 0,	\
+	edrexp : 0,	\
+	ptframes : 820,	\
+	bcount : 0,	\
+	bperiod : 307692,	\
+	hqenable : 0,	\
+	frcount : 820,	\
+	ramp : "",	\
+	state : { WTR DEF ABL ACT },	\
+	start : 0x475000,	\
+	len : 0x1F90000,	\
+	frsize : 40336,	\
+	frspace : 33095680,	\
+	firstfr : 0,	\
+	lastfr : 0,	\
+	format : 0,	\
+	decimation : 1,	\
+	in : 0,	\
+	out : 0,	\
+	aexpmode : 0,	\
+	aexpcomp : -0.1605,	\
+	trigtime : {		\
+		secs : 0,	\
+		frac : 0 	\
+	},	\
+	cam : {		\
+		syncimg : 0,	\
+		master : 0,	\
+		tcmode : 0,	\
+		trigpol : 1,	\
+		trigfilt : 1,	\
+		frdelay : 0,	\
+		startonacq : 1,	\
+		aux1mode : 0,	\
+		aux2mode : 0,	\
+		memgateen : 1,	\
+		membpp : 12,	\
+		tsformat : 1 	\
+	},	\
+	info : {		\
+		hwver : 8001,	\
+		sver : 1023,	\
+		fver : 39,	\
+		pver : 16,	\
+		model : "Phantom Miro M310",	\
+		sensor : 62,	\
+		snsversion : 0,	\
+		snsserial : 0,	\
+		kernel : 425,	\
+		swver : 14967,	\
+		xver : 840,	\
+		serial : 17277,	\
+		cfa : 0,	\
+		filter : 0,	\
+		name : "17277",	\
+		mdepths : 0x1000,	\
+		genlockstatus : 0,	\
+		snstemp : 0,	\
+		camtemp : 0,	\
+		features : "bref blk4 burst edr attach earlyimg notify atrig aexp cf quiet shtr" 	\
+	},	\
+	adj : {		\
+		red : 1,	\
+		green : 1,	\
+		blue : 1,	\
+		wbtemp : 5600,	\
+		wbcc : 0,	\
+		wbred : 1.321455044,	\
+		wbblue : 1.824537662,	\
+		edgeg : 0,	\
+		edger : 0,	\
+		edgeth : 0,	\
+		gamma : 0.57544,	\
+		rgamma : 0,	\
+		bgamma : 0,	\
+		toe : 1,	\
+		gain : 3.176874,	\
+		offset : -0.0785,	\
+		flare : 0,	\
+		hue : 0,	\
+		sat : 1,	\
+		rped : 0,	\
+		gped : 0,	\
+		bped : 0,	\
+		tone : "",	\
+		mmsat : "",	\
+		mmhue : "",	\
+		chroma : 1,	\
+		matrix : 1,	\
+		log : 0,	\
+		sdimin : 32,	\
+		sdimax : 960,	\
+		cmatrix : "cal 1.7326 0.119326 -0.785386  -0.380114 1.78173 -0.901473  -0.125864 -0.102658 2.18562",	\
+		umatrix : "",	\
+		filter : "" 	\
+	},	\
+	meta : {		\
+		name : "",	\
+		uuid : "",	\
+		system : 1,	\
+		pbrate : 50,	\
+		tcrate : 25,	\
+		trigtc : "",	\
+		pax : 0,	\
+		pay : 0,	\
+		paox : -640,	\
+		paoy : -400,	\
+		vox : 0,	\
+		voy : 0,	\
+		vw : 1280,	\
+		vh : 504,	\
+		vow : 711,	\
+		voh : 280,	\
+		ox : -160,	\
+		oy : -120,	\
+		w : 1,	\
+		h : 1,	\
+		ow : 1280,	\
+		oh : 504,	\
+		crop : 0,	\
+		resize : 0,	\
+		lens : "",	\
+		fstop : 0,	\
+		flen : 0,	\
+		gps : "",	\
+		comment : "",	\
+		xset : "" 	\
+	} 	\
+}
+get c17
+ERR: name c17  is unknown 
+get c16
+c16 : {		\
+	res : 1280 x 800,	\
+	rate : 100,	\
+	exp : 1000000,	\
+	shoff : 0,	\
+	edrexp : 0,	\
+	ptframes : 10,	\
+	bcount : 0,	\
+	bperiod : 0,	\
+	hqenable : 0,	\
+	frcount : 0,	\
+	ramp : "",	\
+	state : { RDY DEF ABL },	\
+	start : 0x1DDE5000,	\
+	len : 0x1F90000,	\
+	frsize : 64016,	\
+	frspace : 33095680,	\
+	firstfr : 0,	\
+	lastfr : 0,	\
+	format : 0,	\
+	decimation : 0,	\
+	in : 0,	\
+	out : 0,	\
+	aexpmode : 0,	\
+	aexpcomp : 0,	\
+	trigtime : {		\
+		secs : 0,	\
+		frac : 0 	\
+	},	\
+	cam : {		\
+		syncimg : 0,	\
+		master : 0,	\
+		tcmode : 0,	\
+		trigpol : 0,	\
+		trigfilt : 0,	\
+		frdelay : 0,	\
+		startonacq : 0,	\
+		aux1mode : 0,	\
+		aux2mode : 0,	\
+		memgateen : 0,	\
+		membpp : 12,	\
+		tsformat : 0 	\
+	},	\
+	info : {		\
+		hwver : 0,	\
+		sver : 0,	\
+		fver : 0,	\
+		pver : 0,	\
+		model : "",	\
+		sensor : 0,	\
+		snsversion : 0,	\
+		snsserial : 0,	\
+		kernel : 0,	\
+		swver : 0,	\
+		xver : 0,	\
+		serial : 0,	\
+		cfa : 0,	\
+		filter : 0,	\
+		name : "",	\
+		mdepths : 0x0,	\
+		genlockstatus : 0,	\
+		snstemp : 0,	\
+		camtemp : 0,	\
+		features : "" 	\
+	},	\
+	adj : {		\
+		red : 0,	\
+		green : 0,	\
+		blue : 0,	\
+		wbtemp : 0,	\
+		wbcc : 0,	\
+		wbred : 0,	\
+		wbblue : 0,	\
+		edgeg : 0,	\
+		edger : 0,	\
+		edgeth : 0,	\
+		gamma : 0,	\
+		rgamma : 0,	\
+		bgamma : 0,	\
+		toe : 0,	\
+		gain : 0,	\
+		offset : 0,	\
+		flare : 0,	\
+		hue : 0,	\
+		sat : 0,	\
+		rped : 0,	\
+		gped : 0,	\
+		bped : 0,	\
+		tone : "",	\
+		mmsat : "",	\
+		mmhue : "",	\
+		chroma : 0,	\
+		matrix : 0,	\
+		log : 0,	\
+		sdimin : 0,	\
+		sdimax : 0,	\
+		cmatrix : "",	\
+		umatrix : "",	\
+		filter : "" 	\
+	},	\
+	meta : {		\
+		name : "",	\
+		uuid : "",	\
+		system : 0,	\
+		pbrate : 0,	\
+		tcrate : 0,	\
+		trigtc : "",	\
+		pax : 0,	\
+		pay : 0,	\
+		paox : 0,	\
+		paoy : 0,	\
+		vox : 0,	\
+		voy : 0,	\
+		vw : 0,	\
+		vh : 0,	\
+		vow : 0,	\
+		voh : 0,	\
+		ox : 0,	\
+		oy : 0,	\
+		w : 0,	\
+		h : 0,	\
+		ow : 0,	\
+		oh : 0,	\
+		crop : 0,	\
+		resize : 0,	\
+		lens : "",	\
+		fstop : 0,	\
+		flen : 0,	\
+		gps : "",	\
+		comment : "",	\
+		xset : "" 	\
+	} 	\
+}
+^]
+
+telnet> quit
+Connection closed.
+]0;bvf81224@cs03r-sc-serv-18:~[bvf81224@cs03r-sc-serv-18 ~]$ exit
+exit
+
+Script done on Fri 23 Sep 2016 15:16:46 BST

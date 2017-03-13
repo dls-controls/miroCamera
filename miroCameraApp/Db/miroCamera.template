@@ -1,0 +1,675 @@
+
+#% macro, P, Device Prefix
+#% macro, R, Device Suffix
+#% macro, PORT, Asyn Port name
+
+# This associates the template with an edm screen
+# % gui, $(PORT), edmtab, miro.edl, P=$(P),R=$(R)
+
+include "ADBase.template"
+
+################################################################
+###
+### Partition and Cine Count
+###
+
+record(longout, "$(P)$(R)PartitionCines")
+{
+  field(DESC, "Partition the memory")
+  field(DTYP, "asynInt32")
+  field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))MIRO_SET_PARTITION")
+}
+
+record(longin, "$(P)$(R)CineCount_RBV")
+{
+  field(DESC, "Number of available cines")
+  field(DTYP, "asynInt32")
+  field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))MIRO_GET_CINE_COUNT")
+  field(SCAN, "I/O Intr")
+}
+
+################################################################
+###
+### Post Trigger Frame Count
+###
+record(longin, "$(P)$(R)MaxFrameCount_RBV")
+{
+  field(DESC, "Maximum number of frames per cine")
+  field(DTYP, "asynInt32")
+  field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))MIRO_MAX_FRAME_COUNT")
+  field(SCAN, "I/O Intr")
+}
+
+################################################################
+###
+### Post Trigger Frame Count
+###
+record(longout, "$(P)$(R)PostTrigFrames")
+{
+  field(DESC, "Set the post trigger frame count")
+  field(DTYP, "asynInt32")
+  field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))MIRO_POST_TRIG_COUNT")
+}
+
+record(longin, "$(P)$(R)PostTrigFrames_RBV")
+{
+  field(DESC, "Number of post trigger frames")
+  field(DTYP, "asynInt32")
+  field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))MIRO_POST_TRIG_COUNT")
+  field(SCAN, "I/O Intr")
+}
+
+
+################################################################
+###
+### Total Frame Count
+###
+record(longin, "$(P)$(R)TotalFrameCount_RBV")
+{
+  field(DESC, "Total number of frames recorded")
+  field(DTYP, "asynInt32")
+  field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))MIRO_TOTAL_FRAME_COUNT")
+  field(SCAN, "I/O Intr")
+}
+
+################################################################
+###
+### Auto Saving cine
+###
+
+record(bo, "$(P)$(R)AutoSave")
+{
+   field(DTYP, "asynInt32")
+   field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))MIRO_AUTO_SAVE")
+   field(ZNAM, "Off")
+   field(ONAM, "On")
+}
+
+record(bi, "$(P)$(R)AutoSave_RBV")
+{
+   field(DTYP, "asynInt32")
+   field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))MIRO_AUTO_SAVE")
+   field(ZNAM, "Off")
+   field(ONAM, "On")
+   field(SCAN, "I/O Intr")
+}
+
+record(bo, "$(P)$(R)AutoRestart")
+{
+   field(DTYP, "asynInt32")
+   field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))MIRO_AUTO_RESTART")
+   field(ZNAM, "Off")
+   field(ONAM, "On")
+}
+
+record(bi, "$(P)$(R)AutoRestart_RBV")
+{
+   field(DTYP, "asynInt32")
+   field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))MIRO_AUTO_RESTART")
+   field(ZNAM, "Off")
+   field(ONAM, "On")
+   field(SCAN, "I/O Intr")
+}
+
+################################################################
+###
+### Cine Data
+###
+
+### Set Cine Name
+record(waveform, "$(P)$(R)CineName")
+{
+  field(DESC, "Set Cine name")
+  field(DTYP, "asynOctetWrite")
+  field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))MIRO_CINE_NAME")
+  field(FTVL, "CHAR")
+  field(NELM, "256")
+}
+
+### Get Cine Name
+record(waveform, "$(P)$(R)CineName_RBV")
+{
+  field(DESC, "Get Cine name prefix")
+  field(DTYP, "asynOctetRead")
+  field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))MIRO_CINE_NAME")
+  field(FTVL, "CHAR")
+  field(NELM, "256")
+  field(SCAN, "I/O Intr")
+}
+
+
+### Selected Cine ID
+
+record(mbbo, "$(P)$(R)SelectedCine")
+{
+  field(DESC, "Select a Cine file")
+  field(DTYP, "asynInt32")
+  field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))MIRO_CINE_SELECTED")
+  field(ZRST, "1")
+  field(ZRVL, "1")
+  field(ONST, "2")
+  field(ONVL, "2")
+  field(TWST, "3")
+  field(TWVL, "3")
+  field(THST, "4")
+  field(THVL, "4")
+  field(FRST, "5")
+  field(FRVL, "5")
+  field(FVST, "6")
+  field(FVVL, "6")
+  field(SXST, "7")
+  field(SXVL, "7")
+  field(SVST, "8")
+  field(SVVL, "8")
+  field(EIST, "9")
+  field(EIVL, "9")
+  field(NIST, "10")
+  field(NIVL, "10")
+  field(TEST, "11")
+  field(TEVL, "11")
+  field(ELST, "12")
+  field(ELVL, "12")
+  field(TVST, "13")
+  field(TVVL, "13")
+  field(TTST, "14")
+  field(TTVL, "14")
+  field(FTST, "15")
+  field(FTVL, "15")
+  field(FFST, "16")
+  field(FFVL, "16")
+}
+
+record(mbbi, "$(P)$(R)SelectedCine_RBV")
+{
+  field(DESC, "Selected Cine file ID")
+  field(DTYP, "asynInt32")
+  field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))MIRO_CINE_SELECTED")
+  field(ZRST, "1")
+  field(ZRVL, "1")
+  field(ONST, "2")
+  field(ONVL, "2")
+  field(TWST, "3")
+  field(TWVL, "3")
+  field(THST, "4")
+  field(THVL, "4")
+  field(FRST, "5")
+  field(FRVL, "5")
+  field(FVST, "6")
+  field(FVVL, "6")
+  field(SXST, "7")
+  field(SXVL, "7")
+  field(SVST, "8")
+  field(SVVL, "8")
+  field(EIST, "9")
+  field(EIVL, "9")
+  field(NIST, "10")
+  field(NIVL, "10")
+  field(TEST, "11")
+  field(TEVL, "11")
+  field(ELST, "12")
+  field(ELVL, "12")
+  field(TVST, "13")
+  field(TVVL, "13")
+  field(TTST, "14")
+  field(TTVL, "14")
+  field(FTST, "15")
+  field(FTVL, "15")
+  field(FFST, "16")
+  field(FFVL, "16")
+  field(SCAN, "I/O Intr")
+}
+
+### Cine frame count
+
+record(longin, "$(P)$(R)CineFrameCount_RBV")
+{
+  field(DESC, "Selected Cine frame count")
+  field(DTYP, "asynInt32")
+  field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))MIRO_CINE_FR_COUNT")
+  field(SCAN, "I/O Intr")
+}
+
+### Cine first frame
+
+record(longin, "$(P)$(R)CineFirstFrame_RBV")
+{
+  field(DESC, "Selected Cine first frame")
+  field(DTYP, "asynInt32")
+  field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))MIRO_CINE_FIRST_FR")
+  field(SCAN, "I/O Intr")
+}
+
+### Cine last frame
+
+record(longin, "$(P)$(R)CineLastFrame_RBV")
+{
+  field(DESC, "Selected Cine last frame")
+  field(DTYP, "asynInt32")
+  field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))MIRO_CINE_LAST_FR")
+  field(SCAN, "I/O Intr")
+}
+
+### Cine start record 
+
+record(longout, "$(P)$(R)RecordStart")
+{
+  field(DESC, "Record starting frame")
+  field(DTYP, "asynInt32")
+  field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))MIRO_CINE_REC_START")
+}
+
+record(longin, "$(P)$(R)RecordStart_RBV")
+{
+  field(DESC, "Record starting frame")
+  field(DTYP, "asynInt32")
+  field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))MIRO_CINE_REC_START")
+  field(SCAN, "I/O Intr")
+}
+
+### Cine end record 
+
+record(longout, "$(P)$(R)RecordEnd")
+{
+  field(DESC, "Record ending frame")
+  field(DTYP, "asynInt32")
+  field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))MIRO_CINE_REC_END")
+}
+
+record(longin, "$(P)$(R)RecordEnd_RBV")
+{
+  field(DESC, "Record ending frame")
+  field(DTYP, "asynInt32")
+  field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))MIRO_CINE_REC_END")
+  field(SCAN, "I/O Intr")
+}
+
+### Cine record command
+
+record(longout, "$(P)$(R)Record")
+{
+  field(DESC, "Start the recording")
+  field(DTYP, "asynInt32")
+  field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))MIRO_CINE_RECORD")
+}
+
+### Cine save to flash command
+
+record(longout, "$(P)$(R)SaveToCF")
+{
+  field(DESC, "Save selected cine to CF")
+  field(DTYP, "asynInt32")
+  field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))MIRO_CINE_SAVE_CF")
+}
+
+record(longin, "$(P)$(R)RecordCount_RBV") {
+  field(DTYP, "asynInt32")
+  field(SCAN, "I/O Intr")
+  field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))MIRO_CINE_REC_COUNT")
+}
+
+record(longin, "$(P)$(R)StateRaw") {
+  field(DTYP, "asynInt32")
+  field(SCAN, "I/O Intr")
+  field(INP, "@asyn($(PORT),$(ADDR),$(TIMEOUT))MIRO_ACQUIRE_STATE")
+  field(FLNK, "$(P)$(R)State_RBV")
+}
+
+record(mbbiDirect, "$(P)$(R)State_RBV") {
+  field(INP, "$(P)$(R)StateRaw")
+}
+
+################################################################
+###
+### Send a software trigger
+###
+record(longout, "$(P)$(R)SendSoftwareTrigger")
+{
+  field(DESC, "Send a software trigger")
+  field(DTYP, "asynInt32")
+  field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))MIRO_SOFTWARE_TRIGGER")
+}
+
+################################################################
+###
+### Perform a CSR black reference
+###
+record(longout, "$(P)$(R)PerformCSR")
+{
+  field(DESC, "Perform a CSR")
+  field(DTYP, "asynInt32")
+  field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))MIRO_PERFORM_CSR")
+}
+
+################################################################
+###
+### Live Cine Preview
+###
+### Start/Stop preview
+
+record(longout, "$(P)$(R)Preview")
+{
+  field(DESC, "Run the live preview")
+  field(DTYP, "asynInt32")
+  field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))MIRO_LIVE_PREVIEW")
+}
+
+record(longin, "$(P)$(R)Preview_RBV")
+{
+  field(DESC, "Status of live preview")
+  field(DTYP, "asynInt32")
+  field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))MIRO_LIVE_PREVIEW")
+  field(SCAN, "I/O Intr")
+}
+
+
+################################################################
+###
+### Camera Status
+###
+
+record(longin, "$(P)$(R)SensorTemp_RBV")
+{
+  field(DESC, "Sensor Temperature")
+  field(DTYP, "asynInt32")
+  field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))MIRO_SENSOR_TEMP")
+  field(SCAN, "I/O Intr")
+}
+
+record(longin, "$(P)$(R)ThermoPower_RBV")
+{
+  field(DESC, "Thermo power %")
+  field(DTYP, "asynInt32")
+  field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))MIRO_THERMO_POWER")
+  field(SCAN, "I/O Intr")
+}
+
+record(longin, "$(P)$(R)CameraTemp_RBV")
+{
+  field(DESC, "Camera Temperature")
+  field(DTYP, "asynInt32")
+  field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))MIRO_CAMERA_TEMP")
+  field(SCAN, "I/O Intr")
+}
+
+record(longin, "$(P)$(R)FanPower_RBV")
+{
+  field(DESC, "Fan Power %")
+  field(DTYP, "asynInt32")
+  field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))MIRO_FAN_POWER")
+  field(SCAN, "I/O Intr")
+}
+
+record(mbbo, "$(P)$(R)ExtSyncType")
+{
+   field(DTYP, "asynInt32")
+   field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))MIRO_EXT_SYNC")
+   field(ZRST, "FREE-RUN")
+   field(ZRVL, "0")
+   field(ONST, "FSYNC")
+   field(ONVL, "1")
+   field(TWST, "IRIG")
+   field(TWVL, "2")
+   field(THST, "VIDEO")
+   field(THVL, "3")
+}
+
+record(mbbi, "$(P)$(R)ExtSyncType_RBV")
+{
+   field(DTYP, "asynInt32")
+   field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))MIRO_EXT_SYNC")
+   field(ZRST, "FREE-RUN")
+   field(ZRVL, "0")
+   field(ONST, "FSYNC")
+   field(ONVL, "1")
+   field(TWST, "IRIG")
+   field(TWVL, "2")
+   field(THST, "VIDEO")
+   field(THVL, "3")
+   field(SCAN, "I/O Intr")
+}
+
+record(longout, "$(P)$(R)EDR")
+{
+  field(DESC, "Extended Dynamic Range in ns")
+  field(DTYP, "asynInt32")
+  field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))MIRO_EDR")
+}
+
+record(longin, "$(P)$(R)EDR_RBV")
+{
+  field(DESC, "Extended Dynamic Range in ns")
+  field(DTYP, "asynInt32")
+  field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))MIRO_EDR")
+  field(SCAN, "I/O Intr")
+}
+
+record(longout, "$(P)$(R)FrameDelay")
+{
+  field(DESC, "Frame Delay in us")
+  field(DTYP, "asynInt32")
+  field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))MIRO_FRAME_DELAY")
+}
+
+record(longin, "$(P)$(R)FrameDelay_RBV")
+{
+  field(DESC, "Frame Delay in us")
+  field(DTYP, "asynInt32")
+  field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))MIRO_FRAME_DELAY")
+  field(SCAN, "I/O Intr")
+}
+
+record(mbbo, "$(P)$(R)TriggerEdge")
+{
+   field(DTYP, "asynInt32")
+   field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))MIRO_TRIGGER_EDGE")
+   field(ZRST, "FALLING")
+   field(ZRVL, "0")
+   field(ONST, "RISING")
+   field(ONVL, "1")
+}
+
+record(mbbi, "$(P)$(R)TriggerEdge_RBV")
+{
+   field(DTYP, "asynInt32")
+   field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))MIRO_TRIGGER_EDGE")
+   field(ZRST, "FALLING")
+   field(ZRVL, "0")
+   field(ONST, "RISING")
+   field(ONVL, "1")
+   field(SCAN, "I/O Intr")
+}
+
+record(longout, "$(P)$(R)TriggerFilter")
+{
+  field(DESC, "Trigger filter in us")
+  field(DTYP, "asynInt32")
+  field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))MIRO_TRIGGER_FILTER")
+}
+
+record(longin, "$(P)$(R)TriggerFilter_RBV")
+{
+  field(DESC, "Trigger filter in us")
+  field(DTYP, "asynInt32")
+  field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))MIRO_TRIGGER_FILTER")
+  field(SCAN, "I/O Intr")
+}
+
+record(mbbo, "$(P)$(R)ReadySignal")
+{
+   field(DTYP, "asynInt32")
+   field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))MIRO_READY_SIGNAL")
+   field(ZRST, "RECORDING")
+   field(ZRVL, "0")
+   field(ONST, "TRIGGER")
+   field(ONVL, "1")
+}
+
+record(mbbi, "$(P)$(R)ReadySignal_RBV")
+{
+   field(DTYP, "asynInt32")
+   field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))MIRO_READY_SIGNAL")
+   field(ZRST, "RECORDING")
+   field(ZRVL, "0")
+   field(ONST, "TRIGGER")
+   field(ONVL, "1")
+   field(SCAN, "I/O Intr")
+}
+
+record(mbbo, "$(P)$(R)AuxPinMode")
+{
+   field(DTYP, "asynInt32")
+   field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))MIRO_AUX_PIN")
+   field(ZRST, "STROBE")
+   field(ZRVL, "0")
+   field(ONST, "EVENT")
+   field(ONVL, "1")
+   field(TWST, "MEMGATE")
+   field(TWVL, "2")
+   field(THST, "FSYNC")
+   field(THVL, "3")
+}
+
+record(mbbi, "$(P)$(R)AuxPinMode_RBV")
+{
+   field(DTYP, "asynInt32")
+   field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))MIRO_AUX_PIN")
+   field(ZRST, "STROBE")
+   field(ZRVL, "0")
+   field(ONST, "EVENT")
+   field(ONVL, "1")
+   field(TWST, "MEMGATE")
+   field(TWVL, "2")
+   field(THST, "FSYNC")
+   field(THVL, "3")
+   field(SCAN, "I/O Intr")
+}
+
+########## Disable Redundant areaDetector Fields #########
+
+record(mbbo, "$(P)$(R)DataType")
+{
+  field(DISA, "1")
+}
+
+record(mbbi, "$(P)$(R)DataType_RBV")
+{
+  field(DISA, "1")
+}
+
+record(mbbo, "$(P)$(R)ColorMode")
+{
+  field(DISA, "1")
+}
+
+record(mbbi, "$(P)$(R)ColorMode_RBV")
+{
+  field(DISA, "1")
+}
+
+record(longout, "$(P)$(R)BinX")
+{
+  field(DISA, "1")
+}
+
+record(longin, "$(P)$(R)BinX_RBV")
+{
+  field(DISA, "1")
+}
+
+record(longout, "$(P)$(R)BinY")
+{
+  field(DISA, "1")
+}
+
+record(longin, "$(P)$(R)BinY_RBV")
+{
+  field(DISA, "1")
+}
+
+record(longout, "$(P)$(R)MinX")
+{
+  field(DISA, "1")
+}
+
+record(longin, "$(P)$(R)MinX_RBV")
+{
+  field(DISA, "1")
+}
+
+record(longout, "$(P)$(R)MinY")
+{
+  field(DISA, "1")
+}
+
+record(longin, "$(P)$(R)MinY_RBV")
+{
+  field(DISA, "1")
+}
+
+record(ao, "$(P)$(R)Gain")
+{
+  field(DISA, "1")
+}
+
+record(ai, "$(P)$(R)Gain_RBV")
+{
+  field(DISA, "1")
+}
+
+record(bo, "$(P)$(R)ReverseX")
+{
+  field(DISA, "1")
+}
+
+record(bo, "$(P)$(R)ReverseY")
+{
+  field(DISA, "1")
+}
+
+# Force a connection to establish
+
+# Report back the connected state of the IOC
+record(bi, "$(P)$(R)CONNECTED_RBV") 
+{
+  field(DESC, "Current connected status")
+  field(DTYP, "asynInt32")
+  field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))MIRO_CONNECTED")
+  field(SCAN, "I/O Intr")
+  field(ZNAM, "Not Connected")
+  field(ONAM, "Connected")
+}
+
+include "miroFlash.template"
+
+substitute "CINE=1"
+include "miroCine.template"
+substitute "CINE=2"
+include "miroCine.template"
+substitute "CINE=3"
+include "miroCine.template"
+substitute "CINE=4"
+include "miroCine.template"
+substitute "CINE=5"
+include "miroCine.template"
+substitute "CINE=6"
+include "miroCine.template"
+substitute "CINE=7"
+include "miroCine.template"
+substitute "CINE=8"
+include "miroCine.template"
+substitute "CINE=9"
+include "miroCine.template"
+substitute "CINE=10"
+include "miroCine.template"
+substitute "CINE=11"
+include "miroCine.template"
+substitute "CINE=12"
+include "miroCine.template"
+substitute "CINE=13"
+include "miroCine.template"
+substitute "CINE=14"
+include "miroCine.template"
+substitute "CINE=15"
+include "miroCine.template"
+substitute "CINE=16"
+include "miroCine.template"

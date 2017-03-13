@@ -1,0 +1,8472 @@
+Script started on Fri 23 Sep 2016 15:17:19 BST
+]0;bvf81224@cs03r-sc-serv-18:~[?1034h[bvf81224@cs03r-sc-serv-18 ~]$ telnet outgoing[K[K[K[K[K[K[K[Koutgoing[K[K[K[K[K[K[K[K[K  172.23.240.96 7115
+Trying 172.23.240.96...
+Connected to lab63-vrmiro310-cam.diamond.ac.uk (172.23.240.96).
+Escape character is '^]'.
+get eth
+eth : {		\
+	ip : "172.23.240.96",	\
+	netmask : "255.255.240.0",	\
+	broadcast : "...",	\
+	gateway : "172.23.240.254",	\
+	mtu : 0,	\
+	xip : "",	\
+	xnetmask : "",	\
+	xbroadcast : "" 	\
+}
+get hw
+hw : {		\
+	vpix : 3300,	\
+	vpixl : 2800,	\
+	vmemh : 3600,	\
+	vmeml : 3000,	\
+	vresh : 3600,	\
+	vresds : 3000,	\
+	vresl : 500,	\
+	dcblack : 0,	\
+	bbias : 800,	\
+	tbias : 800,	\
+	brbias : 0,	\
+	trbias : 0,	\
+	osr : 62,	\
+	mcode : 5,	\
+	vmlpred : 0,	\
+	prepw : 14,	\
+	presmpd : 0,	\
+	smppw : 2,	\
+	smpvmhd : 0,	\
+	vmhresd : 0,	\
+	reswait : 4,	\
+	respw : 15,	\
+	reslong : 0,	\
+	expadj : 0,	\
+	sel2w : 5,	\
+	shkolmode : 1,	\
+	memphase : 240,	\
+	adphase : 30,	\
+	dcphase : 1616,	\
+	clkxd : 0,	\
+	adcflags : 112,	\
+	igain : 2253,	\
+	touchdx : 0,	\
+	touchdy : 0,	\
+	touchsx : 0,	\
+	touchsy : 0,	\
+	touchpos : 0,	\
+	freqtrim : 0,	\
+	nsfload : 16,	\
+	colload : 8,	\
+	outload : 16,	\
+	snsflags : 0,	\
+	irigphase : 0,	\
+	irigmodphase : 0,	\
+	memflags : 0,	\
+	colorcal : "0.3242 0.3355  2.32402 0.154988 -0.973507  -0.509867 2.31423 -1.1174  -0.168828 -0.133339 2.70913",	\
+	delaycal0 : "",	\
+	delaycal1 : "",	\
+	delaycal2 : "",	\
+	delaycal3 : "",	\
+	delaycal4 : "",	\
+	delaycal5 : "",	\
+	delaycal6 : "",	\
+	delaycal7 : "",	\
+	rdlevel : "",	\
+	sntempcal : 1100092,	\
+	limittemp : 65,	\
+	fanlo : 22,	\
+	eical : 13000,	\
+	memtest : 0,	\
+	rtctime : {		\
+		secs : 0,	\
+		frac : 0,	\
+		tz : 0 	\
+	} 	\
+}
+get meta
+meta : {		\
+	name : "",	\
+	lens : "",	\
+	fstop : 0,	\
+	flen : 0,	\
+	comment : "",	\
+	xset : "" 	\
+}
+get cam
+cam : {		\
+	syncimg : 0,	\
+	master : 0,	\
+	tcmode : 0,	\
+	trigpol : 1,	\
+	trigfilt : 1,	\
+	frdelay : 0,	\
+	startonacq : 1,	\
+	aux1mode : 0,	\
+	aux2mode : 0,	\
+	memgateen : 1,	\
+	rtoen : 0,	\
+	membpp : 12,	\
+	tsformat : 1,	\
+	longready : 0,	\
+	dark : 0,	\
+	quiet : 0,	\
+	tsetsns : 30,	\
+	tsetcam : 50,	\
+	apoffdis : 0,	\
+	rtotfr : 0,	\
+	cines : 16,	\
+	battarm : 0,	\
+	battmode : 0,	\
+	wtrarmdelay : 0,	\
+	wtrarmtime : 0,	\
+	poffdelay : 10,	\
+	readygate : 0,	\
+	timezone : -3600,	\
+	lang : "en_US",	\
+	occset : "" 	\
+}
+get auto
+auto : {		\
+	videoplay : 0,	\
+	flashsave : 0,	\
+	filesave : 1,	\
+	acqrestart : 1,	\
+	bref : 0,	\
+	firstframe : -2147483648,	\
+	lastframe : 2147483646,	\
+	format : 272,	\
+	loops : 0,	\
+	speed : 0,	\
+	progress : 0,	\
+	bref_progress : 0,	\
+	fseq : 429,	\
+	trigger : {		\
+		x : 0,	\
+		y : -52,	\
+		w : 1280,	\
+		h : 400,	\
+		speed : 1087,	\
+		area : 1,	\
+		threshold : 1,	\
+		mode : 0 	\
+	} 	\
+}
+get video
+video : {		\
+	system : 1,	\
+	output : 0,	\
+	osddis : 1,	\
+	osd_ut : 0,	\
+	pax : 0,	\
+	pay : 0,	\
+	paox : -640,	\
+	paoy : -400,	\
+	vox : 0,	\
+	voy : 0,	\
+	vw : 1280,	\
+	vh : 504,	\
+	vow : 711,	\
+	voh : 280,	\
+	widescreen : 0,	\
+	uzoom : 0,	\
+	genlock : 0,	\
+	fields : 0,	\
+	vfmode : 0,	\
+	adj : {		\
+		red : 1,	\
+		green : 1,	\
+		blue : 1,	\
+		wbtemp : 5600,	\
+		wbcc : 0,	\
+		wbred : 1.321455044,	\
+		wbblue : 1.824537662,	\
+		edgeg : 0,	\
+		edger : 0,	\
+		edgeth : 0,	\
+		gamma : 0.57544,	\
+		rgamma : 0,	\
+		bgamma : 0,	\
+		toe : 1,	\
+		gain : 3.176874,	\
+		offset : -0.0785,	\
+		flare : 0,	\
+		hue : 0,	\
+		sat : 1,	\
+		rped : 0,	\
+		gped : 0,	\
+		bped : 0,	\
+		tone : "",	\
+		mmsat : "",	\
+		mmhue : "",	\
+		chroma : 1,	\
+		matrix : 1,	\
+		log : 0,	\
+		sdimin : 32,	\
+		sdimax : 960,	\
+		cmatrix : "cal 1.7326 0.119326 -0.785386  -0.380114 1.78173 -0.901473  -0.125864 -0.102658 2.18562",	\
+		umatrix : "",	\
+		filter : "" 	\
+	},	\
+	play : {		\
+		live : 1,	\
+		mag : 0,	\
+		fn : 0,	\
+		in : 0,	\
+		out : 0,	\
+		speed : 1,	\
+		step : 1,	\
+		cine : 0,	\
+		frcount : 0 	\
+	} 	\
+}
+get irig
+irig : {		\
+	sec : 1474640337,	\
+	yearbegin : 1451606400,	\
+	flags : { NUL },	\
+	signal : "",	\
+	gps : "",	\
+	ranged : "00000000 00000000 00000000 00000000" 	\
+}
+get mag
+mag : {		\
+	state : 0,	\
+	progress : 0,	\
+	protect : 0,	\
+	errcode : 0,	\
+	size : 0,	\
+	used : 0,	\
+	takes : 0,	\
+	version : 0,	\
+	type : 0,	\
+	magtp : 0,	\
+	runstop : 0,	\
+	id : "",	\
+	test : 0 	\
+}
+get cd
+ERR: name cd  is unknown 
+get cf
+cf : {		\
+	state : 4,	\
+	action : 0,	\
+	size : 246127884,	\
+	used : 61423112,	\
+	progress : 0,	\
+	errcode : 0 	\
+}
+get usets
+usets : {		\
+	nsets : 6,	\
+	valid0 : 1,	\
+	valid1 : 1,	\
+	valid2 : 1,	\
+	valid3 : 1,	\
+	valid4 : 1,	\
+	valid5 : 1 	\
+}
+get defc
+defc : {		\
+	res : 1280 x 504,	\
+	rate : 1080,	\
+	exp : 925482,	\
+	shoff : 0,	\
+	edrexp : 0,	\
+	ptframes : 820,	\
+	bcount : 0,	\
+	bperiod : 307692,	\
+	hqenable : 0,	\
+	frcount : 820,	\
+	ramp : "",	\
+	frsize : 40336,	\
+	decimation : 1,	\
+	aexpmode : 0,	\
+	aexpcomp : -0.1605,	\
+	meta : {		\
+		ox : -160,	\
+		oy : -120,	\
+		w : 1,	\
+		h : 1,	\
+		ow : 1280,	\
+		oh : 504,	\
+		crop : 0,	\
+		resize : 0 	\
+	} 	\
+}
+get info
+info : {		\
+	hwver : 8001,	\
+	pver : 16,	\
+	sver : 1023,	\
+	fver : 39,	\
+	model : "Phantom Miro M310",	\
+	sensor : 62,	\
+	snsversion : 0,	\
+	snsserial : 0,	\
+	occver : 0,	\
+	tally : 0,	\
+	kernel : 425,	\
+	swver : 14967,	\
+	xver : 840,	\
+	serial : 17277,	\
+	memsz : 12288,	\
+	cfa : 0,	\
+	filter : 0,	\
+	maxcines : 17,	\
+	name : "17277",	\
+	kernsz : 24,	\
+	xmax : 1280,	\
+	ymax : 800,	\
+	xinc : 64,	\
+	yinc : 8,	\
+	xblock : 8,	\
+	yblock : 8,	\
+	winx : 32,	\
+	winy : 8,	\
+	pixps : 17857,	\
+	rotps : 196427,	\
+	fotps : 553567,	\
+	minfrate : 24,	\
+	tmodel : 4,	\
+	maxrate : 1000000,	\
+	expdead : 427,	\
+	minexp : 1000,	\
+	magtp : 720000000,	\
+	cinemem : 12181,	\
+	mdepths : 0x1000,	\
+	rtobyteps : 3200,	\
+	rtopacket : 160,	\
+	rtopacketovhead : 12,	\
+	rtofrovhead : 1900,	\
+	rto_channels : 0,	\
+	snstemp : 30,	\
+	tepower : 54,	\
+	camtemp : 52,	\
+	fanpower : 28,	\
+	batti : 0,	\
+	battv : 271,	\
+	battstate : 0,	\
+	batttimer : 0,	\
+	vbatt : 0.2645052632,	\
+	vcdina : 0.3747157895,	\
+	vcdinb : 23.95976842,	\
+	genlockstatus : 0,	\
+	features : "bref blk4 burst edr attach earlyimg notify atrig aexp cf quiet shtr",	\
+	imgformats : "8 8R P16 P16R P10",	\
+	videosystems : "0 1",	\
+	basechroma : 1,	\
+	baseei : 13000,	\
+	setup : "Donal_Std_Rad_2000fps" 	\
+}
+get cf
+cf : {		\
+	state : 4,	\
+	action : 0,	\
+	size : 246127884,	\
+	used : 61423112,	\
+	progress : 0,	\
+	errcode : 0 	\
+}
+get *
+* : {		\
+	info : {		\
+		hwver : 8001,	\
+		pver : 16,	\
+		sver : 1023,	\
+		fver : 39,	\
+		model : "Phantom Miro M310",	\
+		sensor : 62,	\
+		snsversion : 0,	\
+		snsserial : 0,	\
+		occver : 0,	\
+		tally : 0,	\
+		kernel : 425,	\
+		swver : 14967,	\
+		xver : 840,	\
+		serial : 17277,	\
+		memsz : 12288,	\
+		cfa : 0,	\
+		filter : 0,	\
+		maxcines : 17,	\
+		name : "17277",	\
+		kernsz : 24,	\
+		xmax : 1280,	\
+		ymax : 800,	\
+		xinc : 64,	\
+		yinc : 8,	\
+		xblock : 8,	\
+		yblock : 8,	\
+		winx : 32,	\
+		winy : 8,	\
+		pixps : 17857,	\
+		rotps : 196427,	\
+		fotps : 553567,	\
+		minfrate : 24,	\
+		tmodel : 4,	\
+		maxrate : 1000000,	\
+		expdead : 427,	\
+		minexp : 1000,	\
+		magtp : 720000000,	\
+		cinemem : 12181,	\
+		mdepths : 0x1000,	\
+		rtobyteps : 3200,	\
+		rtopacket : 160,	\
+		rtopacketovhead : 12,	\
+		rtofrovhead : 1900,	\
+		rto_channels : 0,	\
+		snstemp : 29,	\
+		tepower : 53,	\
+		camtemp : 52,	\
+		fanpower : 31,	\
+		batti : 0,	\
+		battv : 271,	\
+		battstate : 0,	\
+		batttimer : 0,	\
+		vbatt : 0.2645052632,	\
+		vcdina : 0.3747157895,	\
+		vcdinb : 23.95976842,	\
+		genlockstatus : 0,	\
+		features : "bref blk4 burst edr attach earlyimg notify atrig aexp cf quiet shtr",	\
+		imgformats : "8 8R P16 P16R P10",	\
+		videosystems : "0 1",	\
+		basechroma : 1,	\
+		baseei : 13000,	\
+		setup : "Donal_Std_Rad_2000fps" 	\
+	},		\
+	hw : {		\
+		vpix : 3300,	\
+		vpixl : 2800,	\
+		vmemh : 3600,	\
+		vmeml : 3000,	\
+		vresh : 3600,	\
+		vresds : 3000,	\
+		vresl : 500,	\
+		dcblack : 0,	\
+		bbias : 800,	\
+		tbias : 800,	\
+		brbias : 0,	\
+		trbias : 0,	\
+		osr : 62,	\
+		mcode : 5,	\
+		vmlpred : 0,	\
+		prepw : 14,	\
+		presmpd : 0,	\
+		smppw : 2,	\
+		smpvmhd : 0,	\
+		vmhresd : 0,	\
+		reswait : 4,	\
+		respw : 15,	\
+		reslong : 0,	\
+		expadj : 0,	\
+		sel2w : 5,	\
+		shkolmode : 1,	\
+		memphase : 240,	\
+		adphase : 30,	\
+		dcphase : 1616,	\
+		clkxd : 0,	\
+		adcflags : 112,	\
+		igain : 2253,	\
+		touchdx : 0,	\
+		touchdy : 0,	\
+		touchsx : 0,	\
+		touchsy : 0,	\
+		touchpos : 0,	\
+		freqtrim : 0,	\
+		nsfload : 16,	\
+		colload : 8,	\
+		outload : 16,	\
+		snsflags : 0,	\
+		irigphase : 0,	\
+		irigmodphase : 0,	\
+		memflags : 0,	\
+		colorcal : "0.3242 0.3355  2.32402 0.154988 -0.973507  -0.509867 2.31423 -1.1174  -0.168828 -0.133339 2.70913",	\
+		delaycal0 : "",	\
+		delaycal1 : "",	\
+		delaycal2 : "",	\
+		delaycal3 : "",	\
+		delaycal4 : "",	\
+		delaycal5 : "",	\
+		delaycal6 : "",	\
+		delaycal7 : "",	\
+		rdlevel : "",	\
+		sntempcal : 1100092,	\
+		limittemp : 65,	\
+		fanlo : 22,	\
+		eical : 13000,	\
+		memtest : 0,	\
+		rtctime : {		\
+			secs : 0,	\
+			frac : 0,	\
+			tz : 0 	\
+		} 	\
+	},		\
+	meta : {		\
+		name : "",	\
+		lens : "",	\
+		fstop : 0,	\
+		flen : 0,	\
+		comment : "",	\
+		xset : "" 	\
+	},		\
+	cam : {		\
+		syncimg : 0,	\
+		master : 0,	\
+		tcmode : 0,	\
+		trigpol : 1,	\
+		trigfilt : 1,	\
+		frdelay : 0,	\
+		startonacq : 1,	\
+		aux1mode : 0,	\
+		aux2mode : 0,	\
+		memgateen : 1,	\
+		rtoen : 0,	\
+		membpp : 12,	\
+		tsformat : 1,	\
+		longready : 0,	\
+		dark : 0,	\
+		quiet : 0,	\
+		tsetsns : 30,	\
+		tsetcam : 50,	\
+		apoffdis : 0,	\
+		rtotfr : 0,	\
+		cines : 16,	\
+		battarm : 0,	\
+		battmode : 0,	\
+		wtrarmdelay : 0,	\
+		wtrarmtime : 0,	\
+		poffdelay : 10,	\
+		readygate : 0,	\
+		timezone : -3600,	\
+		lang : "en_US",	\
+		occset : "" 	\
+	},		\
+	auto : {		\
+		videoplay : 0,	\
+		flashsave : 0,	\
+		filesave : 1,	\
+		acqrestart : 1,	\
+		bref : 0,	\
+		firstframe : -2147483648,	\
+		lastframe : 2147483646,	\
+		format : 272,	\
+		loops : 0,	\
+		speed : 0,	\
+		progress : 0,	\
+		bref_progress : 0,	\
+		fseq : 429,	\
+		trigger : {		\
+			x : 0,	\
+			y : -52,	\
+			w : 1280,	\
+			h : 400,	\
+			speed : 1087,	\
+			area : 1,	\
+			threshold : 1,	\
+			mode : 0 	\
+		} 	\
+	},		\
+	eth : {		\
+		ip : "172.23.240.96",	\
+		netmask : "255.255.240.0",	\
+		broadcast : "...",	\
+		gateway : "172.23.240.254",	\
+		mtu : 0,	\
+		xip : "",	\
+		xnetmask : "",	\
+		xbroadcast : "" 	\
+	},		\
+	video : {		\
+		system : 1,	\
+		output : 0,	\
+		osddis : 1,	\
+		osd_ut : 0,	\
+		pax : 0,	\
+		pay : 0,	\
+		paox : -640,	\
+		paoy : -400,	\
+		vox : 0,	\
+		voy : 0,	\
+		vw : 1280,	\
+		vh : 504,	\
+		vow : 711,	\
+		voh : 280,	\
+		widescreen : 0,	\
+		uzoom : 0,	\
+		genlock : 0,	\
+		fields : 0,	\
+		vfmode : 0,	\
+		adj : {		\
+			red : 1,	\
+			green : 1,	\
+			blue : 1,	\
+			wbtemp : 5600,	\
+			wbcc : 0,	\
+			wbred : 1.321455044,	\
+			wbblue : 1.824537662,	\
+			edgeg : 0,	\
+			edger : 0,	\
+			edgeth : 0,	\
+			gamma : 0.57544,	\
+			rgamma : 0,	\
+			bgamma : 0,	\
+			toe : 1,	\
+			gain : 3.176874,	\
+			offset : -0.0785,	\
+			flare : 0,	\
+			hue : 0,	\
+			sat : 1,	\
+			rped : 0,	\
+			gped : 0,	\
+			bped : 0,	\
+			tone : "",	\
+			mmsat : "",	\
+			mmhue : "",	\
+			chroma : 1,	\
+			matrix : 1,	\
+			log : 0,	\
+			sdimin : 32,	\
+			sdimax : 960,	\
+			cmatrix : "cal 1.7326 0.119326 -0.785386  -0.380114 1.78173 -0.901473  -0.125864 -0.102658 2.18562",	\
+			umatrix : "",	\
+			filter : "" 	\
+		},	\
+		play : {		\
+			live : 1,	\
+			mag : 0,	\
+			fn : 0,	\
+			in : 0,	\
+			out : 0,	\
+			speed : 1,	\
+			step : 1,	\
+			cine : 0,	\
+			frcount : 0 	\
+		} 	\
+	},		\
+	irig : {		\
+		sec : 1474640605,	\
+		yearbegin : 1451606400,	\
+		flags : { NUL },	\
+		signal : "",	\
+		gps : "",	\
+		ranged : "00000000 00000000 00000000 00000000" 	\
+	},		\
+	mag : {		\
+		state : 0,	\
+		progress : 0,	\
+		protect : 0,	\
+		errcode : 0,	\
+		size : 0,	\
+		used : 0,	\
+		takes : 0,	\
+		version : 0,	\
+		type : 0,	\
+		magtp : 0,	\
+		runstop : 0,	\
+		id : "",	\
+		test : 0 	\
+	},		\
+	cf : {		\
+		state : 4,	\
+		action : 0,	\
+		size : 246127884,	\
+		used : 61423112,	\
+		progress : 0,	\
+		errcode : 0 	\
+	},		\
+	preset : {		\
+		matrix1 : "",	\
+		matrix2 : "",	\
+		matrix3 : "",	\
+		matrix4 : "",	\
+		tone1 : "medium 0.125 0.0859 0.25 0.218 0.5 0.5 0.75 0.768",	\
+		tone2 : "strong 0.125 0.0625 0.25 0.195 0.5 0.5 0.75 0.79",	\
+		tone3 : "highs1 0.18 0.25 0.375 0.70 0.5 0.860 0.75 0.95",	\
+		tone4 : "highs2 0.06 0.16 0.14 0.50 0.40 0.89",	\
+		filter1 : "",	\
+		filter2 : "",	\
+		filter3 : "",	\
+		filter4 : "" 	\
+	},		\
+	usets : {		\
+		nsets : 6,	\
+		valid0 : 1,	\
+		valid1 : 1,	\
+		valid2 : 1,	\
+		valid3 : 1,	\
+		valid4 : 1,	\
+		valid5 : 1 	\
+	},		\
+	defc : {		\
+		res : 1280 x 504,	\
+		rate : 1080,	\
+		exp : 925482,	\
+		shoff : 0,	\
+		edrexp : 0,	\
+		ptframes : 820,	\
+		bcount : 0,	\
+		bperiod : 307692,	\
+		hqenable : 0,	\
+		frcount : 820,	\
+		ramp : "",	\
+		frsize : 40336,	\
+		decimation : 1,	\
+		aexpmode : 0,	\
+		aexpcomp : -0.1605,	\
+		meta : {		\
+			ox : -160,	\
+			oy : -120,	\
+			w : 1,	\
+			h : 1,	\
+			ow : 1280,	\
+			oh : 504,	\
+			crop : 0,	\
+			resize : 0 	\
+		} 	\
+	},		\
+	c0 : {		\
+		res : 1280 x 800,	\
+		rate : 100,	\
+		exp : 1000000,	\
+		shoff : 0,	\
+		edrexp : 0,	\
+		ptframes : 10,	\
+		bcount : 0,	\
+		bperiod : 0,	\
+		hqenable : 0,	\
+		frcount : 0,	\
+		ramp : "",	\
+		state : { RDY DEF PRE },	\
+		start : 0x2A0400,	\
+		len : 0x1D4C00,	\
+		frsize : 64016,	\
+		frspace : 1920000,	\
+		firstfr : 0,	\
+		lastfr : 0,	\
+		format : 0,	\
+		decimation : 0,	\
+		in : 0,	\
+		out : 0,	\
+		aexpmode : 0,	\
+		aexpcomp : 0,	\
+		trigtime : {		\
+			secs : 0,	\
+			frac : 0 	\
+		},	\
+		cam : {		\
+			syncimg : 0,	\
+			master : 0,	\
+			tcmode : 0,	\
+			trigpol : 0,	\
+			trigfilt : 0,	\
+			frdelay : 0,	\
+			startonacq : 0,	\
+			aux1mode : 0,	\
+			aux2mode : 0,	\
+			memgateen : 0,	\
+			membpp : 12,	\
+			tsformat : 0 	\
+		},	\
+		info : {		\
+			hwver : 0,	\
+			sver : 0,	\
+			fver : 0,	\
+			pver : 0,	\
+			model : "",	\
+			sensor : 0,	\
+			snsversion : 0,	\
+			snsserial : 0,	\
+			kernel : 0,	\
+			swver : 0,	\
+			xver : 0,	\
+			serial : 0,	\
+			cfa : 0,	\
+			filter : 0,	\
+			name : "",	\
+			mdepths : 0x0,	\
+			genlockstatus : 0,	\
+			snstemp : 0,	\
+			camtemp : 0,	\
+			features : "" 	\
+		},	\
+		adj : {		\
+			red : 0,	\
+			green : 0,	\
+			blue : 0,	\
+			wbtemp : 0,	\
+			wbcc : 0,	\
+			wbred : 0,	\
+			wbblue : 0,	\
+			edgeg : 0,	\
+			edger : 0,	\
+			edgeth : 0,	\
+			gamma : 0,	\
+			rgamma : 0,	\
+			bgamma : 0,	\
+			toe : 0,	\
+			gain : 0,	\
+			offset : 0,	\
+			flare : 0,	\
+			hue : 0,	\
+			sat : 0,	\
+			rped : 0,	\
+			gped : 0,	\
+			bped : 0,	\
+			tone : "",	\
+			mmsat : "",	\
+			mmhue : "",	\
+			chroma : 0,	\
+			matrix : 0,	\
+			log : 0,	\
+			sdimin : 0,	\
+			sdimax : 0,	\
+			cmatrix : "",	\
+			umatrix : "",	\
+			filter : "" 	\
+		},	\
+		meta : {		\
+			name : "",	\
+			uuid : "",	\
+			system : 0,	\
+			pbrate : 0,	\
+			tcrate : 0,	\
+			trigtc : "",	\
+			pax : 0,	\
+			pay : 0,	\
+			paox : 0,	\
+			paoy : 0,	\
+			vox : 0,	\
+			voy : 0,	\
+			vw : 0,	\
+			vh : 0,	\
+			vow : 0,	\
+			voh : 0,	\
+			ox : 0,	\
+			oy : 0,	\
+			w : 0,	\
+			h : 0,	\
+			ow : 0,	\
+			oh : 0,	\
+			crop : 0,	\
+			resize : 0,	\
+			lens : "",	\
+			fstop : 0,	\
+			flen : 0,	\
+			gps : "",	\
+			comment : "",	\
+			xset : "" 	\
+		} 	\
+	},		\
+	c1 : {		\
+		res : 1280 x 504,	\
+		rate : 1080,	\
+		exp : 925482,	\
+		shoff : 0,	\
+		edrexp : 0,	\
+		ptframes : 820,	\
+		bcount : 0,	\
+		bperiod : 307692,	\
+		hqenable : 0,	\
+		frcount : 820,	\
+		ramp : "",	\
+		state : { WTR DEF ABL ACT },	\
+		start : 0x475000,	\
+		len : 0x1F90000,	\
+		frsize : 40336,	\
+		frspace : 33095680,	\
+		firstfr : 0,	\
+		lastfr : 0,	\
+		format : 0,	\
+		decimation : 1,	\
+		in : 0,	\
+		out : 0,	\
+		aexpmode : 0,	\
+		aexpcomp : -0.1605,	\
+		trigtime : {		\
+			secs : 0,	\
+			frac : 0 	\
+		},	\
+		cam : {		\
+			syncimg : 0,	\
+			master : 0,	\
+			tcmode : 0,	\
+			trigpol : 1,	\
+			trigfilt : 1,	\
+			frdelay : 0,	\
+			startonacq : 1,	\
+			aux1mode : 0,	\
+			aux2mode : 0,	\
+			memgateen : 1,	\
+			membpp : 12,	\
+			tsformat : 1 	\
+		},	\
+		info : {		\
+			hwver : 8001,	\
+			sver : 1023,	\
+			fver : 39,	\
+			pver : 16,	\
+			model : "Phantom Miro M310",	\
+			sensor : 62,	\
+			snsversion : 0,	\
+			snsserial : 0,	\
+			kernel : 425,	\
+			swver : 14967,	\
+			xver : 840,	\
+			serial : 17277,	\
+			cfa : 0,	\
+			filter : 0,	\
+			name : "17277",	\
+			mdepths : 0x1000,	\
+			genlockstatus : 0,	\
+			snstemp : 0,	\
+			camtemp : 0,	\
+			features : "bref blk4 burst edr attach earlyimg notify atrig aexp cf quiet shtr" 	\
+		},	\
+		adj : {		\
+			red : 1,	\
+			green : 1,	\
+			blue : 1,	\
+			wbtemp : 5600,	\
+			wbcc : 0,	\
+			wbred : 1.321455044,	\
+			wbblue : 1.824537662,	\
+			edgeg : 0,	\
+			edger : 0,	\
+			edgeth : 0,	\
+			gamma : 0.57544,	\
+			rgamma : 0,	\
+			bgamma : 0,	\
+			toe : 1,	\
+			gain : 3.176874,	\
+			offset : -0.0785,	\
+			flare : 0,	\
+			hue : 0,	\
+			sat : 1,	\
+			rped : 0,	\
+			gped : 0,	\
+			bped : 0,	\
+			tone : "",	\
+			mmsat : "",	\
+			mmhue : "",	\
+			chroma : 1,	\
+			matrix : 1,	\
+			log : 0,	\
+			sdimin : 32,	\
+			sdimax : 960,	\
+			cmatrix : "cal 1.7326 0.119326 -0.785386  -0.380114 1.78173 -0.901473  -0.125864 -0.102658 2.18562",	\
+			umatrix : "",	\
+			filter : "" 	\
+		},	\
+		meta : {		\
+			name : "",	\
+			uuid : "",	\
+			system : 1,	\
+			pbrate : 50,	\
+			tcrate : 25,	\
+			trigtc : "",	\
+			pax : 0,	\
+			pay : 0,	\
+			paox : -640,	\
+			paoy : -400,	\
+			vox : 0,	\
+			voy : 0,	\
+			vw : 1280,	\
+			vh : 504,	\
+			vow : 711,	\
+			voh : 280,	\
+			ox : -160,	\
+			oy : -120,	\
+			w : 1,	\
+			h : 1,	\
+			ow : 1280,	\
+			oh : 504,	\
+			crop : 0,	\
+			resize : 0,	\
+			lens : "",	\
+			fstop : 0,	\
+			flen : 0,	\
+			gps : "",	\
+			comment : "",	\
+			xset : "" 	\
+		} 	\
+	},		\
+	c2 : {		\
+		res : 1280 x 800,	\
+		rate : 100,	\
+		exp : 1000000,	\
+		shoff : 0,	\
+		edrexp : 0,	\
+		ptframes : 10,	\
+		bcount : 0,	\
+		bperiod : 0,	\
+		hqenable : 0,	\
+		frcount : 0,	\
+		ramp : "",	\
+		state : { RDY DEF ABL },	\
+		start : 0x2405000,	\
+		len : 0x1F90000,	\
+		frsize : 64016,	\
+		frspace : 33095680,	\
+		firstfr : 0,	\
+		lastfr : 0,	\
+		format : 0,	\
+		decimation : 0,	\
+		in : 0,	\
+		out : 0,	\
+		aexpmode : 0,	\
+		aexpcomp : 0,	\
+		trigtime : {		\
+			secs : 0,	\
+			frac : 0 	\
+		},	\
+		cam : {		\
+			syncimg : 0,	\
+			master : 0,	\
+			tcmode : 0,	\
+			trigpol : 0,	\
+			trigfilt : 0,	\
+			frdelay : 0,	\
+			startonacq : 0,	\
+			aux1mode : 0,	\
+			aux2mode : 0,	\
+			memgateen : 0,	\
+			membpp : 12,	\
+			tsformat : 0 	\
+		},	\
+		info : {		\
+			hwver : 0,	\
+			sver : 0,	\
+			fver : 0,	\
+			pver : 0,	\
+			model : "",	\
+			sensor : 0,	\
+			snsversion : 0,	\
+			snsserial : 0,	\
+			kernel : 0,	\
+			swver : 0,	\
+			xver : 0,	\
+			serial : 0,	\
+			cfa : 0,	\
+			filter : 0,	\
+			name : "",	\
+			mdepths : 0x0,	\
+			genlockstatus : 0,	\
+			snstemp : 0,	\
+			camtemp : 0,	\
+			features : "" 	\
+		},	\
+		adj : {		\
+			red : 0,	\
+			green : 0,	\
+			blue : 0,	\
+			wbtemp : 0,	\
+			wbcc : 0,	\
+			wbred : 0,	\
+			wbblue : 0,	\
+			edgeg : 0,	\
+			edger : 0,	\
+			edgeth : 0,	\
+			gamma : 0,	\
+			rgamma : 0,	\
+			bgamma : 0,	\
+			toe : 0,	\
+			gain : 0,	\
+			offset : 0,	\
+			flare : 0,	\
+			hue : 0,	\
+			sat : 0,	\
+			rped : 0,	\
+			gped : 0,	\
+			bped : 0,	\
+			tone : "",	\
+			mmsat : "",	\
+			mmhue : "",	\
+			chroma : 0,	\
+			matrix : 0,	\
+			log : 0,	\
+			sdimin : 0,	\
+			sdimax : 0,	\
+			cmatrix : "",	\
+			umatrix : "",	\
+			filter : "" 	\
+		},	\
+		meta : {		\
+			name : "",	\
+			uuid : "",	\
+			system : 0,	\
+			pbrate : 0,	\
+			tcrate : 0,	\
+			trigtc : "",	\
+			pax : 0,	\
+			pay : 0,	\
+			paox : 0,	\
+			paoy : 0,	\
+			vox : 0,	\
+			voy : 0,	\
+			vw : 0,	\
+			vh : 0,	\
+			vow : 0,	\
+			voh : 0,	\
+			ox : 0,	\
+			oy : 0,	\
+			w : 0,	\
+			h : 0,	\
+			ow : 0,	\
+			oh : 0,	\
+			crop : 0,	\
+			resize : 0,	\
+			lens : "",	\
+			fstop : 0,	\
+			flen : 0,	\
+			gps : "",	\
+			comment : "",	\
+			xset : "" 	\
+		} 	\
+	},		\
+	c3 : {		\
+		res : 1280 x 800,	\
+		rate : 100,	\
+		exp : 1000000,	\
+		shoff : 0,	\
+		edrexp : 0,	\
+		ptframes : 10,	\
+		bcount : 0,	\
+		bperiod : 0,	\
+		hqenable : 0,	\
+		frcount : 0,	\
+		ramp : "",	\
+		state : { RDY DEF ABL },	\
+		start : 0x4395000,	\
+		len : 0x1F90000,	\
+		frsize : 64016,	\
+		frspace : 33095680,	\
+		firstfr : 0,	\
+		lastfr : 0,	\
+		format : 0,	\
+		decimation : 0,	\
+		in : 0,	\
+		out : 0,	\
+		aexpmode : 0,	\
+		aexpcomp : 0,	\
+		trigtime : {		\
+			secs : 0,	\
+			frac : 0 	\
+		},	\
+		cam : {		\
+			syncimg : 0,	\
+			master : 0,	\
+			tcmode : 0,	\
+			trigpol : 0,	\
+			trigfilt : 0,	\
+			frdelay : 0,	\
+			startonacq : 0,	\
+			aux1mode : 0,	\
+			aux2mode : 0,	\
+			memgateen : 0,	\
+			membpp : 12,	\
+			tsformat : 0 	\
+		},	\
+		info : {		\
+			hwver : 0,	\
+			sver : 0,	\
+			fver : 0,	\
+			pver : 0,	\
+			model : "",	\
+			sensor : 0,	\
+			snsversion : 0,	\
+			snsserial : 0,	\
+			kernel : 0,	\
+			swver : 0,	\
+			xver : 0,	\
+			serial : 0,	\
+			cfa : 0,	\
+			filter : 0,	\
+			name : "",	\
+			mdepths : 0x0,	\
+			genlockstatus : 0,	\
+			snstemp : 0,	\
+			camtemp : 0,	\
+			features : "" 	\
+		},	\
+		adj : {		\
+			red : 0,	\
+			green : 0,	\
+			blue : 0,	\
+			wbtemp : 0,	\
+			wbcc : 0,	\
+			wbred : 0,	\
+			wbblue : 0,	\
+			edgeg : 0,	\
+			edger : 0,	\
+			edgeth : 0,	\
+			gamma : 0,	\
+			rgamma : 0,	\
+			bgamma : 0,	\
+			toe : 0,	\
+			gain : 0,	\
+			offset : 0,	\
+			flare : 0,	\
+			hue : 0,	\
+			sat : 0,	\
+			rped : 0,	\
+			gped : 0,	\
+			bped : 0,	\
+			tone : "",	\
+			mmsat : "",	\
+			mmhue : "",	\
+			chroma : 0,	\
+			matrix : 0,	\
+			log : 0,	\
+			sdimin : 0,	\
+			sdimax : 0,	\
+			cmatrix : "",	\
+			umatrix : "",	\
+			filter : "" 	\
+		},	\
+		meta : {		\
+			name : "",	\
+			uuid : "",	\
+			system : 0,	\
+			pbrate : 0,	\
+			tcrate : 0,	\
+			trigtc : "",	\
+			pax : 0,	\
+			pay : 0,	\
+			paox : 0,	\
+			paoy : 0,	\
+			vox : 0,	\
+			voy : 0,	\
+			vw : 0,	\
+			vh : 0,	\
+			vow : 0,	\
+			voh : 0,	\
+			ox : 0,	\
+			oy : 0,	\
+			w : 0,	\
+			h : 0,	\
+			ow : 0,	\
+			oh : 0,	\
+			crop : 0,	\
+			resize : 0,	\
+			lens : "",	\
+			fstop : 0,	\
+			flen : 0,	\
+			gps : "",	\
+			comment : "",	\
+			xset : "" 	\
+		} 	\
+	},		\
+	c4 : {		\
+		res : 1280 x 800,	\
+		rate : 100,	\
+		exp : 1000000,	\
+		shoff : 0,	\
+		edrexp : 0,	\
+		ptframes : 10,	\
+		bcount : 0,	\
+		bperiod : 0,	\
+		hqenable : 0,	\
+		frcount : 0,	\
+		ramp : "",	\
+		state : { RDY DEF ABL },	\
+		start : 0x6325000,	\
+		len : 0x1F90000,	\
+		frsize : 64016,	\
+		frspace : 33095680,	\
+		firstfr : 0,	\
+		lastfr : 0,	\
+		format : 0,	\
+		decimation : 0,	\
+		in : 0,	\
+		out : 0,	\
+		aexpmode : 0,	\
+		aexpcomp : 0,	\
+		trigtime : {		\
+			secs : 0,	\
+			frac : 0 	\
+		},	\
+		cam : {		\
+			syncimg : 0,	\
+			master : 0,	\
+			tcmode : 0,	\
+			trigpol : 0,	\
+			trigfilt : 0,	\
+			frdelay : 0,	\
+			startonacq : 0,	\
+			aux1mode : 0,	\
+			aux2mode : 0,	\
+			memgateen : 0,	\
+			membpp : 12,	\
+			tsformat : 0 	\
+		},	\
+		info : {		\
+			hwver : 0,	\
+			sver : 0,	\
+			fver : 0,	\
+			pver : 0,	\
+			model : "",	\
+			sensor : 0,	\
+			snsversion : 0,	\
+			snsserial : 0,	\
+			kernel : 0,	\
+			swver : 0,	\
+			xver : 0,	\
+			serial : 0,	\
+			cfa : 0,	\
+			filter : 0,	\
+			name : "",	\
+			mdepths : 0x0,	\
+			genlockstatus : 0,	\
+			snstemp : 0,	\
+			camtemp : 0,	\
+			features : "" 	\
+		},	\
+		adj : {		\
+			red : 0,	\
+			green : 0,	\
+			blue : 0,	\
+			wbtemp : 0,	\
+			wbcc : 0,	\
+			wbred : 0,	\
+			wbblue : 0,	\
+			edgeg : 0,	\
+			edger : 0,	\
+			edgeth : 0,	\
+			gamma : 0,	\
+			rgamma : 0,	\
+			bgamma : 0,	\
+			toe : 0,	\
+			gain : 0,	\
+			offset : 0,	\
+			flare : 0,	\
+			hue : 0,	\
+			sat : 0,	\
+			rped : 0,	\
+			gped : 0,	\
+			bped : 0,	\
+			tone : "",	\
+			mmsat : "",	\
+			mmhue : "",	\
+			chroma : 0,	\
+			matrix : 0,	\
+			log : 0,	\
+			sdimin : 0,	\
+			sdimax : 0,	\
+			cmatrix : "",	\
+			umatrix : "",	\
+			filter : "" 	\
+		},	\
+		meta : {		\
+			name : "",	\
+			uuid : "",	\
+			system : 0,	\
+			pbrate : 0,	\
+			tcrate : 0,	\
+			trigtc : "",	\
+			pax : 0,	\
+			pay : 0,	\
+			paox : 0,	\
+			paoy : 0,	\
+			vox : 0,	\
+			voy : 0,	\
+			vw : 0,	\
+			vh : 0,	\
+			vow : 0,	\
+			voh : 0,	\
+			ox : 0,	\
+			oy : 0,	\
+			w : 0,	\
+			h : 0,	\
+			ow : 0,	\
+			oh : 0,	\
+			crop : 0,	\
+			resize : 0,	\
+			lens : "",	\
+			fstop : 0,	\
+			flen : 0,	\
+			gps : "",	\
+			comment : "",	\
+			xset : "" 	\
+		} 	\
+	},		\
+	c5 : {		\
+		res : 1280 x 800,	\
+		rate : 100,	\
+		exp : 1000000,	\
+		shoff : 0,	\
+		edrexp : 0,	\
+		ptframes : 10,	\
+		bcount : 0,	\
+		bperiod : 0,	\
+		hqenable : 0,	\
+		frcount : 0,	\
+		ramp : "",	\
+		state : { RDY DEF ABL },	\
+		start : 0x82B5000,	\
+		len : 0x1F90000,	\
+		frsize : 64016,	\
+		frspace : 33095680,	\
+		firstfr : 0,	\
+		lastfr : 0,	\
+		format : 0,	\
+		decimation : 0,	\
+		in : 0,	\
+		out : 0,	\
+		aexpmode : 0,	\
+		aexpcomp : 0,	\
+		trigtime : {		\
+			secs : 0,	\
+			frac : 0 	\
+		},	\
+		cam : {		\
+			syncimg : 0,	\
+			master : 0,	\
+			tcmode : 0,	\
+			trigpol : 0,	\
+			trigfilt : 0,	\
+			frdelay : 0,	\
+			startonacq : 0,	\
+			aux1mode : 0,	\
+			aux2mode : 0,	\
+			memgateen : 0,	\
+			membpp : 12,	\
+			tsformat : 0 	\
+		},	\
+		info : {		\
+			hwver : 0,	\
+			sver : 0,	\
+			fver : 0,	\
+			pver : 0,	\
+			model : "",	\
+			sensor : 0,	\
+			snsversion : 0,	\
+			snsserial : 0,	\
+			kernel : 0,	\
+			swver : 0,	\
+			xver : 0,	\
+			serial : 0,	\
+			cfa : 0,	\
+			filter : 0,	\
+			name : "",	\
+			mdepths : 0x0,	\
+			genlockstatus : 0,	\
+			snstemp : 0,	\
+			camtemp : 0,	\
+			features : "" 	\
+		},	\
+		adj : {		\
+			red : 0,	\
+			green : 0,	\
+			blue : 0,	\
+			wbtemp : 0,	\
+			wbcc : 0,	\
+			wbred : 0,	\
+			wbblue : 0,	\
+			edgeg : 0,	\
+			edger : 0,	\
+			edgeth : 0,	\
+			gamma : 0,	\
+			rgamma : 0,	\
+			bgamma : 0,	\
+			toe : 0,	\
+			gain : 0,	\
+			offset : 0,	\
+			flare : 0,	\
+			hue : 0,	\
+			sat : 0,	\
+			rped : 0,	\
+			gped : 0,	\
+			bped : 0,	\
+			tone : "",	\
+			mmsat : "",	\
+			mmhue : "",	\
+			chroma : 0,	\
+			matrix : 0,	\
+			log : 0,	\
+			sdimin : 0,	\
+			sdimax : 0,	\
+			cmatrix : "",	\
+			umatrix : "",	\
+			filter : "" 	\
+		},	\
+		meta : {		\
+			name : "",	\
+			uuid : "",	\
+			system : 0,	\
+			pbrate : 0,	\
+			tcrate : 0,	\
+			trigtc : "",	\
+			pax : 0,	\
+			pay : 0,	\
+			paox : 0,	\
+			paoy : 0,	\
+			vox : 0,	\
+			voy : 0,	\
+			vw : 0,	\
+			vh : 0,	\
+			vow : 0,	\
+			voh : 0,	\
+			ox : 0,	\
+			oy : 0,	\
+			w : 0,	\
+			h : 0,	\
+			ow : 0,	\
+			oh : 0,	\
+			crop : 0,	\
+			resize : 0,	\
+			lens : "",	\
+			fstop : 0,	\
+			flen : 0,	\
+			gps : "",	\
+			comment : "",	\
+			xset : "" 	\
+		} 	\
+	},		\
+	c6 : {		\
+		res : 1280 x 800,	\
+		rate : 100,	\
+		exp : 1000000,	\
+		shoff : 0,	\
+		edrexp : 0,	\
+		ptframes : 10,	\
+		bcount : 0,	\
+		bperiod : 0,	\
+		hqenable : 0,	\
+		frcount : 0,	\
+		ramp : "",	\
+		state : { RDY DEF ABL },	\
+		start : 0xA245000,	\
+		len : 0x1F90000,	\
+		frsize : 64016,	\
+		frspace : 33095680,	\
+		firstfr : 0,	\
+		lastfr : 0,	\
+		format : 0,	\
+		decimation : 0,	\
+		in : 0,	\
+		out : 0,	\
+		aexpmode : 0,	\
+		aexpcomp : 0,	\
+		trigtime : {		\
+			secs : 0,	\
+			frac : 0 	\
+		},	\
+		cam : {		\
+			syncimg : 0,	\
+			master : 0,	\
+			tcmode : 0,	\
+			trigpol : 0,	\
+			trigfilt : 0,	\
+			frdelay : 0,	\
+			startonacq : 0,	\
+			aux1mode : 0,	\
+			aux2mode : 0,	\
+			memgateen : 0,	\
+			membpp : 12,	\
+			tsformat : 0 	\
+		},	\
+		info : {		\
+			hwver : 0,	\
+			sver : 0,	\
+			fver : 0,	\
+			pver : 0,	\
+			model : "",	\
+			sensor : 0,	\
+			snsversion : 0,	\
+			snsserial : 0,	\
+			kernel : 0,	\
+			swver : 0,	\
+			xver : 0,	\
+			serial : 0,	\
+			cfa : 0,	\
+			filter : 0,	\
+			name : "",	\
+			mdepths : 0x0,	\
+			genlockstatus : 0,	\
+			snstemp : 0,	\
+			camtemp : 0,	\
+			features : "" 	\
+		},	\
+		adj : {		\
+			red : 0,	\
+			green : 0,	\
+			blue : 0,	\
+			wbtemp : 0,	\
+			wbcc : 0,	\
+			wbred : 0,	\
+			wbblue : 0,	\
+			edgeg : 0,	\
+			edger : 0,	\
+			edgeth : 0,	\
+			gamma : 0,	\
+			rgamma : 0,	\
+			bgamma : 0,	\
+			toe : 0,	\
+			gain : 0,	\
+			offset : 0,	\
+			flare : 0,	\
+			hue : 0,	\
+			sat : 0,	\
+			rped : 0,	\
+			gped : 0,	\
+			bped : 0,	\
+			tone : "",	\
+			mmsat : "",	\
+			mmhue : "",	\
+			chroma : 0,	\
+			matrix : 0,	\
+			log : 0,	\
+			sdimin : 0,	\
+			sdimax : 0,	\
+			cmatrix : "",	\
+			umatrix : "",	\
+			filter : "" 	\
+		},	\
+		meta : {		\
+			name : "",	\
+			uuid : "",	\
+			system : 0,	\
+			pbrate : 0,	\
+			tcrate : 0,	\
+			trigtc : "",	\
+			pax : 0,	\
+			pay : 0,	\
+			paox : 0,	\
+			paoy : 0,	\
+			vox : 0,	\
+			voy : 0,	\
+			vw : 0,	\
+			vh : 0,	\
+			vow : 0,	\
+			voh : 0,	\
+			ox : 0,	\
+			oy : 0,	\
+			w : 0,	\
+			h : 0,	\
+			ow : 0,	\
+			oh : 0,	\
+			crop : 0,	\
+			resize : 0,	\
+			lens : "",	\
+			fstop : 0,	\
+			flen : 0,	\
+			gps : "",	\
+			comment : "",	\
+			xset : "" 	\
+		} 	\
+	},		\
+	c7 : {		\
+		res : 1280 x 800,	\
+		rate : 100,	\
+		exp : 1000000,	\
+		shoff : 0,	\
+		edrexp : 0,	\
+		ptframes : 10,	\
+		bcount : 0,	\
+		bperiod : 0,	\
+		hqenable : 0,	\
+		frcount : 0,	\
+		ramp : "",	\
+		state : { RDY DEF ABL },	\
+		start : 0xC1D5000,	\
+		len : 0x1F90000,	\
+		frsize : 64016,	\
+		frspace : 33095680,	\
+		firstfr : 0,	\
+		lastfr : 0,	\
+		format : 0,	\
+		decimation : 0,	\
+		in : 0,	\
+		out : 0,	\
+		aexpmode : 0,	\
+		aexpcomp : 0,	\
+		trigtime : {		\
+			secs : 0,	\
+			frac : 0 	\
+		},	\
+		cam : {		\
+			syncimg : 0,	\
+			master : 0,	\
+			tcmode : 0,	\
+			trigpol : 0,	\
+			trigfilt : 0,	\
+			frdelay : 0,	\
+			startonacq : 0,	\
+			aux1mode : 0,	\
+			aux2mode : 0,	\
+			memgateen : 0,	\
+			membpp : 12,	\
+			tsformat : 0 	\
+		},	\
+		info : {		\
+			hwver : 0,	\
+			sver : 0,	\
+			fver : 0,	\
+			pver : 0,	\
+			model : "",	\
+			sensor : 0,	\
+			snsversion : 0,	\
+			snsserial : 0,	\
+			kernel : 0,	\
+			swver : 0,	\
+			xver : 0,	\
+			serial : 0,	\
+			cfa : 0,	\
+			filter : 0,	\
+			name : "",	\
+			mdepths : 0x0,	\
+			genlockstatus : 0,	\
+			snstemp : 0,	\
+			camtemp : 0,	\
+			features : "" 	\
+		},	\
+		adj : {		\
+			red : 0,	\
+			green : 0,	\
+			blue : 0,	\
+			wbtemp : 0,	\
+			wbcc : 0,	\
+			wbred : 0,	\
+			wbblue : 0,	\
+			edgeg : 0,	\
+			edger : 0,	\
+			edgeth : 0,	\
+			gamma : 0,	\
+			rgamma : 0,	\
+			bgamma : 0,	\
+			toe : 0,	\
+			gain : 0,	\
+			offset : 0,	\
+			flare : 0,	\
+			hue : 0,	\
+			sat : 0,	\
+			rped : 0,	\
+			gped : 0,	\
+			bped : 0,	\
+			tone : "",	\
+			mmsat : "",	\
+			mmhue : "",	\
+			chroma : 0,	\
+			matrix : 0,	\
+			log : 0,	\
+			sdimin : 0,	\
+			sdimax : 0,	\
+			cmatrix : "",	\
+			umatrix : "",	\
+			filter : "" 	\
+		},	\
+		meta : {		\
+			name : "",	\
+			uuid : "",	\
+			system : 0,	\
+			pbrate : 0,	\
+			tcrate : 0,	\
+			trigtc : "",	\
+			pax : 0,	\
+			pay : 0,	\
+			paox : 0,	\
+			paoy : 0,	\
+			vox : 0,	\
+			voy : 0,	\
+			vw : 0,	\
+			vh : 0,	\
+			vow : 0,	\
+			voh : 0,	\
+			ox : 0,	\
+			oy : 0,	\
+			w : 0,	\
+			h : 0,	\
+			ow : 0,	\
+			oh : 0,	\
+			crop : 0,	\
+			resize : 0,	\
+			lens : "",	\
+			fstop : 0,	\
+			flen : 0,	\
+			gps : "",	\
+			comment : "",	\
+			xset : "" 	\
+		} 	\
+	},		\
+	c8 : {		\
+		res : 1280 x 800,	\
+		rate : 100,	\
+		exp : 1000000,	\
+		shoff : 0,	\
+		edrexp : 0,	\
+		ptframes : 10,	\
+		bcount : 0,	\
+		bperiod : 0,	\
+		hqenable : 0,	\
+		frcount : 0,	\
+		ramp : "",	\
+		state : { RDY DEF ABL },	\
+		start : 0xE165000,	\
+		len : 0x1F90000,	\
+		frsize : 64016,	\
+		frspace : 33095680,	\
+		firstfr : 0,	\
+		lastfr : 0,	\
+		format : 0,	\
+		decimation : 0,	\
+		in : 0,	\
+		out : 0,	\
+		aexpmode : 0,	\
+		aexpcomp : 0,	\
+		trigtime : {		\
+			secs : 0,	\
+			frac : 0 	\
+		},	\
+		cam : {		\
+			syncimg : 0,	\
+			master : 0,	\
+			tcmode : 0,	\
+			trigpol : 0,	\
+			trigfilt : 0,	\
+			frdelay : 0,	\
+			startonacq : 0,	\
+			aux1mode : 0,	\
+			aux2mode : 0,	\
+			memgateen : 0,	\
+			membpp : 12,	\
+			tsformat : 0 	\
+		},	\
+		info : {		\
+			hwver : 0,	\
+			sver : 0,	\
+			fver : 0,	\
+			pver : 0,	\
+			model : "",	\
+			sensor : 0,	\
+			snsversion : 0,	\
+			snsserial : 0,	\
+			kernel : 0,	\
+			swver : 0,	\
+			xver : 0,	\
+			serial : 0,	\
+			cfa : 0,	\
+			filter : 0,	\
+			name : "",	\
+			mdepths : 0x0,	\
+			genlockstatus : 0,	\
+			snstemp : 0,	\
+			camtemp : 0,	\
+			features : "" 	\
+		},	\
+		adj : {		\
+			red : 0,	\
+			green : 0,	\
+			blue : 0,	\
+			wbtemp : 0,	\
+			wbcc : 0,	\
+			wbred : 0,	\
+			wbblue : 0,	\
+			edgeg : 0,	\
+			edger : 0,	\
+			edgeth : 0,	\
+			gamma : 0,	\
+			rgamma : 0,	\
+			bgamma : 0,	\
+			toe : 0,	\
+			gain : 0,	\
+			offset : 0,	\
+			flare : 0,	\
+			hue : 0,	\
+			sat : 0,	\
+			rped : 0,	\
+			gped : 0,	\
+			bped : 0,	\
+			tone : "",	\
+			mmsat : "",	\
+			mmhue : "",	\
+			chroma : 0,	\
+			matrix : 0,	\
+			log : 0,	\
+			sdimin : 0,	\
+			sdimax : 0,	\
+			cmatrix : "",	\
+			umatrix : "",	\
+			filter : "" 	\
+		},	\
+		meta : {		\
+			name : "",	\
+			uuid : "",	\
+			system : 0,	\
+			pbrate : 0,	\
+			tcrate : 0,	\
+			trigtc : "",	\
+			pax : 0,	\
+			pay : 0,	\
+			paox : 0,	\
+			paoy : 0,	\
+			vox : 0,	\
+			voy : 0,	\
+			vw : 0,	\
+			vh : 0,	\
+			vow : 0,	\
+			voh : 0,	\
+			ox : 0,	\
+			oy : 0,	\
+			w : 0,	\
+			h : 0,	\
+			ow : 0,	\
+			oh : 0,	\
+			crop : 0,	\
+			resize : 0,	\
+			lens : "",	\
+			fstop : 0,	\
+			flen : 0,	\
+			gps : "",	\
+			comment : "",	\
+			xset : "" 	\
+		} 	\
+	},		\
+	c9 : {		\
+		res : 1280 x 800,	\
+		rate : 100,	\
+		exp : 1000000,	\
+		shoff : 0,	\
+		edrexp : 0,	\
+		ptframes : 10,	\
+		bcount : 0,	\
+		bperiod : 0,	\
+		hqenable : 0,	\
+		frcount : 0,	\
+		ramp : "",	\
+		state : { RDY DEF ABL },	\
+		start : 0x100F5000,	\
+		len : 0x1F90000,	\
+		frsize : 64016,	\
+		frspace : 33095680,	\
+		firstfr : 0,	\
+		lastfr : 0,	\
+		format : 0,	\
+		decimation : 0,	\
+		in : 0,	\
+		out : 0,	\
+		aexpmode : 0,	\
+		aexpcomp : 0,	\
+		trigtime : {		\
+			secs : 0,	\
+			frac : 0 	\
+		},	\
+		cam : {		\
+			syncimg : 0,	\
+			master : 0,	\
+			tcmode : 0,	\
+			trigpol : 0,	\
+			trigfilt : 0,	\
+			frdelay : 0,	\
+			startonacq : 0,	\
+			aux1mode : 0,	\
+			aux2mode : 0,	\
+			memgateen : 0,	\
+			membpp : 12,	\
+			tsformat : 0 	\
+		},	\
+		info : {		\
+			hwver : 0,	\
+			sver : 0,	\
+			fver : 0,	\
+			pver : 0,	\
+			model : "",	\
+			sensor : 0,	\
+			snsversion : 0,	\
+			snsserial : 0,	\
+			kernel : 0,	\
+			swver : 0,	\
+			xver : 0,	\
+			serial : 0,	\
+			cfa : 0,	\
+			filter : 0,	\
+			name : "",	\
+			mdepths : 0x0,	\
+			genlockstatus : 0,	\
+			snstemp : 0,	\
+			camtemp : 0,	\
+			features : "" 	\
+		},	\
+		adj : {		\
+			red : 0,	\
+			green : 0,	\
+			blue : 0,	\
+			wbtemp : 0,	\
+			wbcc : 0,	\
+			wbred : 0,	\
+			wbblue : 0,	\
+			edgeg : 0,	\
+			edger : 0,	\
+			edgeth : 0,	\
+			gamma : 0,	\
+			rgamma : 0,	\
+			bgamma : 0,	\
+			toe : 0,	\
+			gain : 0,	\
+			offset : 0,	\
+			flare : 0,	\
+			hue : 0,	\
+			sat : 0,	\
+			rped : 0,	\
+			gped : 0,	\
+			bped : 0,	\
+			tone : "",	\
+			mmsat : "",	\
+			mmhue : "",	\
+			chroma : 0,	\
+			matrix : 0,	\
+			log : 0,	\
+			sdimin : 0,	\
+			sdimax : 0,	\
+			cmatrix : "",	\
+			umatrix : "",	\
+			filter : "" 	\
+		},	\
+		meta : {		\
+			name : "",	\
+			uuid : "",	\
+			system : 0,	\
+			pbrate : 0,	\
+			tcrate : 0,	\
+			trigtc : "",	\
+			pax : 0,	\
+			pay : 0,	\
+			paox : 0,	\
+			paoy : 0,	\
+			vox : 0,	\
+			voy : 0,	\
+			vw : 0,	\
+			vh : 0,	\
+			vow : 0,	\
+			voh : 0,	\
+			ox : 0,	\
+			oy : 0,	\
+			w : 0,	\
+			h : 0,	\
+			ow : 0,	\
+			oh : 0,	\
+			crop : 0,	\
+			resize : 0,	\
+			lens : "",	\
+			fstop : 0,	\
+			flen : 0,	\
+			gps : "",	\
+			comment : "",	\
+			xset : "" 	\
+		} 	\
+	},		\
+	c10 : {		\
+		res : 1280 x 800,	\
+		rate : 100,	\
+		exp : 1000000,	\
+		shoff : 0,	\
+		edrexp : 0,	\
+		ptframes : 10,	\
+		bcount : 0,	\
+		bperiod : 0,	\
+		hqenable : 0,	\
+		frcount : 0,	\
+		ramp : "",	\
+		state : { RDY DEF ABL },	\
+		start : 0x12085000,	\
+		len : 0x1F90000,	\
+		frsize : 64016,	\
+		frspace : 33095680,	\
+		firstfr : 0,	\
+		lastfr : 0,	\
+		format : 0,	\
+		decimation : 0,	\
+		in : 0,	\
+		out : 0,	\
+		aexpmode : 0,	\
+		aexpcomp : 0,	\
+		trigtime : {		\
+			secs : 0,	\
+			frac : 0 	\
+		},	\
+		cam : {		\
+			syncimg : 0,	\
+			master : 0,	\
+			tcmode : 0,	\
+			trigpol : 0,	\
+			trigfilt : 0,	\
+			frdelay : 0,	\
+			startonacq : 0,	\
+			aux1mode : 0,	\
+			aux2mode : 0,	\
+			memgateen : 0,	\
+			membpp : 12,	\
+			tsformat : 0 	\
+		},	\
+		info : {		\
+			hwver : 0,	\
+			sver : 0,	\
+			fver : 0,	\
+			pver : 0,	\
+			model : "",	\
+			sensor : 0,	\
+			snsversion : 0,	\
+			snsserial : 0,	\
+			kernel : 0,	\
+			swver : 0,	\
+			xver : 0,	\
+			serial : 0,	\
+			cfa : 0,	\
+			filter : 0,	\
+			name : "",	\
+			mdepths : 0x0,	\
+			genlockstatus : 0,	\
+			snstemp : 0,	\
+			camtemp : 0,	\
+			features : "" 	\
+		},	\
+		adj : {		\
+			red : 0,	\
+			green : 0,	\
+			blue : 0,	\
+			wbtemp : 0,	\
+			wbcc : 0,	\
+			wbred : 0,	\
+			wbblue : 0,	\
+			edgeg : 0,	\
+			edger : 0,	\
+			edgeth : 0,	\
+			gamma : 0,	\
+			rgamma : 0,	\
+			bgamma : 0,	\
+			toe : 0,	\
+			gain : 0,	\
+			offset : 0,	\
+			flare : 0,	\
+			hue : 0,	\
+			sat : 0,	\
+			rped : 0,	\
+			gped : 0,	\
+			bped : 0,	\
+			tone : "",	\
+			mmsat : "",	\
+			mmhue : "",	\
+			chroma : 0,	\
+			matrix : 0,	\
+			log : 0,	\
+			sdimin : 0,	\
+			sdimax : 0,	\
+			cmatrix : "",	\
+			umatrix : "",	\
+			filter : "" 	\
+		},	\
+		meta : {		\
+			name : "",	\
+			uuid : "",	\
+			system : 0,	\
+			pbrate : 0,	\
+			tcrate : 0,	\
+			trigtc : "",	\
+			pax : 0,	\
+			pay : 0,	\
+			paox : 0,	\
+			paoy : 0,	\
+			vox : 0,	\
+			voy : 0,	\
+			vw : 0,	\
+			vh : 0,	\
+			vow : 0,	\
+			voh : 0,	\
+			ox : 0,	\
+			oy : 0,	\
+			w : 0,	\
+			h : 0,	\
+			ow : 0,	\
+			oh : 0,	\
+			crop : 0,	\
+			resize : 0,	\
+			lens : "",	\
+			fstop : 0,	\
+			flen : 0,	\
+			gps : "",	\
+			comment : "",	\
+			xset : "" 	\
+		} 	\
+	},		\
+	c11 : {		\
+		res : 1280 x 800,	\
+		rate : 100,	\
+		exp : 1000000,	\
+		shoff : 0,	\
+		edrexp : 0,	\
+		ptframes : 10,	\
+		bcount : 0,	\
+		bperiod : 0,	\
+		hqenable : 0,	\
+		frcount : 0,	\
+		ramp : "",	\
+		state : { RDY DEF ABL },	\
+		start : 0x14015000,	\
+		len : 0x1F90000,	\
+		frsize : 64016,	\
+		frspace : 33095680,	\
+		firstfr : 0,	\
+		lastfr : 0,	\
+		format : 0,	\
+		decimation : 0,	\
+		in : 0,	\
+		out : 0,	\
+		aexpmode : 0,	\
+		aexpcomp : 0,	\
+		trigtime : {		\
+			secs : 0,	\
+			frac : 0 	\
+		},	\
+		cam : {		\
+			syncimg : 0,	\
+			master : 0,	\
+			tcmode : 0,	\
+			trigpol : 0,	\
+			trigfilt : 0,	\
+			frdelay : 0,	\
+			startonacq : 0,	\
+			aux1mode : 0,	\
+			aux2mode : 0,	\
+			memgateen : 0,	\
+			membpp : 12,	\
+			tsformat : 0 	\
+		},	\
+		info : {		\
+			hwver : 0,	\
+			sver : 0,	\
+			fver : 0,	\
+			pver : 0,	\
+			model : "",	\
+			sensor : 0,	\
+			snsversion : 0,	\
+			snsserial : 0,	\
+			kernel : 0,	\
+			swver : 0,	\
+			xver : 0,	\
+			serial : 0,	\
+			cfa : 0,	\
+			filter : 0,	\
+			name : "",	\
+			mdepths : 0x0,	\
+			genlockstatus : 0,	\
+			snstemp : 0,	\
+			camtemp : 0,	\
+			features : "" 	\
+		},	\
+		adj : {		\
+			red : 0,	\
+			green : 0,	\
+			blue : 0,	\
+			wbtemp : 0,	\
+			wbcc : 0,	\
+			wbred : 0,	\
+			wbblue : 0,	\
+			edgeg : 0,	\
+			edger : 0,	\
+			edgeth : 0,	\
+			gamma : 0,	\
+			rgamma : 0,	\
+			bgamma : 0,	\
+			toe : 0,	\
+			gain : 0,	\
+			offset : 0,	\
+			flare : 0,	\
+			hue : 0,	\
+			sat : 0,	\
+			rped : 0,	\
+			gped : 0,	\
+			bped : 0,	\
+			tone : "",	\
+			mmsat : "",	\
+			mmhue : "",	\
+			chroma : 0,	\
+			matrix : 0,	\
+			log : 0,	\
+			sdimin : 0,	\
+			sdimax : 0,	\
+			cmatrix : "",	\
+			umatrix : "",	\
+			filter : "" 	\
+		},	\
+		meta : {		\
+			name : "",	\
+			uuid : "",	\
+			system : 0,	\
+			pbrate : 0,	\
+			tcrate : 0,	\
+			trigtc : "",	\
+			pax : 0,	\
+			pay : 0,	\
+			paox : 0,	\
+			paoy : 0,	\
+			vox : 0,	\
+			voy : 0,	\
+			vw : 0,	\
+			vh : 0,	\
+			vow : 0,	\
+			voh : 0,	\
+			ox : 0,	\
+			oy : 0,	\
+			w : 0,	\
+			h : 0,	\
+			ow : 0,	\
+			oh : 0,	\
+			crop : 0,	\
+			resize : 0,	\
+			lens : "",	\
+			fstop : 0,	\
+			flen : 0,	\
+			gps : "",	\
+			comment : "",	\
+			xset : "" 	\
+		} 	\
+	},		\
+	c12 : {		\
+		res : 1280 x 800,	\
+		rate : 100,	\
+		exp : 1000000,	\
+		shoff : 0,	\
+		edrexp : 0,	\
+		ptframes : 10,	\
+		bcount : 0,	\
+		bperiod : 0,	\
+		hqenable : 0,	\
+		frcount : 0,	\
+		ramp : "",	\
+		state : { RDY DEF ABL },	\
+		start : 0x15FA5000,	\
+		len : 0x1F90000,	\
+		frsize : 64016,	\
+		frspace : 33095680,	\
+		firstfr : 0,	\
+		lastfr : 0,	\
+		format : 0,	\
+		decimation : 0,	\
+		in : 0,	\
+		out : 0,	\
+		aexpmode : 0,	\
+		aexpcomp : 0,	\
+		trigtime : {		\
+			secs : 0,	\
+			frac : 0 	\
+		},	\
+		cam : {		\
+			syncimg : 0,	\
+			master : 0,	\
+			tcmode : 0,	\
+			trigpol : 0,	\
+			trigfilt : 0,	\
+			frdelay : 0,	\
+			startonacq : 0,	\
+			aux1mode : 0,	\
+			aux2mode : 0,	\
+			memgateen : 0,	\
+			membpp : 12,	\
+			tsformat : 0 	\
+		},	\
+		info : {		\
+			hwver : 0,	\
+			sver : 0,	\
+			fver : 0,	\
+			pver : 0,	\
+			model : "",	\
+			sensor : 0,	\
+			snsversion : 0,	\
+			snsserial : 0,	\
+			kernel : 0,	\
+			swver : 0,	\
+			xver : 0,	\
+			serial : 0,	\
+			cfa : 0,	\
+			filter : 0,	\
+			name : "",	\
+			mdepths : 0x0,	\
+			genlockstatus : 0,	\
+			snstemp : 0,	\
+			camtemp : 0,	\
+			features : "" 	\
+		},	\
+		adj : {		\
+			red : 0,	\
+			green : 0,	\
+			blue : 0,	\
+			wbtemp : 0,	\
+			wbcc : 0,	\
+			wbred : 0,	\
+			wbblue : 0,	\
+			edgeg : 0,	\
+			edger : 0,	\
+			edgeth : 0,	\
+			gamma : 0,	\
+			rgamma : 0,	\
+			bgamma : 0,	\
+			toe : 0,	\
+			gain : 0,	\
+			offset : 0,	\
+			flare : 0,	\
+			hue : 0,	\
+			sat : 0,	\
+			rped : 0,	\
+			gped : 0,	\
+			bped : 0,	\
+			tone : "",	\
+			mmsat : "",	\
+			mmhue : "",	\
+			chroma : 0,	\
+			matrix : 0,	\
+			log : 0,	\
+			sdimin : 0,	\
+			sdimax : 0,	\
+			cmatrix : "",	\
+			umatrix : "",	\
+			filter : "" 	\
+		},	\
+		meta : {		\
+			name : "",	\
+			uuid : "",	\
+			system : 0,	\
+			pbrate : 0,	\
+			tcrate : 0,	\
+			trigtc : "",	\
+			pax : 0,	\
+			pay : 0,	\
+			paox : 0,	\
+			paoy : 0,	\
+			vox : 0,	\
+			voy : 0,	\
+			vw : 0,	\
+			vh : 0,	\
+			vow : 0,	\
+			voh : 0,	\
+			ox : 0,	\
+			oy : 0,	\
+			w : 0,	\
+			h : 0,	\
+			ow : 0,	\
+			oh : 0,	\
+			crop : 0,	\
+			resize : 0,	\
+			lens : "",	\
+			fstop : 0,	\
+			flen : 0,	\
+			gps : "",	\
+			comment : "",	\
+			xset : "" 	\
+		} 	\
+	},		\
+	c13 : {		\
+		res : 1280 x 800,	\
+		rate : 100,	\
+		exp : 1000000,	\
+		shoff : 0,	\
+		edrexp : 0,	\
+		ptframes : 10,	\
+		bcount : 0,	\
+		bperiod : 0,	\
+		hqenable : 0,	\
+		frcount : 0,	\
+		ramp : "",	\
+		state : { RDY DEF ABL },	\
+		start : 0x17F35000,	\
+		len : 0x1F90000,	\
+		frsize : 64016,	\
+		frspace : 33095680,	\
+		firstfr : 0,	\
+		lastfr : 0,	\
+		format : 0,	\
+		decimation : 0,	\
+		in : 0,	\
+		out : 0,	\
+		aexpmode : 0,	\
+		aexpcomp : 0,	\
+		trigtime : {		\
+			secs : 0,	\
+			frac : 0 	\
+		},	\
+		cam : {		\
+			syncimg : 0,	\
+			master : 0,	\
+			tcmode : 0,	\
+			trigpol : 0,	\
+			trigfilt : 0,	\
+			frdelay : 0,	\
+			startonacq : 0,	\
+			aux1mode : 0,	\
+			aux2mode : 0,	\
+			memgateen : 0,	\
+			membpp : 12,	\
+			tsformat : 0 	\
+		},	\
+		info : {		\
+			hwver : 0,	\
+			sver : 0,	\
+			fver : 0,	\
+			pver : 0,	\
+			model : "",	\
+			sensor : 0,	\
+			snsversion : 0,	\
+			snsserial : 0,	\
+			kernel : 0,	\
+			swver : 0,	\
+			xver : 0,	\
+			serial : 0,	\
+			cfa : 0,	\
+			filter : 0,	\
+			name : "",	\
+			mdepths : 0x0,	\
+			genlockstatus : 0,	\
+			snstemp : 0,	\
+			camtemp : 0,	\
+			features : "" 	\
+		},	\
+		adj : {		\
+			red : 0,	\
+			green : 0,	\
+			blue : 0,	\
+			wbtemp : 0,	\
+			wbcc : 0,	\
+			wbred : 0,	\
+			wbblue : 0,	\
+			edgeg : 0,	\
+			edger : 0,	\
+			edgeth : 0,	\
+			gamma : 0,	\
+			rgamma : 0,	\
+			bgamma : 0,	\
+			toe : 0,	\
+			gain : 0,	\
+			offset : 0,	\
+			flare : 0,	\
+			hue : 0,	\
+			sat : 0,	\
+			rped : 0,	\
+			gped : 0,	\
+			bped : 0,	\
+			tone : "",	\
+			mmsat : "",	\
+			mmhue : "",	\
+			chroma : 0,	\
+			matrix : 0,	\
+			log : 0,	\
+			sdimin : 0,	\
+			sdimax : 0,	\
+			cmatrix : "",	\
+			umatrix : "",	\
+			filter : "" 	\
+		},	\
+		meta : {		\
+			name : "",	\
+			uuid : "",	\
+			system : 0,	\
+			pbrate : 0,	\
+			tcrate : 0,	\
+			trigtc : "",	\
+			pax : 0,	\
+			pay : 0,	\
+			paox : 0,	\
+			paoy : 0,	\
+			vox : 0,	\
+			voy : 0,	\
+			vw : 0,	\
+			vh : 0,	\
+			vow : 0,	\
+			voh : 0,	\
+			ox : 0,	\
+			oy : 0,	\
+			w : 0,	\
+			h : 0,	\
+			ow : 0,	\
+			oh : 0,	\
+			crop : 0,	\
+			resize : 0,	\
+			lens : "",	\
+			fstop : 0,	\
+			flen : 0,	\
+			gps : "",	\
+			comment : "",	\
+			xset : "" 	\
+		} 	\
+	},		\
+	c14 : {		\
+		res : 1280 x 800,	\
+		rate : 100,	\
+		exp : 1000000,	\
+		shoff : 0,	\
+		edrexp : 0,	\
+		ptframes : 10,	\
+		bcount : 0,	\
+		bperiod : 0,	\
+		hqenable : 0,	\
+		frcount : 0,	\
+		ramp : "",	\
+		state : { RDY DEF ABL },	\
+		start : 0x19EC5000,	\
+		len : 0x1F90000,	\
+		frsize : 64016,	\
+		frspace : 33095680,	\
+		firstfr : 0,	\
+		lastfr : 0,	\
+		format : 0,	\
+		decimation : 0,	\
+		in : 0,	\
+		out : 0,	\
+		aexpmode : 0,	\
+		aexpcomp : 0,	\
+		trigtime : {		\
+			secs : 0,	\
+			frac : 0 	\
+		},	\
+		cam : {		\
+			syncimg : 0,	\
+			master : 0,	\
+			tcmode : 0,	\
+			trigpol : 0,	\
+			trigfilt : 0,	\
+			frdelay : 0,	\
+			startonacq : 0,	\
+			aux1mode : 0,	\
+			aux2mode : 0,	\
+			memgateen : 0,	\
+			membpp : 12,	\
+			tsformat : 0 	\
+		},	\
+		info : {		\
+			hwver : 0,	\
+			sver : 0,	\
+			fver : 0,	\
+			pver : 0,	\
+			model : "",	\
+			sensor : 0,	\
+			snsversion : 0,	\
+			snsserial : 0,	\
+			kernel : 0,	\
+			swver : 0,	\
+			xver : 0,	\
+			serial : 0,	\
+			cfa : 0,	\
+			filter : 0,	\
+			name : "",	\
+			mdepths : 0x0,	\
+			genlockstatus : 0,	\
+			snstemp : 0,	\
+			camtemp : 0,	\
+			features : "" 	\
+		},	\
+		adj : {		\
+			red : 0,	\
+			green : 0,	\
+			blue : 0,	\
+			wbtemp : 0,	\
+			wbcc : 0,	\
+			wbred : 0,	\
+			wbblue : 0,	\
+			edgeg : 0,	\
+			edger : 0,	\
+			edgeth : 0,	\
+			gamma : 0,	\
+			rgamma : 0,	\
+			bgamma : 0,	\
+			toe : 0,	\
+			gain : 0,	\
+			offset : 0,	\
+			flare : 0,	\
+			hue : 0,	\
+			sat : 0,	\
+			rped : 0,	\
+			gped : 0,	\
+			bped : 0,	\
+			tone : "",	\
+			mmsat : "",	\
+			mmhue : "",	\
+			chroma : 0,	\
+			matrix : 0,	\
+			log : 0,	\
+			sdimin : 0,	\
+			sdimax : 0,	\
+			cmatrix : "",	\
+			umatrix : "",	\
+			filter : "" 	\
+		},	\
+		meta : {		\
+			name : "",	\
+			uuid : "",	\
+			system : 0,	\
+			pbrate : 0,	\
+			tcrate : 0,	\
+			trigtc : "",	\
+			pax : 0,	\
+			pay : 0,	\
+			paox : 0,	\
+			paoy : 0,	\
+			vox : 0,	\
+			voy : 0,	\
+			vw : 0,	\
+			vh : 0,	\
+			vow : 0,	\
+			voh : 0,	\
+			ox : 0,	\
+			oy : 0,	\
+			w : 0,	\
+			h : 0,	\
+			ow : 0,	\
+			oh : 0,	\
+			crop : 0,	\
+			resize : 0,	\
+			lens : "",	\
+			fstop : 0,	\
+			flen : 0,	\
+			gps : "",	\
+			comment : "",	\
+			xset : "" 	\
+		} 	\
+	},		\
+	c15 : {		\
+		res : 1280 x 800,	\
+		rate : 100,	\
+		exp : 1000000,	\
+		shoff : 0,	\
+		edrexp : 0,	\
+		ptframes : 10,	\
+		bcount : 0,	\
+		bperiod : 0,	\
+		hqenable : 0,	\
+		frcount : 0,	\
+		ramp : "",	\
+		state : { RDY DEF ABL },	\
+		start : 0x1BE55000,	\
+		len : 0x1F90000,	\
+		frsize : 64016,	\
+		frspace : 33095680,	\
+		firstfr : 0,	\
+		lastfr : 0,	\
+		format : 0,	\
+		decimation : 0,	\
+		in : 0,	\
+		out : 0,	\
+		aexpmode : 0,	\
+		aexpcomp : 0,	\
+		trigtime : {		\
+			secs : 0,	\
+			frac : 0 	\
+		},	\
+		cam : {		\
+			syncimg : 0,	\
+			master : 0,	\
+			tcmode : 0,	\
+			trigpol : 0,	\
+			trigfilt : 0,	\
+			frdelay : 0,	\
+			startonacq : 0,	\
+			aux1mode : 0,	\
+			aux2mode : 0,	\
+			memgateen : 0,	\
+			membpp : 12,	\
+			tsformat : 0 	\
+		},	\
+		info : {		\
+			hwver : 0,	\
+			sver : 0,	\
+			fver : 0,	\
+			pver : 0,	\
+			model : "",	\
+			sensor : 0,	\
+			snsversion : 0,	\
+			snsserial : 0,	\
+			kernel : 0,	\
+			swver : 0,	\
+			xver : 0,	\
+			serial : 0,	\
+			cfa : 0,	\
+			filter : 0,	\
+			name : "",	\
+			mdepths : 0x0,	\
+			genlockstatus : 0,	\
+			snstemp : 0,	\
+			camtemp : 0,	\
+			features : "" 	\
+		},	\
+		adj : {		\
+			red : 0,	\
+			green : 0,	\
+			blue : 0,	\
+			wbtemp : 0,	\
+			wbcc : 0,	\
+			wbred : 0,	\
+			wbblue : 0,	\
+			edgeg : 0,	\
+			edger : 0,	\
+			edgeth : 0,	\
+			gamma : 0,	\
+			rgamma : 0,	\
+			bgamma : 0,	\
+			toe : 0,	\
+			gain : 0,	\
+			offset : 0,	\
+			flare : 0,	\
+			hue : 0,	\
+			sat : 0,	\
+			rped : 0,	\
+			gped : 0,	\
+			bped : 0,	\
+			tone : "",	\
+			mmsat : "",	\
+			mmhue : "",	\
+			chroma : 0,	\
+			matrix : 0,	\
+			log : 0,	\
+			sdimin : 0,	\
+			sdimax : 0,	\
+			cmatrix : "",	\
+			umatrix : "",	\
+			filter : "" 	\
+		},	\
+		meta : {		\
+			name : "",	\
+			uuid : "",	\
+			system : 0,	\
+			pbrate : 0,	\
+			tcrate : 0,	\
+			trigtc : "",	\
+			pax : 0,	\
+			pay : 0,	\
+			paox : 0,	\
+			paoy : 0,	\
+			vox : 0,	\
+			voy : 0,	\
+			vw : 0,	\
+			vh : 0,	\
+			vow : 0,	\
+			voh : 0,	\
+			ox : 0,	\
+			oy : 0,	\
+			w : 0,	\
+			h : 0,	\
+			ow : 0,	\
+			oh : 0,	\
+			crop : 0,	\
+			resize : 0,	\
+			lens : "",	\
+			fstop : 0,	\
+			flen : 0,	\
+			gps : "",	\
+			comment : "",	\
+			xset : "" 	\
+		} 	\
+	},		\
+	c16 : {		\
+		res : 1280 x 800,	\
+		rate : 100,	\
+		exp : 1000000,	\
+		shoff : 0,	\
+		edrexp : 0,	\
+		ptframes : 10,	\
+		bcount : 0,	\
+		bperiod : 0,	\
+		hqenable : 0,	\
+		frcount : 0,	\
+		ramp : "",	\
+		state : { RDY DEF ABL },	\
+		start : 0x1DDE5000,	\
+		len : 0x1F90000,	\
+		frsize : 64016,	\
+		frspace : 33095680,	\
+		firstfr : 0,	\
+		lastfr : 0,	\
+		format : 0,	\
+		decimation : 0,	\
+		in : 0,	\
+		out : 0,	\
+		aexpmode : 0,	\
+		aexpcomp : 0,	\
+		trigtime : {		\
+			secs : 0,	\
+			frac : 0 	\
+		},	\
+		cam : {		\
+			syncimg : 0,	\
+			master : 0,	\
+			tcmode : 0,	\
+			trigpol : 0,	\
+			trigfilt : 0,	\
+			frdelay : 0,	\
+			startonacq : 0,	\
+			aux1mode : 0,	\
+			aux2mode : 0,	\
+			memgateen : 0,	\
+			membpp : 12,	\
+			tsformat : 0 	\
+		},	\
+		info : {		\
+			hwver : 0,	\
+			sver : 0,	\
+			fver : 0,	\
+			pver : 0,	\
+			model : "",	\
+			sensor : 0,	\
+			snsversion : 0,	\
+			snsserial : 0,	\
+			kernel : 0,	\
+			swver : 0,	\
+			xver : 0,	\
+			serial : 0,	\
+			cfa : 0,	\
+			filter : 0,	\
+			name : "",	\
+			mdepths : 0x0,	\
+			genlockstatus : 0,	\
+			snstemp : 0,	\
+			camtemp : 0,	\
+			features : "" 	\
+		},	\
+		adj : {		\
+			red : 0,	\
+			green : 0,	\
+			blue : 0,	\
+			wbtemp : 0,	\
+			wbcc : 0,	\
+			wbred : 0,	\
+			wbblue : 0,	\
+			edgeg : 0,	\
+			edger : 0,	\
+			edgeth : 0,	\
+			gamma : 0,	\
+			rgamma : 0,	\
+			bgamma : 0,	\
+			toe : 0,	\
+			gain : 0,	\
+			offset : 0,	\
+			flare : 0,	\
+			hue : 0,	\
+			sat : 0,	\
+			rped : 0,	\
+			gped : 0,	\
+			bped : 0,	\
+			tone : "",	\
+			mmsat : "",	\
+			mmhue : "",	\
+			chroma : 0,	\
+			matrix : 0,	\
+			log : 0,	\
+			sdimin : 0,	\
+			sdimax : 0,	\
+			cmatrix : "",	\
+			umatrix : "",	\
+			filter : "" 	\
+		},	\
+		meta : {		\
+			name : "",	\
+			uuid : "",	\
+			system : 0,	\
+			pbrate : 0,	\
+			tcrate : 0,	\
+			trigtc : "",	\
+			pax : 0,	\
+			pay : 0,	\
+			paox : 0,	\
+			paoy : 0,	\
+			vox : 0,	\
+			voy : 0,	\
+			vw : 0,	\
+			vh : 0,	\
+			vow : 0,	\
+			voh : 0,	\
+			ox : 0,	\
+			oy : 0,	\
+			w : 0,	\
+			h : 0,	\
+			ow : 0,	\
+			oh : 0,	\
+			crop : 0,	\
+			resize : 0,	\
+			lens : "",	\
+			fstop : 0,	\
+			flen : 0,	\
+			gps : "",	\
+			comment : "",	\
+			xset : "" 	\
+		} 	\
+	},		\
+	fc0 : {		\
+		res : 0 x 0,	\
+		rate : 0,	\
+		exp : 0,	\
+		shoff : 0,	\
+		edrexp : 0,	\
+		ptframes : 0,	\
+		bcount : 0,	\
+		bperiod : 0,	\
+		hqenable : 0,	\
+		frcount : 0,	\
+		ramp : "",	\
+		state : { INV },	\
+		start : 0x0,	\
+		len : 0x0,	\
+		frsize : 0,	\
+		frspace : 0,	\
+		firstfr : 0,	\
+		lastfr : 0,	\
+		format : 0,	\
+		decimation : 0,	\
+		in : 0,	\
+		out : 0,	\
+		aexpmode : 0,	\
+		aexpcomp : 0,	\
+		trigtime : {		\
+			secs : 0,	\
+			frac : 0 	\
+		},	\
+		cam : {		\
+			syncimg : 0,	\
+			master : 0,	\
+			tcmode : 0,	\
+			trigpol : 0,	\
+			trigfilt : 0,	\
+			frdelay : 0,	\
+			startonacq : 0,	\
+			aux1mode : 0,	\
+			aux2mode : 0,	\
+			memgateen : 0,	\
+			membpp : 0,	\
+			tsformat : 0 	\
+		},	\
+		info : {		\
+			hwver : 0,	\
+			sver : 0,	\
+			fver : 0,	\
+			pver : 0,	\
+			model : "",	\
+			sensor : 0,	\
+			snsversion : 0,	\
+			snsserial : 0,	\
+			kernel : 0,	\
+			swver : 0,	\
+			xver : 0,	\
+			serial : 0,	\
+			cfa : 0,	\
+			filter : 0,	\
+			name : "",	\
+			mdepths : 0x0,	\
+			genlockstatus : 0,	\
+			snstemp : 0,	\
+			camtemp : 0,	\
+			features : "" 	\
+		},	\
+		adj : {		\
+			red : 0,	\
+			green : 0,	\
+			blue : 0,	\
+			wbtemp : 0,	\
+			wbcc : 0,	\
+			wbred : 0,	\
+			wbblue : 0,	\
+			edgeg : 0,	\
+			edger : 0,	\
+			edgeth : 0,	\
+			gamma : 0,	\
+			rgamma : 0,	\
+			bgamma : 0,	\
+			toe : 0,	\
+			gain : 0,	\
+			offset : 0,	\
+			flare : 0,	\
+			hue : 0,	\
+			sat : 0,	\
+			rped : 0,	\
+			gped : 0,	\
+			bped : 0,	\
+			tone : "",	\
+			mmsat : "",	\
+			mmhue : "",	\
+			chroma : 0,	\
+			matrix : 0,	\
+			log : 0,	\
+			sdimin : 0,	\
+			sdimax : 0,	\
+			cmatrix : "",	\
+			umatrix : "",	\
+			filter : "" 	\
+		},	\
+		meta : {		\
+			name : "",	\
+			uuid : "",	\
+			system : 0,	\
+			pbrate : 0,	\
+			tcrate : 0,	\
+			trigtc : "",	\
+			pax : 0,	\
+			pay : 0,	\
+			paox : 0,	\
+			paoy : 0,	\
+			vox : 0,	\
+			voy : 0,	\
+			vw : 0,	\
+			vh : 0,	\
+			vow : 0,	\
+			voh : 0,	\
+			ox : 0,	\
+			oy : 0,	\
+			w : 0,	\
+			h : 0,	\
+			ow : 0,	\
+			oh : 0,	\
+			crop : 0,	\
+			resize : 0,	\
+			lens : "",	\
+			fstop : 0,	\
+			flen : 0,	\
+			gps : "",	\
+			comment : "",	\
+			xset : "" 	\
+		} 	\
+	},		\
+	fc1 : {		\
+		res : 0 x 0,	\
+		rate : 0,	\
+		exp : 0,	\
+		shoff : 0,	\
+		edrexp : 0,	\
+		ptframes : 0,	\
+		bcount : 0,	\
+		bperiod : 0,	\
+		hqenable : 0,	\
+		frcount : 0,	\
+		ramp : "",	\
+		state : { INV },	\
+		start : 0x0,	\
+		len : 0x0,	\
+		frsize : 0,	\
+		frspace : 0,	\
+		firstfr : 0,	\
+		lastfr : 0,	\
+		format : 0,	\
+		decimation : 0,	\
+		in : 0,	\
+		out : 0,	\
+		aexpmode : 0,	\
+		aexpcomp : 0,	\
+		trigtime : {		\
+			secs : 0,	\
+			frac : 0 	\
+		},	\
+		cam : {		\
+			syncimg : 0,	\
+			master : 0,	\
+			tcmode : 0,	\
+			trigpol : 0,	\
+			trigfilt : 0,	\
+			frdelay : 0,	\
+			startonacq : 0,	\
+			aux1mode : 0,	\
+			aux2mode : 0,	\
+			memgateen : 0,	\
+			membpp : 0,	\
+			tsformat : 0 	\
+		},	\
+		info : {		\
+			hwver : 0,	\
+			sver : 0,	\
+			fver : 0,	\
+			pver : 0,	\
+			model : "",	\
+			sensor : 0,	\
+			snsversion : 0,	\
+			snsserial : 0,	\
+			kernel : 0,	\
+			swver : 0,	\
+			xver : 0,	\
+			serial : 0,	\
+			cfa : 0,	\
+			filter : 0,	\
+			name : "",	\
+			mdepths : 0x0,	\
+			genlockstatus : 0,	\
+			snstemp : 0,	\
+			camtemp : 0,	\
+			features : "" 	\
+		},	\
+		adj : {		\
+			red : 0,	\
+			green : 0,	\
+			blue : 0,	\
+			wbtemp : 0,	\
+			wbcc : 0,	\
+			wbred : 0,	\
+			wbblue : 0,	\
+			edgeg : 0,	\
+			edger : 0,	\
+			edgeth : 0,	\
+			gamma : 0,	\
+			rgamma : 0,	\
+			bgamma : 0,	\
+			toe : 0,	\
+			gain : 0,	\
+			offset : 0,	\
+			flare : 0,	\
+			hue : 0,	\
+			sat : 0,	\
+			rped : 0,	\
+			gped : 0,	\
+			bped : 0,	\
+			tone : "",	\
+			mmsat : "",	\
+			mmhue : "",	\
+			chroma : 0,	\
+			matrix : 0,	\
+			log : 0,	\
+			sdimin : 0,	\
+			sdimax : 0,	\
+			cmatrix : "",	\
+			umatrix : "",	\
+			filter : "" 	\
+		},	\
+		meta : {		\
+			name : "",	\
+			uuid : "",	\
+			system : 0,	\
+			pbrate : 0,	\
+			tcrate : 0,	\
+			trigtc : "",	\
+			pax : 0,	\
+			pay : 0,	\
+			paox : 0,	\
+			paoy : 0,	\
+			vox : 0,	\
+			voy : 0,	\
+			vw : 0,	\
+			vh : 0,	\
+			vow : 0,	\
+			voh : 0,	\
+			ox : 0,	\
+			oy : 0,	\
+			w : 0,	\
+			h : 0,	\
+			ow : 0,	\
+			oh : 0,	\
+			crop : 0,	\
+			resize : 0,	\
+			lens : "",	\
+			fstop : 0,	\
+			flen : 0,	\
+			gps : "",	\
+			comment : "",	\
+			xset : "" 	\
+		} 	\
+	},		\
+	fc2 : {		\
+		res : 0 x 0,	\
+		rate : 0,	\
+		exp : 0,	\
+		shoff : 0,	\
+		edrexp : 0,	\
+		ptframes : 0,	\
+		bcount : 0,	\
+		bperiod : 0,	\
+		hqenable : 0,	\
+		frcount : 0,	\
+		ramp : "",	\
+		state : { INV },	\
+		start : 0x0,	\
+		len : 0x0,	\
+		frsize : 0,	\
+		frspace : 0,	\
+		firstfr : 0,	\
+		lastfr : 0,	\
+		format : 0,	\
+		decimation : 0,	\
+		in : 0,	\
+		out : 0,	\
+		aexpmode : 0,	\
+		aexpcomp : 0,	\
+		trigtime : {		\
+			secs : 0,	\
+			frac : 0 	\
+		},	\
+		cam : {		\
+			syncimg : 0,	\
+			master : 0,	\
+			tcmode : 0,	\
+			trigpol : 0,	\
+			trigfilt : 0,	\
+			frdelay : 0,	\
+			startonacq : 0,	\
+			aux1mode : 0,	\
+			aux2mode : 0,	\
+			memgateen : 0,	\
+			membpp : 0,	\
+			tsformat : 0 	\
+		},	\
+		info : {		\
+			hwver : 0,	\
+			sver : 0,	\
+			fver : 0,	\
+			pver : 0,	\
+			model : "",	\
+			sensor : 0,	\
+			snsversion : 0,	\
+			snsserial : 0,	\
+			kernel : 0,	\
+			swver : 0,	\
+			xver : 0,	\
+			serial : 0,	\
+			cfa : 0,	\
+			filter : 0,	\
+			name : "",	\
+			mdepths : 0x0,	\
+			genlockstatus : 0,	\
+			snstemp : 0,	\
+			camtemp : 0,	\
+			features : "" 	\
+		},	\
+		adj : {		\
+			red : 0,	\
+			green : 0,	\
+			blue : 0,	\
+			wbtemp : 0,	\
+			wbcc : 0,	\
+			wbred : 0,	\
+			wbblue : 0,	\
+			edgeg : 0,	\
+			edger : 0,	\
+			edgeth : 0,	\
+			gamma : 0,	\
+			rgamma : 0,	\
+			bgamma : 0,	\
+			toe : 0,	\
+			gain : 0,	\
+			offset : 0,	\
+			flare : 0,	\
+			hue : 0,	\
+			sat : 0,	\
+			rped : 0,	\
+			gped : 0,	\
+			bped : 0,	\
+			tone : "",	\
+			mmsat : "",	\
+			mmhue : "",	\
+			chroma : 0,	\
+			matrix : 0,	\
+			log : 0,	\
+			sdimin : 0,	\
+			sdimax : 0,	\
+			cmatrix : "",	\
+			umatrix : "",	\
+			filter : "" 	\
+		},	\
+		meta : {		\
+			name : "",	\
+			uuid : "",	\
+			system : 0,	\
+			pbrate : 0,	\
+			tcrate : 0,	\
+			trigtc : "",	\
+			pax : 0,	\
+			pay : 0,	\
+			paox : 0,	\
+			paoy : 0,	\
+			vox : 0,	\
+			voy : 0,	\
+			vw : 0,	\
+			vh : 0,	\
+			vow : 0,	\
+			voh : 0,	\
+			ox : 0,	\
+			oy : 0,	\
+			w : 0,	\
+			h : 0,	\
+			ow : 0,	\
+			oh : 0,	\
+			crop : 0,	\
+			resize : 0,	\
+			lens : "",	\
+			fstop : 0,	\
+			flen : 0,	\
+			gps : "",	\
+			comment : "",	\
+			xset : "" 	\
+		} 	\
+	},		\
+	fc3 : {		\
+		res : 0 x 0,	\
+		rate : 0,	\
+		exp : 0,	\
+		shoff : 0,	\
+		edrexp : 0,	\
+		ptframes : 0,	\
+		bcount : 0,	\
+		bperiod : 0,	\
+		hqenable : 0,	\
+		frcount : 0,	\
+		ramp : "",	\
+		state : { INV },	\
+		start : 0x0,	\
+		len : 0x0,	\
+		frsize : 0,	\
+		frspace : 0,	\
+		firstfr : 0,	\
+		lastfr : 0,	\
+		format : 0,	\
+		decimation : 0,	\
+		in : 0,	\
+		out : 0,	\
+		aexpmode : 0,	\
+		aexpcomp : 0,	\
+		trigtime : {		\
+			secs : 0,	\
+			frac : 0 	\
+		},	\
+		cam : {		\
+			syncimg : 0,	\
+			master : 0,	\
+			tcmode : 0,	\
+			trigpol : 0,	\
+			trigfilt : 0,	\
+			frdelay : 0,	\
+			startonacq : 0,	\
+			aux1mode : 0,	\
+			aux2mode : 0,	\
+			memgateen : 0,	\
+			membpp : 0,	\
+			tsformat : 0 	\
+		},	\
+		info : {		\
+			hwver : 0,	\
+			sver : 0,	\
+			fver : 0,	\
+			pver : 0,	\
+			model : "",	\
+			sensor : 0,	\
+			snsversion : 0,	\
+			snsserial : 0,	\
+			kernel : 0,	\
+			swver : 0,	\
+			xver : 0,	\
+			serial : 0,	\
+			cfa : 0,	\
+			filter : 0,	\
+			name : "",	\
+			mdepths : 0x0,	\
+			genlockstatus : 0,	\
+			snstemp : 0,	\
+			camtemp : 0,	\
+			features : "" 	\
+		},	\
+		adj : {		\
+			red : 0,	\
+			green : 0,	\
+			blue : 0,	\
+			wbtemp : 0,	\
+			wbcc : 0,	\
+			wbred : 0,	\
+			wbblue : 0,	\
+			edgeg : 0,	\
+			edger : 0,	\
+			edgeth : 0,	\
+			gamma : 0,	\
+			rgamma : 0,	\
+			bgamma : 0,	\
+			toe : 0,	\
+			gain : 0,	\
+			offset : 0,	\
+			flare : 0,	\
+			hue : 0,	\
+			sat : 0,	\
+			rped : 0,	\
+			gped : 0,	\
+			bped : 0,	\
+			tone : "",	\
+			mmsat : "",	\
+			mmhue : "",	\
+			chroma : 0,	\
+			matrix : 0,	\
+			log : 0,	\
+			sdimin : 0,	\
+			sdimax : 0,	\
+			cmatrix : "",	\
+			umatrix : "",	\
+			filter : "" 	\
+		},	\
+		meta : {		\
+			name : "",	\
+			uuid : "",	\
+			system : 0,	\
+			pbrate : 0,	\
+			tcrate : 0,	\
+			trigtc : "",	\
+			pax : 0,	\
+			pay : 0,	\
+			paox : 0,	\
+			paoy : 0,	\
+			vox : 0,	\
+			voy : 0,	\
+			vw : 0,	\
+			vh : 0,	\
+			vow : 0,	\
+			voh : 0,	\
+			ox : 0,	\
+			oy : 0,	\
+			w : 0,	\
+			h : 0,	\
+			ow : 0,	\
+			oh : 0,	\
+			crop : 0,	\
+			resize : 0,	\
+			lens : "",	\
+			fstop : 0,	\
+			flen : 0,	\
+			gps : "",	\
+			comment : "",	\
+			xset : "" 	\
+		} 	\
+	},		\
+	fc4 : {		\
+		res : 0 x 0,	\
+		rate : 0,	\
+		exp : 0,	\
+		shoff : 0,	\
+		edrexp : 0,	\
+		ptframes : 0,	\
+		bcount : 0,	\
+		bperiod : 0,	\
+		hqenable : 0,	\
+		frcount : 0,	\
+		ramp : "",	\
+		state : { INV },	\
+		start : 0x0,	\
+		len : 0x0,	\
+		frsize : 0,	\
+		frspace : 0,	\
+		firstfr : 0,	\
+		lastfr : 0,	\
+		format : 0,	\
+		decimation : 0,	\
+		in : 0,	\
+		out : 0,	\
+		aexpmode : 0,	\
+		aexpcomp : 0,	\
+		trigtime : {		\
+			secs : 0,	\
+			frac : 0 	\
+		},	\
+		cam : {		\
+			syncimg : 0,	\
+			master : 0,	\
+			tcmode : 0,	\
+			trigpol : 0,	\
+			trigfilt : 0,	\
+			frdelay : 0,	\
+			startonacq : 0,	\
+			aux1mode : 0,	\
+			aux2mode : 0,	\
+			memgateen : 0,	\
+			membpp : 0,	\
+			tsformat : 0 	\
+		},	\
+		info : {		\
+			hwver : 0,	\
+			sver : 0,	\
+			fver : 0,	\
+			pver : 0,	\
+			model : "",	\
+			sensor : 0,	\
+			snsversion : 0,	\
+			snsserial : 0,	\
+			kernel : 0,	\
+			swver : 0,	\
+			xver : 0,	\
+			serial : 0,	\
+			cfa : 0,	\
+			filter : 0,	\
+			name : "",	\
+			mdepths : 0x0,	\
+			genlockstatus : 0,	\
+			snstemp : 0,	\
+			camtemp : 0,	\
+			features : "" 	\
+		},	\
+		adj : {		\
+			red : 0,	\
+			green : 0,	\
+			blue : 0,	\
+			wbtemp : 0,	\
+			wbcc : 0,	\
+			wbred : 0,	\
+			wbblue : 0,	\
+			edgeg : 0,	\
+			edger : 0,	\
+			edgeth : 0,	\
+			gamma : 0,	\
+			rgamma : 0,	\
+			bgamma : 0,	\
+			toe : 0,	\
+			gain : 0,	\
+			offset : 0,	\
+			flare : 0,	\
+			hue : 0,	\
+			sat : 0,	\
+			rped : 0,	\
+			gped : 0,	\
+			bped : 0,	\
+			tone : "",	\
+			mmsat : "",	\
+			mmhue : "",	\
+			chroma : 0,	\
+			matrix : 0,	\
+			log : 0,	\
+			sdimin : 0,	\
+			sdimax : 0,	\
+			cmatrix : "",	\
+			umatrix : "",	\
+			filter : "" 	\
+		},	\
+		meta : {		\
+			name : "",	\
+			uuid : "",	\
+			system : 0,	\
+			pbrate : 0,	\
+			tcrate : 0,	\
+			trigtc : "",	\
+			pax : 0,	\
+			pay : 0,	\
+			paox : 0,	\
+			paoy : 0,	\
+			vox : 0,	\
+			voy : 0,	\
+			vw : 0,	\
+			vh : 0,	\
+			vow : 0,	\
+			voh : 0,	\
+			ox : 0,	\
+			oy : 0,	\
+			w : 0,	\
+			h : 0,	\
+			ow : 0,	\
+			oh : 0,	\
+			crop : 0,	\
+			resize : 0,	\
+			lens : "",	\
+			fstop : 0,	\
+			flen : 0,	\
+			gps : "",	\
+			comment : "",	\
+			xset : "" 	\
+		} 	\
+	},		\
+	fc5 : {		\
+		res : 0 x 0,	\
+		rate : 0,	\
+		exp : 0,	\
+		shoff : 0,	\
+		edrexp : 0,	\
+		ptframes : 0,	\
+		bcount : 0,	\
+		bperiod : 0,	\
+		hqenable : 0,	\
+		frcount : 0,	\
+		ramp : "",	\
+		state : { INV },	\
+		start : 0x0,	\
+		len : 0x0,	\
+		frsize : 0,	\
+		frspace : 0,	\
+		firstfr : 0,	\
+		lastfr : 0,	\
+		format : 0,	\
+		decimation : 0,	\
+		in : 0,	\
+		out : 0,	\
+		aexpmode : 0,	\
+		aexpcomp : 0,	\
+		trigtime : {		\
+			secs : 0,	\
+			frac : 0 	\
+		},	\
+		cam : {		\
+			syncimg : 0,	\
+			master : 0,	\
+			tcmode : 0,	\
+			trigpol : 0,	\
+			trigfilt : 0,	\
+			frdelay : 0,	\
+			startonacq : 0,	\
+			aux1mode : 0,	\
+			aux2mode : 0,	\
+			memgateen : 0,	\
+			membpp : 0,	\
+			tsformat : 0 	\
+		},	\
+		info : {		\
+			hwver : 0,	\
+			sver : 0,	\
+			fver : 0,	\
+			pver : 0,	\
+			model : "",	\
+			sensor : 0,	\
+			snsversion : 0,	\
+			snsserial : 0,	\
+			kernel : 0,	\
+			swver : 0,	\
+			xver : 0,	\
+			serial : 0,	\
+			cfa : 0,	\
+			filter : 0,	\
+			name : "",	\
+			mdepths : 0x0,	\
+			genlockstatus : 0,	\
+			snstemp : 0,	\
+			camtemp : 0,	\
+			features : "" 	\
+		},	\
+		adj : {		\
+			red : 0,	\
+			green : 0,	\
+			blue : 0,	\
+			wbtemp : 0,	\
+			wbcc : 0,	\
+			wbred : 0,	\
+			wbblue : 0,	\
+			edgeg : 0,	\
+			edger : 0,	\
+			edgeth : 0,	\
+			gamma : 0,	\
+			rgamma : 0,	\
+			bgamma : 0,	\
+			toe : 0,	\
+			gain : 0,	\
+			offset : 0,	\
+			flare : 0,	\
+			hue : 0,	\
+			sat : 0,	\
+			rped : 0,	\
+			gped : 0,	\
+			bped : 0,	\
+			tone : "",	\
+			mmsat : "",	\
+			mmhue : "",	\
+			chroma : 0,	\
+			matrix : 0,	\
+			log : 0,	\
+			sdimin : 0,	\
+			sdimax : 0,	\
+			cmatrix : "",	\
+			umatrix : "",	\
+			filter : "" 	\
+		},	\
+		meta : {		\
+			name : "",	\
+			uuid : "",	\
+			system : 0,	\
+			pbrate : 0,	\
+			tcrate : 0,	\
+			trigtc : "",	\
+			pax : 0,	\
+			pay : 0,	\
+			paox : 0,	\
+			paoy : 0,	\
+			vox : 0,	\
+			voy : 0,	\
+			vw : 0,	\
+			vh : 0,	\
+			vow : 0,	\
+			voh : 0,	\
+			ox : 0,	\
+			oy : 0,	\
+			w : 0,	\
+			h : 0,	\
+			ow : 0,	\
+			oh : 0,	\
+			crop : 0,	\
+			resize : 0,	\
+			lens : "",	\
+			fstop : 0,	\
+			flen : 0,	\
+			gps : "",	\
+			comment : "",	\
+			xset : "" 	\
+		} 	\
+	},		\
+	fc6 : {		\
+		res : 0 x 0,	\
+		rate : 0,	\
+		exp : 0,	\
+		shoff : 0,	\
+		edrexp : 0,	\
+		ptframes : 0,	\
+		bcount : 0,	\
+		bperiod : 0,	\
+		hqenable : 0,	\
+		frcount : 0,	\
+		ramp : "",	\
+		state : { INV },	\
+		start : 0x0,	\
+		len : 0x0,	\
+		frsize : 0,	\
+		frspace : 0,	\
+		firstfr : 0,	\
+		lastfr : 0,	\
+		format : 0,	\
+		decimation : 0,	\
+		in : 0,	\
+		out : 0,	\
+		aexpmode : 0,	\
+		aexpcomp : 0,	\
+		trigtime : {		\
+			secs : 0,	\
+			frac : 0 	\
+		},	\
+		cam : {		\
+			syncimg : 0,	\
+			master : 0,	\
+			tcmode : 0,	\
+			trigpol : 0,	\
+			trigfilt : 0,	\
+			frdelay : 0,	\
+			startonacq : 0,	\
+			aux1mode : 0,	\
+			aux2mode : 0,	\
+			memgateen : 0,	\
+			membpp : 0,	\
+			tsformat : 0 	\
+		},	\
+		info : {		\
+			hwver : 0,	\
+			sver : 0,	\
+			fver : 0,	\
+			pver : 0,	\
+			model : "",	\
+			sensor : 0,	\
+			snsversion : 0,	\
+			snsserial : 0,	\
+			kernel : 0,	\
+			swver : 0,	\
+			xver : 0,	\
+			serial : 0,	\
+			cfa : 0,	\
+			filter : 0,	\
+			name : "",	\
+			mdepths : 0x0,	\
+			genlockstatus : 0,	\
+			snstemp : 0,	\
+			camtemp : 0,	\
+			features : "" 	\
+		},	\
+		adj : {		\
+			red : 0,	\
+			green : 0,	\
+			blue : 0,	\
+			wbtemp : 0,	\
+			wbcc : 0,	\
+			wbred : 0,	\
+			wbblue : 0,	\
+			edgeg : 0,	\
+			edger : 0,	\
+			edgeth : 0,	\
+			gamma : 0,	\
+			rgamma : 0,	\
+			bgamma : 0,	\
+			toe : 0,	\
+			gain : 0,	\
+			offset : 0,	\
+			flare : 0,	\
+			hue : 0,	\
+			sat : 0,	\
+			rped : 0,	\
+			gped : 0,	\
+			bped : 0,	\
+			tone : "",	\
+			mmsat : "",	\
+			mmhue : "",	\
+			chroma : 0,	\
+			matrix : 0,	\
+			log : 0,	\
+			sdimin : 0,	\
+			sdimax : 0,	\
+			cmatrix : "",	\
+			umatrix : "",	\
+			filter : "" 	\
+		},	\
+		meta : {		\
+			name : "",	\
+			uuid : "",	\
+			system : 0,	\
+			pbrate : 0,	\
+			tcrate : 0,	\
+			trigtc : "",	\
+			pax : 0,	\
+			pay : 0,	\
+			paox : 0,	\
+			paoy : 0,	\
+			vox : 0,	\
+			voy : 0,	\
+			vw : 0,	\
+			vh : 0,	\
+			vow : 0,	\
+			voh : 0,	\
+			ox : 0,	\
+			oy : 0,	\
+			w : 0,	\
+			h : 0,	\
+			ow : 0,	\
+			oh : 0,	\
+			crop : 0,	\
+			resize : 0,	\
+			lens : "",	\
+			fstop : 0,	\
+			flen : 0,	\
+			gps : "",	\
+			comment : "",	\
+			xset : "" 	\
+		} 	\
+	},		\
+	fc7 : {		\
+		res : 0 x 0,	\
+		rate : 0,	\
+		exp : 0,	\
+		shoff : 0,	\
+		edrexp : 0,	\
+		ptframes : 0,	\
+		bcount : 0,	\
+		bperiod : 0,	\
+		hqenable : 0,	\
+		frcount : 0,	\
+		ramp : "",	\
+		state : { INV },	\
+		start : 0x0,	\
+		len : 0x0,	\
+		frsize : 0,	\
+		frspace : 0,	\
+		firstfr : 0,	\
+		lastfr : 0,	\
+		format : 0,	\
+		decimation : 0,	\
+		in : 0,	\
+		out : 0,	\
+		aexpmode : 0,	\
+		aexpcomp : 0,	\
+		trigtime : {		\
+			secs : 0,	\
+			frac : 0 	\
+		},	\
+		cam : {		\
+			syncimg : 0,	\
+			master : 0,	\
+			tcmode : 0,	\
+			trigpol : 0,	\
+			trigfilt : 0,	\
+			frdelay : 0,	\
+			startonacq : 0,	\
+			aux1mode : 0,	\
+			aux2mode : 0,	\
+			memgateen : 0,	\
+			membpp : 0,	\
+			tsformat : 0 	\
+		},	\
+		info : {		\
+			hwver : 0,	\
+			sver : 0,	\
+			fver : 0,	\
+			pver : 0,	\
+			model : "",	\
+			sensor : 0,	\
+			snsversion : 0,	\
+			snsserial : 0,	\
+			kernel : 0,	\
+			swver : 0,	\
+			xver : 0,	\
+			serial : 0,	\
+			cfa : 0,	\
+			filter : 0,	\
+			name : "",	\
+			mdepths : 0x0,	\
+			genlockstatus : 0,	\
+			snstemp : 0,	\
+			camtemp : 0,	\
+			features : "" 	\
+		},	\
+		adj : {		\
+			red : 0,	\
+			green : 0,	\
+			blue : 0,	\
+			wbtemp : 0,	\
+			wbcc : 0,	\
+			wbred : 0,	\
+			wbblue : 0,	\
+			edgeg : 0,	\
+			edger : 0,	\
+			edgeth : 0,	\
+			gamma : 0,	\
+			rgamma : 0,	\
+			bgamma : 0,	\
+			toe : 0,	\
+			gain : 0,	\
+			offset : 0,	\
+			flare : 0,	\
+			hue : 0,	\
+			sat : 0,	\
+			rped : 0,	\
+			gped : 0,	\
+			bped : 0,	\
+			tone : "",	\
+			mmsat : "",	\
+			mmhue : "",	\
+			chroma : 0,	\
+			matrix : 0,	\
+			log : 0,	\
+			sdimin : 0,	\
+			sdimax : 0,	\
+			cmatrix : "",	\
+			umatrix : "",	\
+			filter : "" 	\
+		},	\
+		meta : {		\
+			name : "",	\
+			uuid : "",	\
+			system : 0,	\
+			pbrate : 0,	\
+			tcrate : 0,	\
+			trigtc : "",	\
+			pax : 0,	\
+			pay : 0,	\
+			paox : 0,	\
+			paoy : 0,	\
+			vox : 0,	\
+			voy : 0,	\
+			vw : 0,	\
+			vh : 0,	\
+			vow : 0,	\
+			voh : 0,	\
+			ox : 0,	\
+			oy : 0,	\
+			w : 0,	\
+			h : 0,	\
+			ow : 0,	\
+			oh : 0,	\
+			crop : 0,	\
+			resize : 0,	\
+			lens : "",	\
+			fstop : 0,	\
+			flen : 0,	\
+			gps : "",	\
+			comment : "",	\
+			xset : "" 	\
+		} 	\
+	},		\
+	fc8 : {		\
+		res : 0 x 0,	\
+		rate : 0,	\
+		exp : 0,	\
+		shoff : 0,	\
+		edrexp : 0,	\
+		ptframes : 0,	\
+		bcount : 0,	\
+		bperiod : 0,	\
+		hqenable : 0,	\
+		frcount : 0,	\
+		ramp : "",	\
+		state : { INV },	\
+		start : 0x0,	\
+		len : 0x0,	\
+		frsize : 0,	\
+		frspace : 0,	\
+		firstfr : 0,	\
+		lastfr : 0,	\
+		format : 0,	\
+		decimation : 0,	\
+		in : 0,	\
+		out : 0,	\
+		aexpmode : 0,	\
+		aexpcomp : 0,	\
+		trigtime : {		\
+			secs : 0,	\
+			frac : 0 	\
+		},	\
+		cam : {		\
+			syncimg : 0,	\
+			master : 0,	\
+			tcmode : 0,	\
+			trigpol : 0,	\
+			trigfilt : 0,	\
+			frdelay : 0,	\
+			startonacq : 0,	\
+			aux1mode : 0,	\
+			aux2mode : 0,	\
+			memgateen : 0,	\
+			membpp : 0,	\
+			tsformat : 0 	\
+		},	\
+		info : {		\
+			hwver : 0,	\
+			sver : 0,	\
+			fver : 0,	\
+			pver : 0,	\
+			model : "",	\
+			sensor : 0,	\
+			snsversion : 0,	\
+			snsserial : 0,	\
+			kernel : 0,	\
+			swver : 0,	\
+			xver : 0,	\
+			serial : 0,	\
+			cfa : 0,	\
+			filter : 0,	\
+			name : "",	\
+			mdepths : 0x0,	\
+			genlockstatus : 0,	\
+			snstemp : 0,	\
+			camtemp : 0,	\
+			features : "" 	\
+		},	\
+		adj : {		\
+			red : 0,	\
+			green : 0,	\
+			blue : 0,	\
+			wbtemp : 0,	\
+			wbcc : 0,	\
+			wbred : 0,	\
+			wbblue : 0,	\
+			edgeg : 0,	\
+			edger : 0,	\
+			edgeth : 0,	\
+			gamma : 0,	\
+			rgamma : 0,	\
+			bgamma : 0,	\
+			toe : 0,	\
+			gain : 0,	\
+			offset : 0,	\
+			flare : 0,	\
+			hue : 0,	\
+			sat : 0,	\
+			rped : 0,	\
+			gped : 0,	\
+			bped : 0,	\
+			tone : "",	\
+			mmsat : "",	\
+			mmhue : "",	\
+			chroma : 0,	\
+			matrix : 0,	\
+			log : 0,	\
+			sdimin : 0,	\
+			sdimax : 0,	\
+			cmatrix : "",	\
+			umatrix : "",	\
+			filter : "" 	\
+		},	\
+		meta : {		\
+			name : "",	\
+			uuid : "",	\
+			system : 0,	\
+			pbrate : 0,	\
+			tcrate : 0,	\
+			trigtc : "",	\
+			pax : 0,	\
+			pay : 0,	
+?
+
+?
+
+?
+get *
+* : {		\
+	info : {		\
+		hwver : 8001,	\
+		pver : 16,	\
+		sver : 1023,	\
+		fver : 39,	\
+		model : "Phantom Miro M310",	\
+		sensor : 62,	\
+		snsversion : 0,	\
+		snsserial : 0,	\
+		occver : 0,	\
+		tally : 0,	\
+		kernel : 425,	\
+		swver : 14967,	\
+		xver : 840,	\
+		serial : 17277,	\
+		memsz : 12288,	\
+		cfa : 0,	\
+		filter : 0,	\
+		maxcines : 17,	\
+		name : "17277",	\
+		kernsz : 24,	\
+		xmax : 1280,	\
+		ymax : 800,	\
+		xinc : 64,	\
+		yinc : 8,	\
+		xblock : 8,	\
+		yblock : 8,	\
+		winx : 32,	\
+		winy : 8,	\
+		pixps : 17857,	\
+		rotps : 196427,	\
+		fotps : 553567,	\
+		minfrate : 24,	\
+		tmodel : 4,	\
+		maxrate : 1000000,	\
+		expdead : 427,	\
+		minexp : 1000,	\
+		magtp : 720000000,	\
+		cinemem : 12181,	\
+		mdepths : 0x1000,	\
+		rtobyteps : 3200,	\
+		rtopacket : 160,	\
+		rtopacketovhead : 12,	\
+		rtofrovhead : 1900,	\
+		rto_channels : 0,	\
+		snstemp : 29,	\
+		tepower : 51,	\
+		camtemp : 52,	\
+		fanpower : 28,	\
+		batti : 0,	\
+		battv : 271,	\
+		battstate : 0,	\
+		batttimer : 0,	\
+		vbatt : 0.2645052632,	\
+		vcdina : 0.3857368421,	\
+		vcdinb : 23.95976842,	\
+		genlockstatus : 0,	\
+		features : "bref blk4 burst edr attach earlyimg notify atrig aexp cf quiet shtr",	\
+		imgformats : "8 8R P16 P16R P10",	\
+		videosystems : "0 1",	\
+		basechroma : 1,	\
+		baseei : 13000,	\
+		setup : "Donal_Std_Rad_2000fps" 	\
+	},		\
+	hw : {		\
+		vpix : 3300,	\
+		vpixl : 2800,	\
+		vmemh : 3600,	\
+		vmeml : 3000,	\
+		vresh : 3600,	\
+		vresds : 3000,	\
+		vresl : 500,	\
+		dcblack : 0,	\
+		bbias : 800,	\
+		tbias : 800,	\
+		brbias : 0,	\
+		trbias : 0,	\
+		osr : 62,	\
+		mcode : 5,	\
+		vmlpred : 0,	\
+		prepw : 14,	\
+		presmpd : 0,	\
+		smppw : 2,	\
+		smpvmhd : 0,	\
+		vmhresd : 0,	\
+		reswait : 4,	\
+		respw : 15,	\
+		reslong : 0,	\
+		expadj : 0,	\
+		sel2w : 5,	\
+		shkolmode : 1,	\
+		memphase : 240,	\
+		adphase : 30,	\
+		dcphase : 1616,	\
+		clkxd : 0,	\
+		adcflags : 112,	\
+		igain : 2253,	\
+		touchdx : 0,	\
+		touchdy : 0,	\
+		touchsx : 0,	\
+		touchsy : 0,	\
+		touchpos : 0,	\
+		freqtrim : 0,	\
+		nsfload : 16,	\
+		colload : 8,	\
+		outload : 16,	\
+		snsflags : 0,	\
+		irigphase : 0,	\
+		irigmodphase : 0,	\
+		memflags : 0,	\
+		colorcal : "0.3242 0.3355  2.32402 0.154988 -0.973507  -0.509867 2.31423 -1.1174  -0.168828 -0.133339 2.70913",	\
+		delaycal0 : "",	\
+		delaycal1 : "",	\
+		delaycal2 : "",	\
+		delaycal3 : "",	\
+		delaycal4 : "",	\
+		delaycal5 : "",	\
+		delaycal6 : "",	\
+		delaycal7 : "",	\
+		rdlevel : "",	\
+		sntempcal : 1100092,	\
+		limittemp : 65,	\
+		fanlo : 22,	\
+		eical : 13000,	\
+		memtest : 0,	\
+		rtctime : {		\
+			secs : 0,	\
+			frac : 0,	\
+			tz : 0 	\
+		} 	\
+	},		\
+	meta : {		\
+		name : "",	\
+		lens : "",	\
+		fstop : 0,	\
+		flen : 0,	\
+		comment : "",	\
+		xset : "" 	\
+	},		\
+	cam : {		\
+		syncimg : 0,	\
+		master : 0,	\
+		tcmode : 0,	\
+		trigpol : 1,	\
+		trigfilt : 1,	\
+		frdelay : 0,	\
+		startonacq : 1,	\
+		aux1mode : 0,	\
+		aux2mode : 0,	\
+		memgateen : 1,	\
+		rtoen : 0,	\
+		membpp : 12,	\
+		tsformat : 1,	\
+		longready : 0,	\
+		dark : 0,	\
+		quiet : 0,	\
+		tsetsns : 30,	\
+		tsetcam : 50,	\
+		apoffdis : 0,	\
+		rtotfr : 0,	\
+		cines : 16,	\
+		battarm : 0,	\
+		battmode : 0,	\
+		wtrarmdelay : 0,	\
+		wtrarmtime : 0,	\
+		poffdelay : 10,	\
+		readygate : 0,	\
+		timezone : -3600,	\
+		lang : "en_US",	\
+		occset : "" 	\
+	},		\
+	auto : {		\
+		videoplay : 0,	\
+		flashsave : 0,	\
+		filesave : 1,	\
+		acqrestart : 1,	\
+		bref : 0,	\
+		firstframe : -2147483648,	\
+		lastframe : 2147483646,	\
+		format : 272,	\
+		loops : 0,	\
+		speed : 0,	\
+		progress : 0,	\
+		bref_progress : 0,	\
+		fseq : 429,	\
+		trigger : {		\
+			x : 0,	\
+			y : -52,	\
+			w : 1280,	\
+			h : 400,	\
+			speed : 1087,	\
+			area : 1,	\
+			threshold : 1,	\
+			mode : 0 	\
+		} 	\
+	},		\
+	eth : {		\
+		ip : "172.23.240.96",	\
+		netmask : "255.255.240.0",	\
+		broadcast : "...",	\
+		gateway : "172.23.240.254",	\
+		mtu : 0,	\
+		xip : "",	\
+		xnetmask : "",	\
+		xbroadcast : "" 	\
+	},		\
+	video : {		\
+		system : 1,	\
+		output : 0,	\
+		osddis : 1,	\
+		osd_ut : 0,	\
+		pax : 0,	\
+		pay : 0,	\
+		paox : -640,	\
+		paoy : -400,	\
+		vox : 0,	\
+		voy : 0,	\
+		vw : 1280,	\
+		vh : 504,	\
+		vow : 711,	\
+		voh : 280,	\
+		widescreen : 0,	\
+		uzoom : 0,	\
+		genlock : 0,	\
+		fields : 0,	\
+		vfmode : 0,	\
+		adj : {		\
+			red : 1,	\
+			green : 1,	\
+			blue : 1,	\
+			wbtemp : 5600,	\
+			wbcc : 0,	\
+			wbred : 1.321455044,	\
+			wbblue : 1.824537662,	\
+			edgeg : 0,	\
+			edger : 0,	\
+			edgeth : 0,	\
+			gamma : 0.57544,	\
+			rgamma : 0,	\
+			bgamma : 0,	\
+			toe : 1,	\
+			gain : 3.176874,	\
+			offset : -0.0785,	\
+			flare : 0,	\
+			hue : 0,	\
+			sat : 1,	\
+			rped : 0,	\
+			gped : 0,	\
+			bped : 0,	\
+			tone : "",	\
+			mmsat : "",	\
+			mmhue : "",	\
+			chroma : 1,	\
+			matrix : 1,	\
+			log : 0,	\
+			sdimin : 32,	\
+			sdimax : 960,	\
+			cmatrix : "cal 1.7326 0.119326 -0.785386  -0.380114 1.78173 -0.901473  -0.125864 -0.102658 2.18562",	\
+			umatrix : "",	\
+			filter : "" 	\
+		},	\
+		play : {		\
+			live : 1,	\
+			mag : 0,	\
+			fn : 0,	\
+			in : 0,	\
+			out : 0,	\
+			speed : 1,	\
+			step : 1,	\
+			cine : 0,	\
+			frcount : 0 	\
+		} 	\
+	},		\
+	irig : {		\
+		sec : 1474640612,	\
+		yearbegin : 1451606400,	\
+		flags : { NUL },	\
+		signal : "",	\
+		gps : "",	\
+		ranged : "00000000 00000000 00000000 00000000" 	\
+	},		\
+	mag : {		\
+		state : 0,	\
+		progress : 0,	\
+		protect : 0,	\
+		errcode : 0,	\
+		size : 0,	\
+		used : 0,	\
+		takes : 0,	\
+		version : 0,	\
+		type : 0,	\
+		magtp : 0,	\
+		runstop : 0,	\
+		id : "",	\
+		test : 0 	\
+	},		\
+	cf : {		\
+		state : 4,	\
+		action : 0,	\
+		size : 246127884,	\
+		used : 61423112,	\
+		progress : 0,	\
+		errcode : 0 	\
+	},		\
+	preset : {		\
+		matrix1 : "",	\
+		matrix2 : "",	\
+		matrix3 : "",	\
+		matrix4 : "",	\
+		tone1 : "medium 0.125 0.0859 0.25 0.218 0.5 0.5 0.75 0.768",	\
+		tone2 : "strong 0.125 0.0625 0.25 0.195 0.5 0.5 0.75 0.79",	\
+		tone3 : "highs1 0.18 0.25 0.375 0.70 0.5 0.860 0.75 0.95",	\
+		tone4 : "highs2 0.06 0.16 0.14 0.50 0.40 0.89",	\
+		filter1 : "",	\
+		filter2 : "",	\
+		filter3 : "",	\
+		filter4 : "" 	\
+	},		\
+	usets : {		\
+		nsets : 6,	\
+		valid0 : 1,	\
+		valid1 : 1,	\
+		valid2 : 1,	\
+		valid3 : 1,	\
+		valid4 : 1,	\
+		valid5 : 1 	\
+	},		\
+	defc : {		\
+		res : 1280 x 504,	\
+		rate : 1080,	\
+		exp : 925482,	\
+		shoff : 0,	\
+		edrexp : 0,	\
+		ptframes : 820,	\
+		bcount : 0,	\
+		bperiod : 307692,	\
+		hqenable : 0,	\
+		frcount : 820,	\
+		ramp : "",	\
+		frsize : 40336,	\
+		decimation : 1,	\
+		aexpmode : 0,	\
+		aexpcomp : -0.1605,	\
+		meta : {		\
+			ox : -160,	\
+			oy : -120,	\
+			w : 1,	\
+			h : 1,	\
+			ow : 1280,	\
+			oh : 504,	\
+			crop : 0,	\
+			resize : 0 	\
+		} 	\
+	},		\
+	c0 : {		\
+		res : 1280 x 800,	\
+		rate : 100,	\
+		exp : 1000000,	\
+		shoff : 0,	\
+		edrexp : 0,	\
+		ptframes : 10,	\
+		bcount : 0,	\
+		bperiod : 0,	\
+		hqenable : 0,	\
+		frcount : 0,	\
+		ramp : "",	\
+		state : { RDY DEF PRE },	\
+		start : 0x2A0400,	\
+		len : 0x1D4C00,	\
+		frsize : 64016,	\
+		frspace : 1920000,	\
+		firstfr : 0,	\
+		lastfr : 0,	\
+		format : 0,	\
+		decimation : 0,	\
+		in : 0,	\
+		out : 0,	\
+		aexpmode : 0,	\
+		aexpcomp : 0,	\
+		trigtime : {		\
+			secs : 0,	\
+			frac : 0 	\
+		},	\
+		cam : {		\
+			syncimg : 0,	\
+			master : 0,	\
+			tcmode : 0,	\
+			trigpol : 0,	\
+			trigfilt : 0,	\
+			frdelay : 0,	\
+			startonacq : 0,	\
+			aux1mode : 0,	\
+			aux2mode : 0,	\
+			memgateen : 0,	\
+			membpp : 12,	\
+			tsformat : 0 	\
+		},	\
+		info : {		\
+			hwver : 0,	\
+			sver : 0,	\
+			fver : 0,	\
+			pver : 0,	\
+			model : "",	\
+			sensor : 0,	\
+			snsversion : 0,	\
+			snsserial : 0,	\
+			kernel : 0,	\
+			swver : 0,	\
+			xver : 0,	\
+			serial : 0,	\
+			cfa : 0,	\
+			filter : 0,	\
+			name : "",	\
+			mdepths : 0x0,	\
+			genlockstatus : 0,	\
+			snstemp : 0,	\
+			camtemp : 0,	\
+			features : "" 	\
+		},	\
+		adj : {		\
+			red : 0,	\
+			green : 0,	\
+			blue : 0,	\
+			wbtemp : 0,	\
+			wbcc : 0,	\
+			wbred : 0,	\
+			wbblue : 0,	\
+			edgeg : 0,	\
+			edger : 0,	\
+			edgeth : 0,	\
+			gamma : 0,	\
+			rgamma : 0,	\
+			bgamma : 0,	\
+			toe : 0,	\
+			gain : 0,	\
+			offset : 0,	\
+			flare : 0,	\
+			hue : 0,	\
+			sat : 0,	\
+			rped : 0,	\
+			gped : 0,	\
+			bped : 0,	\
+			tone : "",	\
+			mmsat : "",	\
+			mmhue : "",	\
+			chroma : 0,	\
+			matrix : 0,	\
+			log : 0,	\
+			sdimin : 0,	\
+			sdimax : 0,	\
+			cmatrix : "",	\
+			umatrix : "",	\
+			filter : "" 	\
+		},	\
+		meta : {		\
+			name : "",	\
+			uuid : "",	\
+			system : 0,	\
+			pbrate : 0,	\
+			tcrate : 0,	\
+			trigtc : "",	\
+			pax : 0,	\
+			pay : 0,	\
+			paox : 0,	\
+			paoy : 0,	\
+			vox : 0,	\
+			voy : 0,	\
+			vw : 0,	\
+			vh : 0,	\
+			vow : 0,	\
+			voh : 0,	\
+			ox : 0,	\
+			oy : 0,	\
+			w : 0,	\
+			h : 0,	\
+			ow : 0,	\
+			oh : 0,	\
+			crop : 0,	\
+			resize : 0,	\
+			lens : "",	\
+			fstop : 0,	\
+			flen : 0,	\
+			gps : "",	\
+			comment : "",	\
+			xset : "" 	\
+		} 	\
+	},		\
+	c1 : {		\
+		res : 1280 x 504,	\
+		rate : 1080,	\
+		exp : 925482,	\
+		shoff : 0,	\
+		edrexp : 0,	\
+		ptframes : 820,	\
+		bcount : 0,	\
+		bperiod : 307692,	\
+		hqenable : 0,	\
+		frcount : 820,	\
+		ramp : "",	\
+		state : { WTR DEF ABL ACT },	\
+		start : 0x475000,	\
+		len : 0x1F90000,	\
+		frsize : 40336,	\
+		frspace : 33095680,	\
+		firstfr : 0,	\
+		lastfr : 0,	\
+		format : 0,	\
+		decimation : 1,	\
+		in : 0,	\
+		out : 0,	\
+		aexpmode : 0,	\
+		aexpcomp : -0.1605,	\
+		trigtime : {		\
+			secs : 0,	\
+			frac : 0 	\
+		},	\
+		cam : {		\
+			syncimg : 0,	\
+			master : 0,	\
+			tcmode : 0,	\
+			trigpol : 1,	\
+			trigfilt : 1,	\
+			frdelay : 0,	\
+			startonacq : 1,	\
+			aux1mode : 0,	\
+			aux2mode : 0,	\
+			memgateen : 1,	\
+			membpp : 12,	\
+			tsformat : 1 	\
+		},	\
+		info : {		\
+			hwver : 8001,	\
+			sver : 1023,	\
+			fver : 39,	\
+			pver : 16,	\
+			model : "Phantom Miro M310",	\
+			sensor : 62,	\
+			snsversion : 0,	\
+			snsserial : 0,	\
+			kernel : 425,	\
+			swver : 14967,	\
+			xver : 840,	\
+			serial : 17277,	\
+			cfa : 0,	\
+			filter : 0,	\
+			name : "17277",	\
+			mdepths : 0x1000,	\
+			genlockstatus : 0,	\
+			snstemp : 0,	\
+			camtemp : 0,	\
+			features : "bref blk4 burst edr attach earlyimg notify atrig aexp cf quiet shtr" 	\
+		},	\
+		adj : {		\
+			red : 1,	\
+			green : 1,	\
+			blue : 1,	\
+			wbtemp : 5600,	\
+			wbcc : 0,	\
+			wbred : 1.321455044,	\
+			wbblue : 1.824537662,	\
+			edgeg : 0,	\
+			edger : 0,	\
+			edgeth : 0,	\
+			gamma : 0.57544,	\
+			rgamma : 0,	\
+			bgamma : 0,	\
+			toe : 1,	\
+			gain : 3.176874,	\
+			offset : -0.0785,	\
+			flare : 0,	\
+			hue : 0,	\
+			sat : 1,	\
+			rped : 0,	\
+			gped : 0,	\
+			bped : 0,	\
+			tone : "",	\
+			mmsat : "",	\
+			mmhue : "",	\
+			chroma : 1,	\
+			matrix : 1,	\
+			log : 0,	\
+			sdimin : 32,	\
+			sdimax : 960,	\
+			cmatrix : "cal 1.7326 0.119326 -0.785386  -0.380114 1.78173 -0.901473  -0.125864 -0.102658 2.18562",	\
+			umatrix : "",	\
+			filter : "" 	\
+		},	\
+		meta : {		\
+			name : "",	\
+			uuid : "",	\
+			system : 1,	\
+			pbrate : 50,	\
+			tcrate : 25,	\
+			trigtc : "",	\
+			pax : 0,	\
+			pay : 0,	\
+			paox : -640,	\
+			paoy : -400,	\
+			vox : 0,	\
+			voy : 0,	\
+			vw : 1280,	\
+			vh : 504,	\
+			vow : 711,	\
+			voh : 280,	\
+			ox : -160,	\
+			oy : -120,	\
+			w : 1,	\
+			h : 1,	\
+			ow : 1280,	\
+			oh : 504,	\
+			crop : 0,	\
+			resize : 0,	\
+			lens : "",	\
+			fstop : 0,	\
+			flen : 0,	\
+			gps : "",	\
+			comment : "",	\
+			xset : "" 	\
+		} 	\
+	},		\
+	c2 : {		\
+		res : 1280 x 800,	\
+		rate : 100,	\
+		exp : 1000000,	\
+		shoff : 0,	\
+		edrexp : 0,	\
+		ptframes : 10,	\
+		bcount : 0,	\
+		bperiod : 0,	\
+		hqenable : 0,	\
+		frcount : 0,	\
+		ramp : "",	\
+		state : { RDY DEF ABL },	\
+		start : 0x2405000,	\
+		len : 0x1F90000,	\
+		frsize : 64016,	\
+		frspace : 33095680,	\
+		firstfr : 0,	\
+		lastfr : 0,	\
+		format : 0,	\
+		decimation : 0,	\
+		in : 0,	\
+		out : 0,	\
+		aexpmode : 0,	\
+		aexpcomp : 0,	\
+		trigtime : {		\
+			secs : 0,	\
+			frac : 0 	\
+		},	\
+		cam : {		\
+			syncimg : 0,	\
+			master : 0,	\
+			tcmode : 0,	\
+			trigpol : 0,	\
+			trigfilt : 0,	\
+			frdelay : 0,	\
+			startonacq : 0,	\
+			aux1mode : 0,	\
+			aux2mode : 0,	\
+			memgateen : 0,	\
+			membpp : 12,	\
+			tsformat : 0 	\
+		},	\
+		info : {		\
+			hwver : 0,	\
+			sver : 0,	\
+			fver : 0,	\
+			pver : 0,	\
+			model : "",	\
+			sensor : 0,	\
+			snsversion : 0,	\
+			snsserial : 0,	\
+			kernel : 0,	\
+			swver : 0,	\
+			xver : 0,	\
+			serial : 0,	\
+			cfa : 0,	\
+			filter : 0,	\
+			name : "",	\
+			mdepths : 0x0,	\
+			genlockstatus : 0,	\
+			snstemp : 0,	\
+			camtemp : 0,	\
+			features : "" 	\
+		},	\
+		adj : {		\
+			red : 0,	\
+			green : 0,	\
+			blue : 0,	\
+			wbtemp : 0,	\
+			wbcc : 0,	\
+			wbred : 0,	\
+			wbblue : 0,	\
+			edgeg : 0,	\
+			edger : 0,	\
+			edgeth : 0,	\
+			gamma : 0,	\
+			rgamma : 0,	\
+			bgamma : 0,	\
+			toe : 0,	\
+			gain : 0,	\
+			offset : 0,	\
+			flare : 0,	\
+			hue : 0,	\
+			sat : 0,	\
+			rped : 0,	\
+			gped : 0,	\
+			bped : 0,	\
+			tone : "",	\
+			mmsat : "",	\
+			mmhue : "",	\
+			chroma : 0,	\
+			matrix : 0,	\
+			log : 0,	\
+			sdimin : 0,	\
+			sdimax : 0,	\
+			cmatrix : "",	\
+			umatrix : "",	\
+			filter : "" 	\
+		},	\
+		meta : {		\
+			name : "",	\
+			uuid : "",	\
+			system : 0,	\
+			pbrate : 0,	\
+			tcrate : 0,	\
+			trigtc : "",	\
+			pax : 0,	\
+			pay : 0,	\
+			paox : 0,	\
+			paoy : 0,	\
+			vox : 0,	\
+			voy : 0,	\
+			vw : 0,	\
+			vh : 0,	\
+			vow : 0,	\
+			voh : 0,	\
+			ox : 0,	\
+			oy : 0,	\
+			w : 0,	\
+			h : 0,	\
+			ow : 0,	\
+			oh : 0,	\
+			crop : 0,	\
+			resize : 0,	\
+			lens : "",	\
+			fstop : 0,	\
+			flen : 0,	\
+			gps : "",	\
+			comment : "",	\
+			xset : "" 	\
+		} 	\
+	},		\
+	c3 : {		\
+		res : 1280 x 800,	\
+		rate : 100,	\
+		exp : 1000000,	\
+		shoff : 0,	\
+		edrexp : 0,	\
+		ptframes : 10,	\
+		bcount : 0,	\
+		bperiod : 0,	\
+		hqenable : 0,	\
+		frcount : 0,	\
+		ramp : "",	\
+		state : { RDY DEF ABL },	\
+		start : 0x4395000,	\
+		len : 0x1F90000,	\
+		frsize : 64016,	\
+		frspace : 33095680,	\
+		firstfr : 0,	\
+		lastfr : 0,	\
+		format : 0,	\
+		decimation : 0,	\
+		in : 0,	\
+		out : 0,	\
+		aexpmode : 0,	\
+		aexpcomp : 0,	\
+		trigtime : {		\
+			secs : 0,	\
+			frac : 0 	\
+		},	\
+		cam : {		\
+			syncimg : 0,	\
+			master : 0,	\
+			tcmode : 0,	\
+			trigpol : 0,	\
+			trigfilt : 0,	\
+			frdelay : 0,	\
+			startonacq : 0,	\
+			aux1mode : 0,	\
+			aux2mode : 0,	\
+			memgateen : 0,	\
+			membpp : 12,	\
+			tsformat : 0 	\
+		},	\
+		info : {		\
+			hwver : 0,	\
+			sver : 0,	\
+			fver : 0,	\
+			pver : 0,	\
+			model : "",	\
+			sensor : 0,	\
+			snsversion : 0,	\
+			snsserial : 0,	\
+			kernel : 0,	\
+			swver : 0,	\
+			xver : 0,	\
+			serial : 0,	\
+			cfa : 0,	\
+			filter : 0,	\
+			name : "",	\
+			mdepths : 0x0,	\
+			genlockstatus : 0,	\
+			snstemp : 0,	\
+			camtemp : 0,	\
+			features : "" 	\
+		},	\
+		adj : {		\
+			red : 0,	\
+			green : 0,	\
+			blue : 0,	\
+			wbtemp : 0,	\
+			wbcc : 0,	\
+			wbred : 0,	\
+			wbblue : 0,	\
+			edgeg : 0,	\
+			edger : 0,	\
+			edgeth : 0,	\
+			gamma : 0,	\
+			rgamma : 0,	\
+			bgamma : 0,	\
+			toe : 0,	\
+			gain : 0,	\
+			offset : 0,	\
+			flare : 0,	\
+			hue : 0,	\
+			sat : 0,	\
+			rped : 0,	\
+			gped : 0,	\
+			bped : 0,	\
+			tone : "",	\
+			mmsat : "",	\
+			mmhue : "",	\
+			chroma : 0,	\
+			matrix : 0,	\
+			log : 0,	\
+			sdimin : 0,	\
+			sdimax : 0,	\
+			cmatrix : "",	\
+			umatrix : "",	\
+			filter : "" 	\
+		},	\
+		meta : {		\
+			name : "",	\
+			uuid : "",	\
+			system : 0,	\
+			pbrate : 0,	\
+			tcrate : 0,	\
+			trigtc : "",	\
+			pax : 0,	\
+			pay : 0,	\
+			paox : 0,	\
+			paoy : 0,	\
+			vox : 0,	\
+			voy : 0,	\
+			vw : 0,	\
+			vh : 0,	\
+			vow : 0,	\
+			voh : 0,	\
+			ox : 0,	\
+			oy : 0,	\
+			w : 0,	\
+			h : 0,	\
+			ow : 0,	\
+			oh : 0,	\
+			crop : 0,	\
+			resize : 0,	\
+			lens : "",	\
+			fstop : 0,	\
+			flen : 0,	\
+			gps : "",	\
+			comment : "",	\
+			xset : "" 	\
+		} 	\
+	},		\
+	c4 : {		\
+		res : 1280 x 800,	\
+		rate : 100,	\
+		exp : 1000000,	\
+		shoff : 0,	\
+		edrexp : 0,	\
+		ptframes : 10,	\
+		bcount : 0,	\
+		bperiod : 0,	\
+		hqenable : 0,	\
+		frcount : 0,	\
+		ramp : "",	\
+		state : { RDY DEF ABL },	\
+		start : 0x6325000,	\
+		len : 0x1F90000,	\
+		frsize : 64016,	\
+		frspace : 33095680,	\
+		firstfr : 0,	\
+		lastfr : 0,	\
+		format : 0,	\
+		decimation : 0,	\
+		in : 0,	\
+		out : 0,	\
+		aexpmode : 0,	\
+		aexpcomp : 0,	\
+		trigtime : {		\
+			secs : 0,	\
+			frac : 0 	\
+		},	\
+		cam : {		\
+			syncimg : 0,	\
+			master : 0,	\
+			tcmode : 0,	\
+			trigpol : 0,	\
+			trigfilt : 0,	\
+			frdelay : 0,	\
+			startonacq : 0,	\
+			aux1mode : 0,	\
+			aux2mode : 0,	\
+			memgateen : 0,	\
+			membpp : 12,	\
+			tsformat : 0 	\
+		},	\
+		info : {		\
+			hwver : 0,	\
+			sver : 0,	\
+			fver : 0,	\
+			pver : 0,	\
+			model : "",	\
+			sensor : 0,	\
+			snsversion : 0,	\
+			snsserial : 0,	\
+			kernel : 0,	\
+			swver : 0,	\
+			xver : 0,	\
+			serial : 0,	\
+			cfa : 0,	\
+			filter : 0,	\
+			name : "",	\
+			mdepths : 0x0,	\
+			genlockstatus : 0,	\
+			snstemp : 0,	\
+			camtemp : 0,	\
+			features : "" 	\
+		},	\
+		adj : {		\
+			red : 0,	\
+			green : 0,	\
+			blue : 0,	\
+			wbtemp : 0,	\
+			wbcc : 0,	\
+			wbred : 0,	\
+			wbblue : 0,	\
+			edgeg : 0,	\
+			edger : 0,	\
+			edgeth : 0,	\
+			gamma : 0,	\
+			rgamma : 0,	\
+			bgamma : 0,	\
+			toe : 0,	\
+			gain : 0,	\
+			offset : 0,	\
+			flare : 0,	\
+			hue : 0,	\
+			sat : 0,	\
+			rped : 0,	\
+			gped : 0,	\
+			bped : 0,	\
+			tone : "",	\
+			mmsat : "",	\
+			mmhue : "",	\
+			chroma : 0,	\
+			matrix : 0,	\
+			log : 0,	\
+			sdimin : 0,	\
+			sdimax : 0,	\
+			cmatrix : "",	\
+			umatrix : "",	\
+			filter : "" 	\
+		},	\
+		meta : {		\
+			name : "",	\
+			uuid : "",	\
+			system : 0,	\
+			pbrate : 0,	\
+			tcrate : 0,	\
+			trigtc : "",	\
+			pax : 0,	\
+			pay : 0,	\
+			paox : 0,	\
+			paoy : 0,	\
+			vox : 0,	\
+			voy : 0,	\
+			vw : 0,	\
+			vh : 0,	\
+			vow : 0,	\
+			voh : 0,	\
+			ox : 0,	\
+			oy : 0,	\
+			w : 0,	\
+			h : 0,	\
+			ow : 0,	\
+			oh : 0,	\
+			crop : 0,	\
+			resize : 0,	\
+			lens : "",	\
+			fstop : 0,	\
+			flen : 0,	\
+			gps : "",	\
+			comment : "",	\
+			xset : "" 	\
+		} 	\
+	},		\
+	c5 : {		\
+		res : 1280 x 800,	\
+		rate : 100,	\
+		exp : 1000000,	\
+		shoff : 0,	\
+		edrexp : 0,	\
+		ptframes : 10,	\
+		bcount : 0,	\
+		bperiod : 0,	\
+		hqenable : 0,	\
+		frcount : 0,	\
+		ramp : "",	\
+		state : { RDY DEF ABL },	\
+		start : 0x82B5000,	\
+		len : 0x1F90000,	\
+		frsize : 64016,	\
+		frspace : 33095680,	\
+		firstfr : 0,	\
+		lastfr : 0,	\
+		format : 0,	\
+		decimation : 0,	\
+		in : 0,	\
+		out : 0,	\
+		aexpmode : 0,	\
+		aexpcomp : 0,	\
+		trigtime : {		\
+			secs : 0,	\
+			frac : 0 	\
+		},	\
+		cam : {		\
+			syncimg : 0,	\
+			master : 0,	\
+			tcmode : 0,	\
+			trigpol : 0,	\
+			trigfilt : 0,	\
+			frdelay : 0,	\
+			startonacq : 0,	\
+			aux1mode : 0,	\
+			aux2mode : 0,	\
+			memgateen : 0,	\
+			membpp : 12,	\
+			tsformat : 0 	\
+		},	\
+		info : {		\
+			hwver : 0,	\
+			sver : 0,	\
+			fver : 0,	\
+			pver : 0,	\
+			model : "",	\
+			sensor : 0,	\
+			snsversion : 0,	\
+			snsserial : 0,	\
+			kernel : 0,	\
+			swver : 0,	\
+			xver : 0,	\
+			serial : 0,	\
+			cfa : 0,	\
+			filter : 0,	\
+			name : "",	\
+			mdepths : 0x0,	\
+			genlockstatus : 0,	\
+			snstemp : 0,	\
+			camtemp : 0,	\
+			features : "" 	\
+		},	\
+		adj : {		\
+			red : 0,	\
+			green : 0,	\
+			blue : 0,	\
+			wbtemp : 0,	\
+			wbcc : 0,	\
+			wbred : 0,	\
+			wbblue : 0,	\
+			edgeg : 0,	\
+			edger : 0,	\
+			edgeth : 0,	\
+			gamma : 0,	\
+			rgamma : 0,	\
+			bgamma : 0,	\
+			toe : 0,	\
+			gain : 0,	\
+			offset : 0,	\
+			flare : 0,	\
+			hue : 0,	\
+			sat : 0,	\
+			rped : 0,	\
+			gped : 0,	\
+			bped : 0,	\
+			tone : "",	\
+			mmsat : "",	\
+			mmhue : "",	\
+			chroma : 0,	\
+			matrix : 0,	\
+			log : 0,	\
+			sdimin : 0,	\
+			sdimax : 0,	\
+			cmatrix : "",	\
+			umatrix : "",	\
+			filter : "" 	\
+		},	\
+		meta : {		\
+			name : "",	\
+			uuid : "",	\
+			system : 0,	\
+			pbrate : 0,	\
+			tcrate : 0,	\
+			trigtc : "",	\
+			pax : 0,	\
+			pay : 0,	\
+			paox : 0,	\
+			paoy : 0,	\
+			vox : 0,	\
+			voy : 0,	\
+			vw : 0,	\
+			vh : 0,	\
+			vow : 0,	\
+			voh : 0,	\
+			ox : 0,	\
+			oy : 0,	\
+			w : 0,	\
+			h : 0,	\
+			ow : 0,	\
+			oh : 0,	\
+			crop : 0,	\
+			resize : 0,	\
+			lens : "",	\
+			fstop : 0,	\
+			flen : 0,	\
+			gps : "",	\
+			comment : "",	\
+			xset : "" 	\
+		} 	\
+	},		\
+	c6 : {		\
+		res : 1280 x 800,	\
+		rate : 100,	\
+		exp : 1000000,	\
+		shoff : 0,	\
+		edrexp : 0,	\
+		ptframes : 10,	\
+		bcount : 0,	\
+		bperiod : 0,	\
+		hqenable : 0,	\
+		frcount : 0,	\
+		ramp : "",	\
+		state : { RDY DEF ABL },	\
+		start : 0xA245000,	\
+		len : 0x1F90000,	\
+		frsize : 64016,	\
+		frspace : 33095680,	\
+		firstfr : 0,	\
+		lastfr : 0,	\
+		format : 0,	\
+		decimation : 0,	\
+		in : 0,	\
+		out : 0,	\
+		aexpmode : 0,	\
+		aexpcomp : 0,	\
+		trigtime : {		\
+			secs : 0,	\
+			frac : 0 	\
+		},	\
+		cam : {		\
+			syncimg : 0,	\
+			master : 0,	\
+			tcmode : 0,	\
+			trigpol : 0,	\
+			trigfilt : 0,	\
+			frdelay : 0,	\
+			startonacq : 0,	\
+			aux1mode : 0,	\
+			aux2mode : 0,	\
+			memgateen : 0,	\
+			membpp : 12,	\
+			tsformat : 0 	\
+		},	\
+		info : {		\
+			hwver : 0,	\
+			sver : 0,	\
+			fver : 0,	\
+			pver : 0,	\
+			model : "",	\
+			sensor : 0,	\
+			snsversion : 0,	\
+			snsserial : 0,	\
+			kernel : 0,	\
+			swver : 0,	\
+			xver : 0,	\
+			serial : 0,	\
+			cfa : 0,	\
+			filter : 0,	\
+			name : "",	\
+			mdepths : 0x0,	\
+			genlockstatus : 0,	\
+			snstemp : 0,	\
+			camtemp : 0,	\
+			features : "" 	\
+		},	\
+		adj : {		\
+			red : 0,	\
+			green : 0,	\
+			blue : 0,	\
+			wbtemp : 0,	\
+			wbcc : 0,	\
+			wbred : 0,	\
+			wbblue : 0,	\
+			edgeg : 0,	\
+			edger : 0,	\
+			edgeth : 0,	\
+			gamma : 0,	\
+			rgamma : 0,	\
+			bgamma : 0,	\
+			toe : 0,	\
+			gain : 0,	\
+			offset : 0,	\
+			flare : 0,	\
+			hue : 0,	\
+			sat : 0,	\
+			rped : 0,	\
+			gped : 0,	\
+			bped : 0,	\
+			tone : "",	\
+			mmsat : "",	\
+			mmhue : "",	\
+			chroma : 0,	\
+			matrix : 0,	\
+			log : 0,	\
+			sdimin : 0,	\
+			sdimax : 0,	\
+			cmatrix : "",	\
+			umatrix : "",	\
+			filter : "" 	\
+		},	\
+		meta : {		\
+			name : "",	\
+			uuid : "",	\
+			system : 0,	\
+			pbrate : 0,	\
+			tcrate : 0,	\
+			trigtc : "",	\
+			pax : 0,	\
+			pay : 0,	\
+			paox : 0,	\
+			paoy : 0,	\
+			vox : 0,	\
+			voy : 0,	\
+			vw : 0,	\
+			vh : 0,	\
+			vow : 0,	\
+			voh : 0,	\
+			ox : 0,	\
+			oy : 0,	\
+			w : 0,	\
+			h : 0,	\
+			ow : 0,	\
+			oh : 0,	\
+			crop : 0,	\
+			resize : 0,	\
+			lens : "",	\
+			fstop : 0,	\
+			flen : 0,	\
+			gps : "",	\
+			comment : "",	\
+			xset : "" 	\
+		} 	\
+	},		\
+	c7 : {		\
+		res : 1280 x 800,	\
+		rate : 100,	\
+		exp : 1000000,	\
+		shoff : 0,	\
+		edrexp : 0,	\
+		ptframes : 10,	\
+		bcount : 0,	\
+		bperiod : 0,	\
+		hqenable : 0,	\
+		frcount : 0,	\
+		ramp : "",	\
+		state : { RDY DEF ABL },	\
+		start : 0xC1D5000,	\
+		len : 0x1F90000,	\
+		frsize : 64016,	\
+		frspace : 33095680,	\
+		firstfr : 0,	\
+		lastfr : 0,	\
+		format : 0,	\
+		decimation : 0,	\
+		in : 0,	\
+		out : 0,	\
+		aexpmode : 0,	\
+		aexpcomp : 0,	\
+		trigtime : {		\
+			secs : 0,	\
+			frac : 0 	\
+		},	\
+		cam : {		\
+			syncimg : 0,	\
+			master : 0,	\
+			tcmode : 0,	\
+			trigpol : 0,	\
+			trigfilt : 0,	\
+			frdelay : 0,	\
+			startonacq : 0,	\
+			aux1mode : 0,	\
+			aux2mode : 0,	\
+			memgateen : 0,	\
+			membpp : 12,	\
+			tsformat : 0 	\
+		},	\
+		info : {		\
+			hwver : 0,	\
+			sver : 0,	\
+			fver : 0,	\
+			pver : 0,	\
+			model : "",	\
+			sensor : 0,	\
+			snsversion : 0,	\
+			snsserial : 0,	\
+			kernel : 0,	\
+			swver : 0,	\
+			xver : 0,	\
+			serial : 0,	\
+			cfa : 0,	\
+			filter : 0,	\
+			name : "",	\
+			mdepths : 0x0,	\
+			genlockstatus : 0,	\
+			snstemp : 0,	\
+			camtemp : 0,	\
+			features : "" 	\
+		},	\
+		adj : {		\
+			red : 0,	\
+			green : 0,	\
+			blue : 0,	\
+			wbtemp : 0,	\
+			wbcc : 0,	\
+			wbred : 0,	\
+			wbblue : 0,	\
+			edgeg : 0,	\
+			edger : 0,	\
+			edgeth : 0,	\
+			gamma : 0,	\
+			rgamma : 0,	\
+			bgamma : 0,	\
+			toe : 0,	\
+			gain : 0,	\
+			offset : 0,	\
+			flare : 0,	\
+			hue : 0,	\
+			sat : 0,	\
+			rped : 0,	\
+			gped : 0,	\
+			bped : 0,	\
+			tone : "",	\
+			mmsat : "",	\
+			mmhue : "",	\
+			chroma : 0,	\
+			matrix : 0,	\
+			log : 0,	\
+			sdimin : 0,	\
+			sdimax : 0,	\
+			cmatrix : "",	\
+			umatrix : "",	\
+			filter : "" 	\
+		},	\
+		meta : {		\
+			name : "",	\
+			uuid : "",	\
+			system : 0,	\
+			pbrate : 0,	\
+			tcrate : 0,	\
+			trigtc : "",	\
+			pax : 0,	\
+			pay : 0,	\
+			paox : 0,	\
+			paoy : 0,	\
+			vox : 0,	\
+			voy : 0,	\
+			vw : 0,	\
+			vh : 0,	\
+			vow : 0,	\
+			voh : 0,	\
+			ox : 0,	\
+			oy : 0,	\
+			w : 0,	\
+			h : 0,	\
+			ow : 0,	\
+			oh : 0,	\
+			crop : 0,	\
+			resize : 0,	\
+			lens : "",	\
+			fstop : 0,	\
+			flen : 0,	\
+			gps : "",	\
+			comment : "",	\
+			xset : "" 	\
+		} 	\
+	},		\
+	c8 : {		\
+		res : 1280 x 800,	\
+		rate : 100,	\
+		exp : 1000000,	\
+		shoff : 0,	\
+		edrexp : 0,	\
+		ptframes : 10,	\
+		bcount : 0,	\
+		bperiod : 0,	\
+		hqenable : 0,	\
+		frcount : 0,	\
+		ramp : "",	\
+		state : { RDY DEF ABL },	\
+		start : 0xE165000,	\
+		len : 0x1F90000,	\
+		frsize : 64016,	\
+		frspace : 33095680,	\
+		firstfr : 0,	\
+		lastfr : 0,	\
+		format : 0,	\
+		decimation : 0,	\
+		in : 0,	\
+		out : 0,	\
+		aexpmode : 0,	\
+		aexpcomp : 0,	\
+		trigtime : {		\
+			secs : 0,	\
+			frac : 0 	\
+		},	\
+		cam : {		\
+			syncimg : 0,	\
+			master : 0,	\
+			tcmode : 0,	\
+			trigpol : 0,	\
+			trigfilt : 0,	\
+			frdelay : 0,	\
+			startonacq : 0,	\
+			aux1mode : 0,	\
+			aux2mode : 0,	\
+			memgateen : 0,	\
+			membpp : 12,	\
+			tsformat : 0 	\
+		},	\
+		info : {		\
+			hwver : 0,	\
+			sver : 0,	\
+			fver : 0,	\
+			pver : 0,	\
+			model : "",	\
+			sensor : 0,	\
+			snsversion : 0,	\
+			snsserial : 0,	\
+			kernel : 0,	\
+			swver : 0,	\
+			xver : 0,	\
+			serial : 0,	\
+			cfa : 0,	\
+			filter : 0,	\
+			name : "",	\
+			mdepths : 0x0,	\
+			genlockstatus : 0,	\
+			snstemp : 0,	\
+			camtemp : 0,	\
+			features : "" 	\
+		},	\
+		adj : {		\
+			red : 0,	\
+			green : 0,	\
+			blue : 0,	\
+			wbtemp : 0,	\
+			wbcc : 0,	\
+			wbred : 0,	\
+			wbblue : 0,	\
+			edgeg : 0,	\
+			edger : 0,	\
+			edgeth : 0,	\
+			gamma : 0,	\
+			rgamma : 0,	\
+			bgamma : 0,	\
+			toe : 0,	\
+			gain : 0,	\
+			offset : 0,	\
+			flare : 0,	\
+			hue : 0,	\
+			sat : 0,	\
+			rped : 0,	\
+			gped : 0,	\
+			bped : 0,	\
+			tone : "",	\
+			mmsat : "",	\
+			mmhue : "",	\
+			chroma : 0,	\
+			matrix : 0,	\
+			log : 0,	\
+			sdimin : 0,	\
+			sdimax : 0,	\
+			cmatrix : "",	\
+			umatrix : "",	\
+			filter : "" 	\
+		},	\
+		meta : {		\
+			name : "",	\
+			uuid : "",	\
+			system : 0,	\
+			pbrate : 0,	\
+			tcrate : 0,	\
+			trigtc : "",	\
+			pax : 0,	\
+			pay : 0,	\
+			paox : 0,	\
+			paoy : 0,	\
+			vox : 0,	\
+			voy : 0,	\
+			vw : 0,	\
+			vh : 0,	\
+			vow : 0,	\
+			voh : 0,	\
+			ox : 0,	\
+			oy : 0,	\
+			w : 0,	\
+			h : 0,	\
+			ow : 0,	\
+			oh : 0,	\
+			crop : 0,	\
+			resize : 0,	\
+			lens : "",	\
+			fstop : 0,	\
+			flen : 0,	\
+			gps : "",	\
+			comment : "",	\
+			xset : "" 	\
+		} 	\
+	},		\
+	c9 : {		\
+		res : 1280 x 800,	\
+		rate : 100,	\
+		exp : 1000000,	\
+		shoff : 0,	\
+		edrexp : 0,	\
+		ptframes : 10,	\
+		bcount : 0,	\
+		bperiod : 0,	\
+		hqenable : 0,	\
+		frcount : 0,	\
+		ramp : "",	\
+		state : { RDY DEF ABL },	\
+		start : 0x100F5000,	\
+		len : 0x1F90000,	\
+		frsize : 64016,	\
+		frspace : 33095680,	\
+		firstfr : 0,	\
+		lastfr : 0,	\
+		format : 0,	\
+		decimation : 0,	\
+		in : 0,	\
+		out : 0,	\
+		aexpmode : 0,	\
+		aexpcomp : 0,	\
+		trigtime : {		\
+			secs : 0,	\
+			frac : 0 	\
+		},	\
+		cam : {		\
+			syncimg : 0,	\
+			master : 0,	\
+			tcmode : 0,	\
+			trigpol : 0,	\
+			trigfilt : 0,	\
+			frdelay : 0,	\
+			startonacq : 0,	\
+			aux1mode : 0,	\
+			aux2mode : 0,	\
+			memgateen : 0,	\
+			membpp : 12,	\
+			tsformat : 0 	\
+		},	\
+		info : {		\
+			hwver : 0,	\
+			sver : 0,	\
+			fver : 0,	\
+			pver : 0,	\
+			model : "",	\
+			sensor : 0,	\
+			snsversion : 0,	\
+			snsserial : 0,	\
+			kernel : 0,	\
+			swver : 0,	\
+			xver : 0,	\
+			serial : 0,	\
+			cfa : 0,	\
+			filter : 0,	\
+			name : "",	\
+			mdepths : 0x0,	\
+			genlockstatus : 0,	\
+			snstemp : 0,	\
+			camtemp : 0,	\
+			features : "" 	\
+		},	\
+		adj : {		\
+			red : 0,	\
+			green : 0,	\
+			blue : 0,	\
+			wbtemp : 0,	\
+			wbcc : 0,	\
+			wbred : 0,	\
+			wbblue : 0,	\
+			edgeg : 0,	\
+			edger : 0,	\
+			edgeth : 0,	\
+			gamma : 0,	\
+			rgamma : 0,	\
+			bgamma : 0,	\
+			toe : 0,	\
+			gain : 0,	\
+			offset : 0,	\
+			flare : 0,	\
+			hue : 0,	\
+			sat : 0,	\
+			rped : 0,	\
+			gped : 0,	\
+			bped : 0,	\
+			tone : "",	\
+			mmsat : "",	\
+			mmhue : "",	\
+			chroma : 0,	\
+			matrix : 0,	\
+			log : 0,	\
+			sdimin : 0,	\
+			sdimax : 0,	\
+			cmatrix : "",	\
+			umatrix : "",	\
+			filter : "" 	\
+		},	\
+		meta : {		\
+			name : "",	\
+			uuid : "",	\
+			system : 0,	\
+			pbrate : 0,	\
+			tcrate : 0,	\
+			trigtc : "",	\
+			pax : 0,	\
+			pay : 0,	\
+			paox : 0,	\
+			paoy : 0,	\
+			vox : 0,	\
+			voy : 0,	\
+			vw : 0,	\
+			vh : 0,	\
+			vow : 0,	\
+			voh : 0,	\
+			ox : 0,	\
+			oy : 0,	\
+			w : 0,	\
+			h : 0,	\
+			ow : 0,	\
+			oh : 0,	\
+			crop : 0,	\
+			resize : 0,	\
+			lens : "",	\
+			fstop : 0,	\
+			flen : 0,	\
+			gps : "",	\
+			comment : "",	\
+			xset : "" 	\
+		} 	\
+	},		\
+	c10 : {		\
+		res : 1280 x 800,	\
+		rate : 100,	\
+		exp : 1000000,	\
+		shoff : 0,	\
+		edrexp : 0,	\
+		ptframes : 10,	\
+		bcount : 0,	\
+		bperiod : 0,	\
+		hqenable : 0,	\
+		frcount : 0,	\
+		ramp : "",	\
+		state : { RDY DEF ABL },	\
+		start : 0x12085000,	\
+		len : 0x1F90000,	\
+		frsize : 64016,	\
+		frspace : 33095680,	\
+		firstfr : 0,	\
+		lastfr : 0,	\
+		format : 0,	\
+		decimation : 0,	\
+		in : 0,	\
+		out : 0,	\
+		aexpmode : 0,	\
+		aexpcomp : 0,	\
+		trigtime : {		\
+			secs : 0,	\
+			frac : 0 	\
+		},	\
+		cam : {		\
+			syncimg : 0,	\
+			master : 0,	\
+			tcmode : 0,	\
+			trigpol : 0,	\
+			trigfilt : 0,	\
+			frdelay : 0,	\
+			startonacq : 0,	\
+			aux1mode : 0,	\
+			aux2mode : 0,	\
+			memgateen : 0,	\
+			membpp : 12,	\
+			tsformat : 0 	\
+		},	\
+		info : {		\
+			hwver : 0,	\
+			sver : 0,	\
+			fver : 0,	\
+			pver : 0,	\
+			model : "",	\
+			sensor : 0,	\
+			snsversion : 0,	\
+			snsserial : 0,	\
+			kernel : 0,	\
+			swver : 0,	\
+			xver : 0,	\
+			serial : 0,	\
+			cfa : 0,	\
+			filter : 0,	\
+			name : "",	\
+			mdepths : 0x0,	\
+			genlockstatus : 0,	\
+			snstemp : 0,	\
+			camtemp : 0,	\
+			features : "" 	\
+		},	\
+		adj : {		\
+			red : 0,	\
+			green : 0,	\
+			blue : 0,	\
+			wbtemp : 0,	\
+			wbcc : 0,	\
+			wbred : 0,	\
+			wbblue : 0,	\
+			edgeg : 0,	\
+			edger : 0,	\
+			edgeth : 0,	\
+			gamma : 0,	\
+			rgamma : 0,	\
+			bgamma : 0,	\
+			toe : 0,	\
+			gain : 0,	\
+			offset : 0,	\
+			flare : 0,	\
+			hue : 0,	\
+			sat : 0,	\
+			rped : 0,	\
+			gped : 0,	\
+			bped : 0,	\
+			tone : "",	\
+			mmsat : "",	\
+			mmhue : "",	\
+			chroma : 0,	\
+			matrix : 0,	\
+			log : 0,	\
+			sdimin : 0,	\
+			sdimax : 0,	\
+			cmatrix : "",	\
+			umatrix : "",	\
+			filter : "" 	\
+		},	\
+		meta : {		\
+			name : "",	\
+			uuid : "",	\
+			system : 0,	\
+			pbrate : 0,	\
+			tcrate : 0,	\
+			trigtc : "",	\
+			pax : 0,	\
+			pay : 0,	\
+			paox : 0,	\
+			paoy : 0,	\
+			vox : 0,	\
+			voy : 0,	\
+			vw : 0,	\
+			vh : 0,	\
+			vow : 0,	\
+			voh : 0,	\
+			ox : 0,	\
+			oy : 0,	\
+			w : 0,	\
+			h : 0,	\
+			ow : 0,	\
+			oh : 0,	\
+			crop : 0,	\
+			resize : 0,	\
+			lens : "",	\
+			fstop : 0,	\
+			flen : 0,	\
+			gps : "",	\
+			comment : "",	\
+			xset : "" 	\
+		} 	\
+	},		\
+	c11 : {		\
+		res : 1280 x 800,	\
+		rate : 100,	\
+		exp : 1000000,	\
+		shoff : 0,	\
+		edrexp : 0,	\
+		ptframes : 10,	\
+		bcount : 0,	\
+		bperiod : 0,	\
+		hqenable : 0,	\
+		frcount : 0,	\
+		ramp : "",	\
+		state : { RDY DEF ABL },	\
+		start : 0x14015000,	\
+		len : 0x1F90000,	\
+		frsize : 64016,	\
+		frspace : 33095680,	\
+		firstfr : 0,	\
+		lastfr : 0,	\
+		format : 0,	\
+		decimation : 0,	\
+		in : 0,	\
+		out : 0,	\
+		aexpmode : 0,	\
+		aexpcomp : 0,	\
+		trigtime : {		\
+			secs : 0,	\
+			frac : 0 	\
+		},	\
+		cam : {		\
+			syncimg : 0,	\
+			master : 0,	\
+			tcmode : 0,	\
+			trigpol : 0,	\
+			trigfilt : 0,	\
+			frdelay : 0,	\
+			startonacq : 0,	\
+			aux1mode : 0,	\
+			aux2mode : 0,	\
+			memgateen : 0,	\
+			membpp : 12,	\
+			tsformat : 0 	\
+		},	\
+		info : {		\
+			hwver : 0,	\
+			sver : 0,	\
+			fver : 0,	\
+			pver : 0,	\
+			model : "",	\
+			sensor : 0,	\
+			snsversion : 0,	\
+			snsserial : 0,	\
+			kernel : 0,	\
+			swver : 0,	\
+			xver : 0,	\
+			serial : 0,	\
+			cfa : 0,	\
+			filter : 0,	\
+			name : "",	\
+			mdepths : 0x0,	\
+			genlockstatus : 0,	\
+			snstemp : 0,	\
+			camtemp : 0,	\
+			features : "" 	\
+		},	\
+		adj : {		\
+			red : 0,	\
+			green : 0,	\
+			blue : 0,	\
+			wbtemp : 0,	\
+			wbcc : 0,	\
+			wbred : 0,	\
+			wbblue : 0,	\
+			edgeg : 0,	\
+			edger : 0,	\
+			edgeth : 0,	\
+			gamma : 0,	\
+			rgamma : 0,	\
+			bgamma : 0,	\
+			toe : 0,	\
+			gain : 0,	\
+			offset : 0,	\
+			flare : 0,	\
+			hue : 0,	\
+			sat : 0,	\
+			rped : 0,	\
+			gped : 0,	\
+			bped : 0,	\
+			tone : "",	\
+			mmsat : "",	\
+			mmhue : "",	\
+			chroma : 0,	\
+			matrix : 0,	\
+			log : 0,	\
+			sdimin : 0,	\
+			sdimax : 0,	\
+			cmatrix : "",	\
+			umatrix : "",	\
+			filter : "" 	\
+		},	\
+		meta : {		\
+			name : "",	\
+			uuid : "",	\
+			system : 0,	\
+			pbrate : 0,	\
+			tcrate : 0,	\
+			trigtc : "",	\
+			pax : 0,	\
+			pay : 0,	\
+			paox : 0,	\
+			paoy : 0,	\
+			vox : 0,	\
+			voy : 0,	\
+			vw : 0,	\
+			vh : 0,	\
+			vow : 0,	\
+			voh : 0,	\
+			ox : 0,	\
+			oy : 0,	\
+			w : 0,	\
+			h : 0,	\
+			ow : 0,	\
+			oh : 0,	\
+			crop : 0,	\
+			resize : 0,	\
+			lens : "",	\
+			fstop : 0,	\
+			flen : 0,	\
+			gps : "",	\
+			comment : "",	\
+			xset : "" 	\
+		} 	\
+	},		\
+	c12 : {		\
+		res : 1280 x 800,	\
+		rate : 100,	\
+		exp : 1000000,	\
+		shoff : 0,	\
+		edrexp : 0,	\
+		ptframes : 10,	\
+		bcount : 0,	\
+		bperiod : 0,	\
+		hqenable : 0,	\
+		frcount : 0,	\
+		ramp : "",	\
+		state : { RDY DEF ABL },	\
+		start : 0x15FA5000,	\
+		len : 0x1F90000,	\
+		frsize : 64016,	\
+		frspace : 33095680,	\
+		firstfr : 0,	\
+		lastfr : 0,	\
+		format : 0,	\
+		decimation : 0,	\
+		in : 0,	\
+		out : 0,	\
+		aexpmode : 0,	\
+		aexpcomp : 0,	\
+		trigtime : {		\
+			secs : 0,	\
+			frac : 0 	\
+		},	\
+		cam : {		\
+			syncimg : 0,	\
+			master : 0,	\
+			tcmode : 0,	\
+			trigpol : 0,	\
+			trigfilt : 0,	\
+			frdelay : 0,	\
+			startonacq : 0,	\
+			aux1mode : 0,	\
+			aux2mode : 0,	\
+			memgateen : 0,	\
+			membpp : 12,	\
+			tsformat : 0 	\
+		},	\
+		info : {		\
+			hwver : 0,	\
+			sver : 0,	\
+			fver : 0,	\
+			pver : 0,	\
+			model : "",	\
+			sensor : 0,	\
+			snsversion : 0,	\
+			snsserial : 0,	\
+			kernel : 0,	\
+			swver : 0,	\
+			xver : 0,	\
+			serial : 0,	\
+			cfa : 0,	\
+			filter : 0,	\
+			name : "",	\
+			mdepths : 0x0,	\
+			genlockstatus : 0,	\
+			snstemp : 0,	\
+			camtemp : 0,	\
+			features : "" 	\
+		},	\
+		adj : {		\
+			red : 0,	\
+			green : 0,	\
+			blue : 0,	\
+			wbtemp : 0,	\
+			wbcc : 0,	\
+			wbred : 0,	\
+			wbblue : 0,	\
+			edgeg : 0,	\
+			edger : 0,	\
+			edgeth : 0,	\
+			gamma : 0,	\
+			rgamma : 0,	\
+			bgamma : 0,	\
+			toe : 0,	\
+			gain : 0,	\
+			offset : 0,	\
+			flare : 0,	\
+			hue : 0,	\
+			sat : 0,	\
+			rped : 0,	\
+			gped : 0,	\
+			bped : 0,	\
+			tone : "",	\
+			mmsat : "",	\
+			mmhue : "",	\
+			chroma : 0,	\
+			matrix : 0,	\
+			log : 0,	\
+			sdimin : 0,	\
+			sdimax : 0,	\
+			cmatrix : "",	\
+			umatrix : "",	\
+			filter : "" 	\
+		},	\
+		meta : {		\
+			name : "",	\
+			uuid : "",	\
+			system : 0,	\
+			pbrate : 0,	\
+			tcrate : 0,	\
+			trigtc : "",	\
+			pax : 0,	\
+			pay : 0,	\
+			paox : 0,	\
+			paoy : 0,	\
+			vox : 0,	\
+			voy : 0,	\
+			vw : 0,	\
+			vh : 0,	\
+			vow : 0,	\
+			voh : 0,	\
+			ox : 0,	\
+			oy : 0,	\
+			w : 0,	\
+			h : 0,	\
+			ow : 0,	\
+			oh : 0,	\
+			crop : 0,	\
+			resize : 0,	\
+			lens : "",	\
+			fstop : 0,	\
+			flen : 0,	\
+			gps : "",	\
+			comment : "",	\
+			xset : "" 	\
+		} 	\
+	},		\
+	c13 : {		\
+		res : 1280 x 800,	\
+		rate : 100,	\
+		exp : 1000000,	\
+		shoff : 0,	\
+		edrexp : 0,	\
+		ptframes : 10,	\
+		bcount : 0,	\
+		bperiod : 0,	\
+		hqenable : 0,	\
+		frcount : 0,	\
+		ramp : "",	\
+		state : { RDY DEF ABL },	\
+		start : 0x17F35000,	\
+		len : 0x1F90000,	\
+		frsize : 64016,	\
+		frspace : 33095680,	\
+		firstfr : 0,	\
+		lastfr : 0,	\
+		format : 0,	\
+		decimation : 0,	\
+		in : 0,	\
+		out : 0,	\
+		aexpmode : 0,	\
+		aexpcomp : 0,	\
+		trigtime : {		\
+			secs : 0,	\
+			frac : 0 	\
+		},	\
+		cam : {		\
+			syncimg : 0,	\
+			master : 0,	\
+			tcmode : 0,	\
+			trigpol : 0,	\
+			trigfilt : 0,	\
+			frdelay : 0,	\
+			startonacq : 0,	\
+			aux1mode : 0,	\
+			aux2mode : 0,	\
+			memgateen : 0,	\
+			membpp : 12,	\
+			tsformat : 0 	\
+		},	\
+		info : {		\
+			hwver : 0,	\
+			sver : 0,	\
+			fver : 0,	\
+			pver : 0,	\
+			model : "",	\
+			sensor : 0,	\
+			snsversion : 0,	\
+			snsserial : 0,	\
+			kernel : 0,	\
+			swver : 0,	\
+			xver : 0,	\
+			serial : 0,	\
+			cfa : 0,	\
+			filter : 0,	\
+			name : "",	\
+			mdepths : 0x0,	\
+			genlockstatus : 0,	\
+			snstemp : 0,	\
+			camtemp : 0,	\
+			features : "" 	\
+		},	\
+		adj : {		\
+			red : 0,	\
+			green : 0,	\
+			blue : 0,	\
+			wbtemp : 0,	\
+			wbcc : 0,	\
+			wbred : 0,	\
+			wbblue : 0,	\
+			edgeg : 0,	\
+			edger : 0,	\
+			edgeth : 0,	\
+			gamma : 0,	\
+			rgamma : 0,	\
+			bgamma : 0,	\
+			toe : 0,	\
+			gain : 0,	\
+			offset : 0,	\
+			flare : 0,	\
+			hue : 0,	\
+			sat : 0,	\
+			rped : 0,	\
+			gped : 0,	\
+			bped : 0,	\
+			tone : "",	\
+			mmsat : "",	\
+			mmhue : "",	\
+			chroma : 0,	\
+			matrix : 0,	\
+			log : 0,	\
+			sdimin : 0,	\
+			sdimax : 0,	\
+			cmatrix : "",	\
+			umatrix : "",	\
+			filter : "" 	\
+		},	\
+		meta : {		\
+			name : "",	\
+			uuid : "",	\
+			system : 0,	\
+			pbrate : 0,	\
+			tcrate : 0,	\
+			trigtc : "",	\
+			pax : 0,	\
+			pay : 0,	\
+			paox : 0,	\
+			paoy : 0,	\
+			vox : 0,	\
+			voy : 0,	\
+			vw : 0,	\
+			vh : 0,	\
+			vow : 0,	\
+			voh : 0,	\
+			ox : 0,	\
+			oy : 0,	\
+			w : 0,	\
+			h : 0,	\
+			ow : 0,	\
+			oh : 0,	\
+			crop : 0,	\
+			resize : 0,	\
+			lens : "",	\
+			fstop : 0,	\
+			flen : 0,	\
+			gps : "",	\
+			comment : "",	\
+			xset : "" 	\
+		} 	\
+	},		\
+	c14 : {		\
+		res : 1280 x 800,	\
+		rate : 100,	\
+		exp : 1000000,	\
+		shoff : 0,	\
+		edrexp : 0,	\
+		ptframes : 10,	\
+		bcount : 0,	\
+		bperiod : 0,	\
+		hqenable : 0,	\
+		frcount : 0,	\
+		ramp : "",	\
+		state : { RDY DEF ABL },	\
+		start : 0x19EC5000,	\
+		len : 0x1F90000,	\
+		frsize : 64016,	\
+		frspace : 33095680,	\
+		firstfr : 0,	\
+		lastfr : 0,	\
+		format : 0,	\
+		decimation : 0,	\
+		in : 0,	\
+		out : 0,	\
+		aexpmode : 0,	\
+		aexpcomp : 0,	\
+		trigtime : {		\
+			secs : 0,	\
+			frac : 0 	\
+		},	\
+		cam : {		\
+			syncimg : 0,	\
+			master : 0,	\
+			tcmode : 0,	\
+			trigpol : 0,	\
+			trigfilt : 0,	\
+			frdelay : 0,	\
+			startonacq : 0,	\
+			aux1mode : 0,	\
+			aux2mode : 0,	\
+			memgateen : 0,	\
+			membpp : 12,	\
+			tsformat : 0 	\
+		},	\
+		info : {		\
+			hwver : 0,	\
+			sver : 0,	\
+			fver : 0,	\
+			pver : 0,	\
+			model : "",	\
+			sensor : 0,	\
+			snsversion : 0,	\
+			snsserial : 0,	\
+			kernel : 0,	\
+			swver : 0,	\
+			xver : 0,	\
+			serial : 0,	\
+			cfa : 0,	\
+			filter : 0,	\
+			name : "",	\
+			mdepths : 0x0,	\
+			genlockstatus : 0,	\
+			snstemp : 0,	\
+			camtemp : 0,	\
+			features : "" 	\
+		},	\
+		adj : {		\
+			red : 0,	\
+			green : 0,	\
+			blue : 0,	\
+			wbtemp : 0,	\
+			wbcc : 0,	\
+			wbred : 0,	\
+			wbblue : 0,	\
+			edgeg : 0,	\
+			edger : 0,	\
+			edgeth : 0,	\
+			gamma : 0,	\
+			rgamma : 0,	\
+			bgamma : 0,	\
+			toe : 0,	\
+			gain : 0,	\
+			offset : 0,	\
+			flare : 0,	\
+			hue : 0,	\
+			sat : 0,	\
+			rped : 0,	\
+			gped : 0,	\
+			bped : 0,	\
+			tone : "",	\
+			mmsat : "",	\
+			mmhue : "",	\
+			chroma : 0,	\
+			matrix : 0,	\
+			log : 0,	\
+			sdimin : 0,	\
+			sdimax : 0,	\
+			cmatrix : "",	\
+			umatrix : "",	\
+			filter : "" 	\
+		},	\
+		meta : {		\
+			name : "",	\
+			uuid : "",	\
+			system : 0,	\
+			pbrate : 0,	\
+			tcrate : 0,	\
+			trigtc : "",	\
+			pax : 0,	\
+			pay : 0,	\
+			paox : 0,	\
+			paoy : 0,	\
+			vox : 0,	\
+			voy : 0,	\
+			vw : 0,	\
+			vh : 0,	\
+			vow : 0,	\
+			voh : 0,	\
+			ox : 0,	\
+			oy : 0,	\
+			w : 0,	\
+			h : 0,	\
+			ow : 0,	\
+			oh : 0,	\
+			crop : 0,	\
+			resize : 0,	\
+			lens : "",	\
+			fstop : 0,	\
+			flen : 0,	\
+			gps : "",	\
+			comment : "",	\
+			xset : "" 	\
+		} 	\
+	},		\
+	c15 : {		\
+		res : 1280 x 800,	\
+		rate : 100,	\
+		exp : 1000000,	\
+		shoff : 0,	\
+		edrexp : 0,	\
+		ptframes : 10,	\
+		bcount : 0,	\
+		bperiod : 0,	\
+		hqenable : 0,	\
+		frcount : 0,	\
+		ramp : "",	\
+		state : { RDY DEF ABL },	\
+		start : 0x1BE55000,	\
+		len : 0x1F90000,	\
+		frsize : 64016,	\
+		frspace : 33095680,	\
+		firstfr : 0,	\
+		lastfr : 0,	\
+		format : 0,	\
+		decimation : 0,	\
+		in : 0,	\
+		out : 0,	\
+		aexpmode : 0,	\
+		aexpcomp : 0,	\
+		trigtime : {		\
+			secs : 0,	\
+			frac : 0 	\
+		},	\
+		cam : {		\
+			syncimg : 0,	\
+			master : 0,	\
+			tcmode : 0,	\
+			trigpol : 0,	\
+			trigfilt : 0,	\
+			frdelay : 0,	\
+			startonacq : 0,	\
+			aux1mode : 0,	\
+			aux2mode : 0,	\
+			memgateen : 0,	\
+			membpp : 12,	\
+			tsformat : 0 	\
+		},	\
+		info : {		\
+			hwver : 0,	\
+			sver : 0,	\
+			fver : 0,	\
+			pver : 0,	\
+			model : "",	\
+			sensor : 0,	\
+			snsversion : 0,	\
+			snsserial : 0,	\
+			kernel : 0,	\
+			swver : 0,	\
+			xver : 0,	\
+			serial : 0,	\
+			cfa : 0,	\
+			filter : 0,	\
+			name : "",	\
+			mdepths : 0x0,	\
+			genlockstatus : 0,	\
+			snstemp : 0,	\
+			camtemp : 0,	\
+			features : "" 	\
+		},	\
+		adj : {		\
+			red : 0,	\
+			green : 0,	\
+			blue : 0,	\
+			wbtemp : 0,	\
+			wbcc : 0,	\
+			wbred : 0,	\
+			wbblue : 0,	\
+			edgeg : 0,	\
+			edger : 0,	\
+			edgeth : 0,	\
+			gamma : 0,	\
+			rgamma : 0,	\
+			bgamma : 0,	\
+			toe : 0,	\
+			gain : 0,	\
+			offset : 0,	\
+			flare : 0,	\
+			hue : 0,	\
+			sat : 0,	\
+			rped : 0,	\
+			gped : 0,	\
+			bped : 0,	\
+			tone : "",	\
+			mmsat : "",	\
+			mmhue : "",	\
+			chroma : 0,	\
+			matrix : 0,	\
+			log : 0,	\
+			sdimin : 0,	\
+			sdimax : 0,	\
+			cmatrix : "",	\
+			umatrix : "",	\
+			filter : "" 	\
+		},	\
+		meta : {		\
+			name : "",	\
+			uuid : "",	\
+			system : 0,	\
+			pbrate : 0,	\
+			tcrate : 0,	\
+			trigtc : "",	\
+			pax : 0,	\
+			pay : 0,	\
+			paox : 0,	\
+			paoy : 0,	\
+			vox : 0,	\
+			voy : 0,	\
+			vw : 0,	\
+			vh : 0,	\
+			vow : 0,	\
+			voh : 0,	\
+			ox : 0,	\
+			oy : 0,	\
+			w : 0,	\
+			h : 0,	\
+			ow : 0,	\
+			oh : 0,	\
+			crop : 0,	\
+			resize : 0,	\
+			lens : "",	\
+			fstop : 0,	\
+			flen : 0,	\
+			gps : "",	\
+			comment : "",	\
+			xset : "" 	\
+		} 	\
+	},		\
+	c16 : {		\
+		res : 1280 x 800,	\
+		rate : 100,	\
+		exp : 1000000,	\
+		shoff : 0,	\
+		edrexp : 0,	\
+		ptframes : 10,	\
+		bcount : 0,	\
+		bperiod : 0,	\
+		hqenable : 0,	\
+		frcount : 0,	\
+		ramp : "",	\
+		state : { RDY DEF ABL },	\
+		start : 0x1DDE5000,	\
+		len : 0x1F90000,	\
+		frsize : 64016,	\
+		frspace : 33095680,	\
+		firstfr : 0,	\
+		lastfr : 0,	\
+		format : 0,	\
+		decimation : 0,	\
+		in : 0,	\
+		out : 0,	\
+		aexpmode : 0,	\
+		aexpcomp : 0,	\
+		trigtime : {		\
+			secs : 0,	\
+			frac : 0 	\
+		},	\
+		cam : {		\
+			syncimg : 0,	\
+			master : 0,	\
+			tcmode : 0,	\
+			trigpol : 0,	\
+			trigfilt : 0,	\
+			frdelay : 0,	\
+			startonacq : 0,	\
+			aux1mode : 0,	\
+			aux2mode : 0,	\
+			memgateen : 0,	\
+			membpp : 12,	\
+			tsformat : 0 	\
+		},	\
+		info : {		\
+			hwver : 0,	\
+			sver : 0,	\
+			fver : 0,	\
+			pver : 0,	\
+			model : "",	\
+			sensor : 0,	\
+			snsversion : 0,	\
+			snsserial : 0,	\
+			kernel : 0,	\
+			swver : 0,	\
+			xver : 0,	\
+			serial : 0,	\
+			cfa : 0,	\
+			filter : 0,	\
+			name : "",	\
+			mdepths : 0x0,	\
+			genlockstatus : 0,	\
+			snstemp : 0,	\
+			camtemp : 0,	\
+			features : "" 	\
+		},	\
+		adj : {		\
+			red : 0,	\
+			green : 0,	\
+			blue : 0,	\
+			wbtemp : 0,	\
+			wbcc : 0,	\
+			wbred : 0,	\
+			wbblue : 0,	\
+			edgeg : 0,	\
+			edger : 0,	\
+			edgeth : 0,	\
+			gamma : 0,	\
+			rgamma : 0,	\
+			bgamma : 0,	\
+			toe : 0,	\
+			gain : 0,	\
+			offset : 0,	\
+			flare : 0,	\
+			hue : 0,	\
+			sat : 0,	\
+			rped : 0,	\
+			gped : 0,	\
+			bped : 0,	\
+			tone : "",	\
+			mmsat : "",	\
+			mmhue : "",	\
+			chroma : 0,	\
+			matrix : 0,	\
+			log : 0,	\
+			sdimin : 0,	\
+			sdimax : 0,	\
+			cmatrix : "",	\
+			umatrix : "",	\
+			filter : "" 	\
+		},	\
+		meta : {		\
+			name : "",	\
+			uuid : "",	\
+			system : 0,	\
+			pbrate : 0,	\
+			tcrate : 0,	\
+			trigtc : "",	\
+			pax : 0,	\
+			pay : 0,	\
+			paox : 0,	\
+			paoy : 0,	\
+			vox : 0,	\
+			voy : 0,	\
+			vw : 0,	\
+			vh : 0,	\
+			vow : 0,	\
+			voh : 0,	\
+			ox : 0,	\
+			oy : 0,	\
+			w : 0,	\
+			h : 0,	\
+			ow : 0,	\
+			oh : 0,	\
+			crop : 0,	\
+			resize : 0,	\
+			lens : "",	\
+			fstop : 0,	\
+			flen : 0,	\
+			gps : "",	\
+			comment : "",	\
+			xset : "" 	\
+		} 	\
+	},		\
+	fc0 : {		\
+		res : 0 x 0,	\
+		rate : 0,	\
+		exp : 0,	\
+		shoff : 0,	\
+		edrexp : 0,	\
+		ptframes : 0,	\
+		bcount : 0,	\
+		bperiod : 0,	\
+		hqenable : 0,	\
+		frcount : 0,	\
+		ramp : "",	\
+		state : { INV },	\
+		start : 0x0,	\
+		len : 0x0,	\
+		frsize : 0,	\
+		frspace : 0,	\
+		firstfr : 0,	\
+		lastfr : 0,	\
+		format : 0,	\
+		decimation : 0,	\
+		in : 0,	\
+		out : 0,	\
+		aexpmode : 0,	\
+		aexpcomp : 0,	\
+		trigtime : {		\
+			secs : 0,	\
+			frac : 0 	\
+		},	\
+		cam : {		\
+			syncimg : 0,	\
+			master : 0,	\
+			tcmode : 0,	\
+			trigpol : 0,	\
+			trigfilt : 0,	\
+			frdelay : 0,	\
+			startonacq : 0,	\
+			aux1mode : 0,	\
+			aux2mode : 0,	\
+			memgateen : 0,	\
+			membpp : 0,	\
+			tsformat : 0 	\
+		},	\
+		info : {		\
+			hwver : 0,	\
+			sver : 0,	\
+			fver : 0,	\
+			pver : 0,	\
+			model : "",	\
+			sensor : 0,	\
+			snsversion : 0,	\
+			snsserial : 0,	\
+			kernel : 0,	\
+			swver : 0,	\
+			xver : 0,	\
+			serial : 0,	\
+			cfa : 0,	\
+			filter : 0,	\
+			name : "",	\
+			mdepths : 0x0,	\
+			genlockstatus : 0,	\
+			snstemp : 0,	\
+			camtemp : 0,	\
+			features : "" 	\
+		},	\
+		adj : {		\
+			red : 0,	\
+			green : 0,	\
+			blue : 0,	\
+			wbtemp : 0,	\
+			wbcc : 0,	\
+			wbred : 0,	\
+			wbblue : 0,	\
+			edgeg : 0,	\
+			edger : 0,	\
+			edgeth : 0,	\
+			gamma : 0,	\
+			rgamma : 0,	\
+			bgamma : 0,	\
+			toe : 0,	\
+			gain : 0,	\
+			offset : 0,	\
+			flare : 0,	\
+			hue : 0,	\
+			sat : 0,	\
+			rped : 0,	\
+			gped : 0,	\
+			bped : 0,	\
+			tone : "",	\
+			mmsat : "",	\
+			mmhue : "",	\
+			chroma : 0,	\
+			matrix : 0,	\
+			log : 0,	\
+			sdimin : 0,	\
+			sdimax : 0,	\
+			cmatrix : "",	\
+			umatrix : "",	\
+			filter : "" 	\
+		},	\
+		meta : {		\
+			name : "",	\
+			uuid : "",	\
+			system : 0,	\
+			pbrate : 0,	\
+			tcrate : 0,	\
+			trigtc : "",	\
+			pax : 0,	\
+			pay : 0,	\
+			paox : 0,	\
+			paoy : 0,	\
+			vox : 0,	\
+			voy : 0,	\
+			vw : 0,	\
+			vh : 0,	\
+			vow : 0,	\
+			voh : 0,	\
+			ox : 0,	\
+			oy : 0,	\
+			w : 0,	\
+			h : 0,	\
+			ow : 0,	\
+			oh : 0,	\
+			crop : 0,	\
+			resize : 0,	\
+			lens : "",	\
+			fstop : 0,	\
+			flen : 0,	\
+			gps : "",	\
+			comment : "",	\
+			xset : "" 	\
+		} 	\
+	},		\
+	fc1 : {		\
+		res : 0 x 0,	\
+		rate : 0,	\
+		exp : 0,	\
+		shoff : 0,	\
+		edrexp : 0,	\
+		ptframes : 0,	\
+		bcount : 0,	\
+		bperiod : 0,	\
+		hqenable : 0,	\
+		frcount : 0,	\
+		ramp : "",	\
+		state : { INV },	\
+		start : 0x0,	\
+		len : 0x0,	\
+		frsize : 0,	\
+		frspace : 0,	\
+		firstfr : 0,	\
+		lastfr : 0,	\
+		format : 0,	\
+		decimation : 0,	\
+		in : 0,	\
+		out : 0,	\
+		aexpmode : 0,	\
+		aexpcomp : 0,	\
+		trigtime : {		\
+			secs : 0,	\
+			frac : 0 	\
+		},	\
+		cam : {		\
+			syncimg : 0,	\
+			master : 0,	\
+			tcmode : 0,	\
+			trigpol : 0,	\
+			trigfilt : 0,	\
+			frdelay : 0,	\
+			startonacq : 0,	\
+			aux1mode : 0,	\
+			aux2mode : 0,	\
+			memgateen : 0,	\
+			membpp : 0,	\
+			tsformat : 0 	\
+		},	\
+		info : {		\
+			hwver : 0,	\
+			sver : 0,	\
+			fver : 0,	\
+			pver : 0,	\
+			model : "",	\
+			sensor : 0,	\
+			snsversion : 0,	\
+			snsserial : 0,	\
+			kernel : 0,	\
+			swver : 0,	\
+			xver : 0,	\
+			serial : 0,	\
+			cfa : 0,	\
+			filter : 0,	\
+			name : "",	\
+			mdepths : 0x0,	\
+			genlockstatus : 0,	\
+			snstemp : 0,	\
+			camtemp : 0,	\
+			features : "" 	\
+		},	\
+		adj : {		\
+			red : 0,	\
+			green : 0,	\
+			blue : 0,	\
+			wbtemp : 0,	\
+			wbcc : 0,	\
+			wbred : 0,	\
+			wbblue : 0,	\
+			edgeg : 0,	\
+			edger : 0,	\
+			edgeth : 0,	\
+			gamma : 0,	\
+			rgamma : 0,	\
+			bgamma : 0,	\
+			toe : 0,	\
+			gain : 0,	\
+			offset : 0,	\
+			flare : 0,	\
+			hue : 0,	\
+			sat : 0,	\
+			rped : 0,	\
+			gped : 0,	\
+			bped : 0,	\
+			tone : "",	\
+			mmsat : "",	\
+			mmhue : "",	\
+			chroma : 0,	\
+			matrix : 0,	\
+			log : 0,	\
+			sdimin : 0,	\
+			sdimax : 0,	\
+			cmatrix : "",	\
+			umatrix : "",	\
+			filter : "" 	\
+		},	\
+		meta : {		\
+			name : "",	\
+			uuid : "",	\
+			system : 0,	\
+			pbrate : 0,	\
+			tcrate : 0,	\
+			trigtc : "",	\
+			pax : 0,	\
+			pay : 0,	\
+			paox : 0,	\
+			paoy : 0,	\
+			vox : 0,	\
+			voy : 0,	\
+			vw : 0,	\
+			vh : 0,	\
+			vow : 0,	\
+			voh : 0,	\
+			ox : 0,	\
+			oy : 0,	\
+			w : 0,	\
+			h : 0,	\
+			ow : 0,	\
+			oh : 0,	\
+			crop : 0,	\
+			resize : 0,	\
+			lens : "",	\
+			fstop : 0,	\
+			flen : 0,	\
+			gps : "",	\
+			comment : "",	\
+			xset : "" 	\
+		} 	\
+	},		\
+	fc2 : {		\
+		res : 0 x 0,	\
+		rate : 0,	\
+		exp : 0,	\
+		shoff : 0,	\
+		edrexp : 0,	\
+		ptframes : 0,	\
+		bcount : 0,	\
+		bperiod : 0,	\
+		hqenable : 0,	\
+		frcount : 0,	\
+		ramp : "",	\
+		state : { INV },	\
+		start : 0x0,	\
+		len : 0x0,	\
+		frsize : 0,	\
+		frspace : 0,	\
+		firstfr : 0,	\
+		lastfr : 0,	\
+		format : 0,	\
+		decimation : 0,	\
+		in : 0,	\
+		out : 0,	\
+		aexpmode : 0,	\
+		aexpcomp : 0,	\
+		trigtime : {		\
+			secs : 0,	\
+			frac : 0 	\
+		},	\
+		cam : {		\
+			syncimg : 0,	\
+			master : 0,	\
+			tcmode : 0,	\
+			trigpol : 0,	\
+			trigfilt : 0,	\
+			frdelay : 0,	\
+			startonacq : 0,	\
+			aux1mode : 0,	\
+			aux2mode : 0,	\
+			memgateen : 0,	\
+			membpp : 0,	\
+			tsformat : 0 	\
+		},	\
+		info : {		\
+			hwver : 0,	\
+			sver : 0,	\
+			fver : 0,	\
+			pver : 0,	\
+			model : "",	\
+			sensor : 0,	\
+			snsversion : 0,	\
+			snsserial : 0,	\
+			kernel : 0,	\
+			swver : 0,	\
+			xver : 0,	\
+			serial : 0,	\
+			cfa : 0,	\
+			filter : 0,	\
+			name : "",	\
+			mdepths : 0x0,	\
+			genlockstatus : 0,	\
+			snstemp : 0,	\
+			camtemp : 0,	\
+			features : "" 	\
+		},	\
+		adj : {		\
+			red : 0,	\
+			green : 0,	\
+			blue : 0,	\
+			wbtemp : 0,	\
+			wbcc : 0,	\
+			wbred : 0,	\
+			wbblue : 0,	\
+			edgeg : 0,	\
+			edger : 0,	\
+			edgeth : 0,	\
+			gamma : 0,	\
+			rgamma : 0,	\
+			bgamma : 0,	\
+			toe : 0,	\
+			gain : 0,	\
+			offset : 0,	\
+			flare : 0,	\
+			hue : 0,	\
+			sat : 0,	\
+			rped : 0,	\
+			gped : 0,	\
+			bped : 0,	\
+			tone : "",	\
+			mmsat : "",	\
+			mmhue : "",	\
+			chroma : 0,	\
+			matrix : 0,	\
+			log : 0,	\
+			sdimin : 0,	\
+			sdimax : 0,	\
+			cmatrix : "",	\
+			umatrix : "",	\
+			filter : "" 	\
+		},	\
+		meta : {		\
+			name : "",	\
+			uuid : "",	\
+			system : 0,	\
+			pbrate : 0,	\
+			tcrate : 0,	\
+			trigtc : "",	\
+			pax : 0,	\
+			pay : 0,	\
+			paox : 0,	\
+			paoy : 0,	\
+			vox : 0,	\
+			voy : 0,	\
+			vw : 0,	\
+			vh : 0,	\
+			vow : 0,	\
+			voh : 0,	\
+			ox : 0,	\
+			oy : 0,	\
+			w : 0,	\
+			h : 0,	\
+			ow : 0,	\
+			oh : 0,	\
+			crop : 0,	\
+			resize : 0,	\
+			lens : "",	\
+			fstop : 0,	\
+			flen : 0,	\
+			gps : "",	\
+			comment : "",	\
+			xset : "" 	\
+		} 	\
+	},		\
+	fc3 : {		\
+		res : 0 x 0,	\
+		rate : 0,	\
+		exp : 0,	\
+		shoff : 0,	\
+		edrexp : 0,	\
+		ptframes : 0,	\
+		bcount : 0,	\
+		bperiod : 0,	\
+		hqenable : 0,	\
+		frcount : 0,	\
+		ramp : "",	\
+		state : { INV },	\
+		start : 0x0,	\
+		len : 0x0,	\
+		frsize : 0,	\
+		frspace : 0,	\
+		firstfr : 0,	\
+		lastfr : 0,	\
+		format : 0,	\
+		decimation : 0,	\
+		in : 0,	\
+		out : 0,	\
+		aexpmode : 0,	\
+		aexpcomp : 0,	\
+		trigtime : {		\
+			secs : 0,	\
+			frac : 0 	\
+		},	\
+		cam : {		\
+			syncimg : 0,	\
+			master : 0,	\
+			tcmode : 0,	\
+			trigpol : 0,	\
+			trigfilt : 0,	\
+			frdelay : 0,	\
+			startonacq : 0,	\
+			aux1mode : 0,	\
+			aux2mode : 0,	\
+			memgateen : 0,	\
+			membpp : 0,	\
+			tsformat : 0 	\
+		},	\
+		info : {		\
+			hwver : 0,	\
+			sver : 0,	\
+			fver : 0,	\
+			pver : 0,	\
+			model : "",	\
+			sensor : 0,	\
+			snsversion : 0,	\
+			snsserial : 0,	\
+			kernel : 0,	\
+			swver : 0,	\
+			xver : 0,	\
+			serial : 0,	\
+			cfa : 0,	\
+			filter : 0,	\
+			name : "",	\
+			mdepths : 0x0,	\
+			genlockstatus : 0,	\
+			snstemp : 0,	\
+			camtemp : 0,	\
+			features : "" 	\
+		},	\
+		adj : {		\
+			red : 0,	\
+			green : 0,	\
+			blue : 0,	\
+			wbtemp : 0,	\
+			wbcc : 0,	\
+			wbred : 0,	\
+			wbblue : 0,	\
+			edgeg : 0,	\
+			edger : 0,	\
+			edgeth : 0,	\
+			gamma : 0,	\
+			rgamma : 0,	\
+			bgamma : 0,	\
+			toe : 0,	\
+			gain : 0,	\
+			offset : 0,	\
+			flare : 0,	\
+			hue : 0,	\
+			sat : 0,	\
+			rped : 0,	\
+			gped : 0,	\
+			bped : 0,	\
+			tone : "",	\
+			mmsat : "",	\
+			mmhue : "",	\
+			chroma : 0,	\
+			matrix : 0,	\
+			log : 0,	\
+			sdimin : 0,	\
+			sdimax : 0,	\
+			cmatrix : "",	\
+			umatrix : "",	\
+			filter : "" 	\
+		},	\
+		meta : {		\
+			name : "",	\
+			uuid : "",	\
+			system : 0,	\
+			pbrate : 0,	\
+			tcrate : 0,	\
+			trigtc : "",	\
+			pax : 0,	\
+			pay : 0,	\
+			paox : 0,	\
+			paoy : 0,	\
+			vox : 0,	\
+			voy : 0,	\
+			vw : 0,	\
+			vh : 0,	\
+			vow : 0,	\
+			voh : 0,	\
+			ox : 0,	\
+			oy : 0,	\
+			w : 0,	\
+			h : 0,	\
+			ow : 0,	\
+			oh : 0,	\
+			crop : 0,	\
+			resize : 0,	\
+			lens : "",	\
+			fstop : 0,	\
+			flen : 0,	\
+			gps : "",	\
+			comment : "",	\
+			xset : "" 	\
+		} 	\
+	},		\
+	fc4 : {		\
+		res : 0 x 0,	\
+		rate : 0,	\
+		exp : 0,	\
+		shoff : 0,	\
+		edrexp : 0,	\
+		ptframes : 0,	\
+		bcount : 0,	\
+		bperiod : 0,	\
+		hqenable : 0,	\
+		frcount : 0,	\
+		ramp : "",	\
+		state : { INV },	\
+		start : 0x0,	\
+		len : 0x0,	\
+		frsize : 0,	\
+		frspace : 0,	\
+		firstfr : 0,	\
+		lastfr : 0,	\
+		format : 0,	\
+		decimation : 0,	\
+		in : 0,	\
+		out : 0,	\
+		aexpmode : 0,	\
+		aexpcomp : 0,	\
+		trigtime : {		\
+			secs : 0,	\
+			frac : 0 	\
+		},	\
+		cam : {		\
+			syncimg : 0,	\
+			master : 0,	\
+			tcmode : 0,	\
+			trigpol : 0,	\
+			trigfilt : 0,	\
+			frdelay : 0,	\
+			startonacq : 0,	\
+			aux1mode : 0,	\
+			aux2mode : 0,	\
+			memgateen : 0,	\
+			membpp : 0,	\
+			tsformat : 0 	\
+		},	\
+		info : {		\
+			hwver : 0,	\
+			sver : 0,	\
+			fver : 0,	\
+			pver : 0,	\
+			model : "",	\
+			sensor : 0,	\
+			snsversion : 0,	\
+			snsserial : 0,	\
+			kernel : 0,	\
+			swver : 0,	\
+			xver : 0,	\
+			serial : 0,	\
+			cfa : 0,	\
+			filter : 0,	\
+			name : "",	\
+			mdepths : 0x0,	\
+			genlockstatus : 0,	\
+			snstemp : 0,	\
+			camtemp : 0,	\
+			features : "" 	\
+		},	\
+		adj : {		\
+			red : 0,	\
+			green : 0,	\
+			blue : 0,	\
+			wbtemp : 0,	\
+			wbcc : 0,	\
+			wbred : 0,	\
+			wbblue : 0,	\
+			edgeg : 0,	\
+			edger : 0,	\
+			edgeth : 0,	\
+			gamma : 0,	\
+			rgamma : 0,	\
+			bgamma : 0,	\
+			toe : 0,	\
+			gain : 0,	\
+			offset : 0,	\
+			flare : 0,	\
+			hue : 0,	\
+			sat : 0,	\
+			rped : 0,	\
+			gped : 0,	\
+			bped : 0,	\
+			tone : "",	\
+			mmsat : "",	\
+			mmhue : "",	\
+			chroma : 0,	\
+			matrix : 0,	\
+			log : 0,	\
+			sdimin : 0,	\
+			sdimax : 0,	\
+			cmatrix : "",	\
+			umatrix : "",	\
+			filter : "" 	\
+		},	\
+		meta : {		\
+			name : "",	\
+			uuid : "",	\
+			system : 0,	\
+			pbrate : 0,	\
+			tcrate : 0,	\
+			trigtc : "",	\
+			pax : 0,	\
+			pay : 0,	\
+			paox : 0,	\
+			paoy : 0,	\
+			vox : 0,	\
+			voy : 0,	\
+			vw : 0,	\
+			vh : 0,	\
+			vow : 0,	\
+			voh : 0,	\
+			ox : 0,	\
+			oy : 0,	\
+			w : 0,	\
+			h : 0,	\
+			ow : 0,	\
+			oh : 0,	\
+			crop : 0,	\
+			resize : 0,	\
+			lens : "",	\
+			fstop : 0,	\
+			flen : 0,	\
+			gps : "",	\
+			comment : "",	\
+			xset : "" 	\
+		} 	\
+	},		\
+	fc5 : {		\
+		res : 0 x 0,	\
+		rate : 0,	\
+		exp : 0,	\
+		shoff : 0,	\
+		edrexp : 0,	\
+		ptframes : 0,	\
+		bcount : 0,	\
+		bperiod : 0,	\
+		hqenable : 0,	\
+		frcount : 0,	\
+		ramp : "",	\
+		state : { INV },	\
+		start : 0x0,	\
+		len : 0x0,	\
+		frsize : 0,	\
+		frspace : 0,	\
+		firstfr : 0,	\
+		lastfr : 0,	\
+		format : 0,	\
+		decimation : 0,	\
+		in : 0,	\
+		out : 0,	\
+		aexpmode : 0,	\
+		aexpcomp : 0,	\
+		trigtime : {		\
+			secs : 0,	\
+			frac : 0 	\
+		},	\
+		cam : {		\
+			syncimg : 0,	\
+			master : 0,	\
+			tcmode : 0,	\
+			trigpol : 0,	\
+			trigfilt : 0,	\
+			frdelay : 0,	\
+			startonacq : 0,	\
+			aux1mode : 0,	\
+			aux2mode : 0,	\
+			memgateen : 0,	\
+			membpp : 0,	\
+			tsformat : 0 	\
+		},	\
+		info : {		\
+			hwver : 0,	\
+			sver : 0,	\
+			fver : 0,	\
+			pver : 0,	\
+			model : "",	\
+			sensor : 0,	\
+			snsversion : 0,	\
+			snsserial : 0,	\
+			kernel : 0,	\
+			swver : 0,	\
+			xver : 0,	\
+			serial : 0,	\
+			cfa : 0,	\
+			filter : 0,	\
+			name : "",	\
+			mdepths : 0x0,	\
+			genlockstatus : 0,	\
+			snstemp : 0,	\
+			camtemp : 0,	\
+			features : "" 	\
+		},	\
+		adj : {		\
+			red : 0,	\
+			green : 0,	\
+			blue : 0,	\
+			wbtemp : 0,	\
+			wbcc : 0,	\
+			wbred : 0,	\
+			wbblue : 0,	\
+			edgeg : 0,	\
+			edger : 0,	\
+			edgeth : 0,	\
+			gamma : 0,	\
+			rgamma : 0,	\
+			bgamma : 0,	\
+			toe : 0,	\
+			gain : 0,	\
+			offset : 0,	\
+			flare : 0,	\
+			hue : 0,	\
+			sat : 0,	\
+			rped : 0,	\
+			gped : 0,	\
+			bped : 0,	\
+			tone : "",	\
+			mmsat : "",	\
+			mmhue : "",	\
+			chroma : 0,	\
+			matrix : 0,	\
+			log : 0,	\
+			sdimin : 0,	\
+			sdimax : 0,	\
+			cmatrix : "",	\
+			umatrix : "",	\
+			filter : "" 	\
+		},	\
+		meta : {		\
+			name : "",	\
+			uuid : "",	\
+			system : 0,	\
+			pbrate : 0,	\
+			tcrate : 0,	\
+			trigtc : "",	\
+			pax : 0,	\
+			pay : 0,	\
+			paox : 0,	\
+			paoy : 0,	\
+			vox : 0,	\
+			voy : 0,	\
+			vw : 0,	\
+			vh : 0,	\
+			vow : 0,	\
+			voh : 0,	\
+			ox : 0,	\
+			oy : 0,	\
+			w : 0,	\
+			h : 0,	\
+			ow : 0,	\
+			oh : 0,	\
+			crop : 0,	\
+			resize : 0,	\
+			lens : "",	\
+			fstop : 0,	\
+			flen : 0,	\
+			gps : "",	\
+			comment : "",	\
+			xset : "" 	\
+		} 	\
+	},		\
+	fc6 : {		\
+		res : 0 x 0,	\
+		rate : 0,	\
+		exp : 0,	\
+		shoff : 0,	\
+		edrexp : 0,	\
+		ptframes : 0,	\
+		bcount : 0,	\
+		bperiod : 0,	\
+		hqenable : 0,	\
+		frcount : 0,	\
+		ramp : "",	\
+		state : { INV },	\
+		start : 0x0,	\
+		len : 0x0,	\
+		frsize : 0,	\
+		frspace : 0,	\
+		firstfr : 0,	\
+		lastfr : 0,	\
+		format : 0,	\
+		decimation : 0,	\
+		in : 0,	\
+		out : 0,	\
+		aexpmode : 0,	\
+		aexpcomp : 0,	\
+		trigtime : {		\
+			secs : 0,	\
+			frac : 0 	\
+		},	\
+		cam : {		\
+			syncimg : 0,	\
+			master : 0,	\
+			tcmode : 0,	\
+			trigpol : 0,	\
+			trigfilt : 0,	\
+			frdelay : 0,	\
+			startonacq : 0,	\
+			aux1mode : 0,	\
+			aux2mode : 0,	\
+			memgateen : 0,	\
+			membpp : 0,	\
+			tsformat : 0 	\
+		},	\
+		info : {		\
+			hwver : 0,	\
+			sver : 0,	\
+			fver : 0,	\
+			pver : 0,	\
+			model : "",	\
+			sensor : 0,	\
+			snsversion : 0,	\
+			snsserial : 0,	\
+			kernel : 0,	\
+			swver : 0,	\
+			xver : 0,	\
+			serial : 0,	\
+			cfa : 0,	\
+			filter : 0,	\
+			name : "",	\
+			mdepths : 0x0,	\
+			genlockstatus : 0,	\
+			snstemp : 0,	\
+			camtemp : 0,	\
+			features : "" 	\
+		},	\
+		adj : {		\
+			red : 0,	\
+			green : 0,	\
+			blue : 0,	\
+			wbtemp : 0,	\
+			wbcc : 0,	\
+			wbred : 0,	\
+			wbblue : 0,	\
+			edgeg : 0,	\
+			edger : 0,	\
+			edgeth : 0,	\
+			gamma : 0,	\
+			rgamma : 0,	\
+			bgamma : 0,	\
+			toe : 0,	\
+			gain : 0,	\
+			offset : 0,	\
+			flare : 0,	\
+			hue : 0,	\
+			sat : 0,	\
+			rped : 0,	\
+			gped : 0,	\
+			bped : 0,	\
+			tone : "",	\
+			mmsat : "",	\
+			mmhue : "",	\
+			chroma : 0,	\
+			matrix : 0,	\
+			log : 0,	\
+			sdimin : 0,	\
+			sdimax : 0,	\
+			cmatrix : "",	\
+			umatrix : "",	\
+			filter : "" 	\
+		},	\
+		meta : {		\
+			name : "",	\
+			uuid : "",	\
+			system : 0,	\
+			pbrate : 0,	\
+			tcrate : 0,	\
+			trigtc : "",	\
+			pax : 0,	\
+			pay : 0,	\
+			paox : 0,	\
+			paoy : 0,	\
+			vox : 0,	\
+			voy : 0,	\
+			vw : 0,	\
+			vh : 0,	\
+			vow : 0,	\
+			voh : 0,	\
+			ox : 0,	\
+			oy : 0,	\
+			w : 0,	\
+			h : 0,	\
+			ow : 0,	\
+			oh : 0,	\
+			crop : 0,	\
+			resize : 0,	\
+			lens : "",	\
+			fstop : 0,	\
+			flen : 0,	\
+			gps : "",	\
+			comment : "",	\
+			xset : "" 	\
+		} 	\
+	},		\
+	fc7 : {		\
+		res : 0 x 0,	\
+		rate : 0,	\
+		exp : 0,	\
+		shoff : 0,	\
+		edrexp : 0,	\
+		ptframes : 0,	\
+		bcount : 0,	\
+		bperiod : 0,	\
+		hqenable : 0,	\
+		frcount : 0,	\
+		ramp : "",	\
+		state : { INV },	\
+		start : 0x0,	\
+		len : 0x0,	\
+		frsize : 0,	\
+		frspace : 0,	\
+		firstfr : 0,	\
+		lastfr : 0,	\
+		format : 0,	\
+		decimation : 0,	\
+		in : 0,	\
+		out : 0,	\
+		aexpmode : 0,	\
+		aexpcomp : 0,	\
+		trigtime : {		\
+			secs : 0,	\
+			frac : 0 	\
+		},	\
+		cam : {		\
+			syncimg : 0,	\
+			master : 0,	\
+			tcmode : 0,	\
+			trigpol : 0,	\
+			trigfilt : 0,	\
+			frdelay : 0,	\
+			startonacq : 0,	\
+			aux1mode : 0,	\
+			aux2mode : 0,	\
+			memgateen : 0,	\
+			membpp : 0,	\
+			tsformat : 0 	\
+		},	\
+		info : {		\
+			hwver : 0,	\
+			sver : 0,	\
+			fver : 0,	\
+			pver : 0,	\
+			model : "",	\
+			sensor : 0,	\
+			snsversion : 0,	\
+			snsserial : 0,	\
+			kernel : 0,	\
+			swver : 0,	\
+			xver : 0,	\
+			serial : 0,	\
+			cfa : 0,	\
+			filter : 0,	\
+			name : "",	\
+			mdepths : 0x0,	\
+			genlockstatus : 0,	\
+			snstemp : 0,	\
+			camtemp : 0,	\
+			features : "" 	\
+		},	\
+		adj : {		\
+			red : 0,	\
+			green : 0,	\
+			blue : 0,	\
+			wbtemp : 0,	\
+			wbcc : 0,	\
+			wbred : 0,	\
+			wbblue : 0,	\
+			edgeg : 0,	\
+			edger : 0,	\
+			edgeth : 0,	\
+			gamma : 0,	\
+			rgamma : 0,	\
+			bgamma : 0,	\
+			toe : 0,	\
+			gain : 0,	\
+			offset : 0,	\
+			flare : 0,	\
+			hue : 0,	\
+			sat : 0,	\
+			rped : 0,	\
+			gped : 0,	\
+			bped : 0,	\
+			tone : "",	\
+			mmsat : "",	\
+			mmhue : "",	\
+			chroma : 0,	\
+			matrix : 0,	\
+			log : 0,	\
+			sdimin : 0,	\
+			sdimax : 0,	\
+			cmatrix : "",	\
+			umatrix : "",	\
+			filter : "" 	\
+		},	\
+		meta : {		\
+			name : "",	\
+			uuid : "",	\
+			system : 0,	\
+			pbrate : 0,	\
+			tcrate : 0,	\
+			trigtc : "",	\
+			pax : 0,	\
+			pay : 0,	\
+			paox : 0,	\
+			paoy : 0,	\
+			vox : 0,	\
+			voy : 0,	\
+			vw : 0,	\
+			vh : 0,	\
+			vow : 0,	\
+			voh : 0,	\
+			ox : 0,	\
+			oy : 0,	\
+			w : 0,	\
+			h : 0,	\
+			ow : 0,	\
+			oh : 0,	\
+			crop : 0,	\
+			resize : 0,	\
+			lens : "",	\
+			fstop : 0,	\
+			flen : 0,	\
+			gps : "",	\
+			comment : "",	\
+			xset : "" 	\
+		} 	\
+	},		\
+	fc8 : {		\
+		res : 0 x 0,	\
+		rate : 0,	\
+		exp : 0,	\
+		shoff : 0,	\
+		edrexp : 0,	\
+		ptframes : 0,	\
+		bcount : 0,	\
+		bperiod : 0,	\
+		hqenable : 0,	\
+		frcount : 0,	\
+		ramp : "",	\
+		state : { INV },	\
+		start : 0x0,	\
+		len : 0x0,	\
+		frsize : 0,	\
+		frspace : 0,	\
+		firstfr : 0,	\
+		lastfr : 0,	\
+		format : 0,	\
+		decimation : 0,	\
+		in : 0,	\
+		out : 0,	\
+		aexpmode : 0,	\
+		aexpcomp : 0,	\
+		trigtime : {		\
+			secs : 0,	\
+			frac : 0 	\
+		},	\
+		cam : {		\
+			syncimg : 0,	\
+			master : 0,	\
+			tcmode : 0,	\
+			trigpol : 0,	\
+			trigfilt : 0,	\
+			frdelay : 0,	\
+			startonacq : 0,	\
+			aux1mode : 0,	\
+			aux2mode : 0,	\
+			memgateen : 0,	\
+			membpp : 0,	\
+			tsformat : 0 	\
+		},	\
+		info : {		\
+			hwver : 0,	\
+			sver : 0,	\
+			fver : 0,	\
+			pver : 0,	\
+			model : "",	\
+			sensor : 0,	\
+			snsversion : 0,	\
+			snsserial : 0,	\
+			kernel : 0,	\
+			swver : 0,	\
+			xver : 0,	\
+			serial : 0,	\
+			cfa : 0,	\
+			filter : 0,	\
+			name : "",	\
+			mdepths : 0x0,	\
+			genlockstatus : 0,	\
+			snstemp : 0,	\
+			camtemp : 0,	\
+			features : "" 	\
+		},	\
+		adj : {		\
+			red : 0,	\
+			green : 0,	\
+			blue : 0,	\
+			wbtemp : 0,	\
+			wbcc : 0,	\
+			wbred : 0,	\
+			wbblue : 0,	\
+			edgeg : 0,	\
+			edger : 0,	\
+			edgeth : 0,	\
+			gamma : 0,	\
+			rgamma : 0,	\
+			bgamma : 0,	\
+			toe : 0,	\
+			gain : 0,	\
+			offset : 0,	\
+			flare : 0,	\
+			hue : 0,	\
+			sat : 0,	\
+			rped : 0,	\
+			gped : 0,	\
+			bped : 0,	\
+			tone : "",	\
+			mmsat : "",	\
+			mmhue : "",	\
+			chroma : 0,	\
+			matrix : 0,	\
+			log : 0,	\
+			sdimin : 0,	\
+			sdimax : 0,	\
+			cmatrix : "",	\
+			umatrix : "",	\
+			filter : "" 	\
+		},	\
+		meta : {		\
+			name : "",	\
+			uuid : "",	\
+			system : 0,	\
+			pbrate : 0,	\
+			tcrate : 0,	\
+			trigtc : "",	\
+			pax : 0,	\
+			pay : 0,	
+?
+
+?
+
+?
+
+?
+get junk
+ERR: name junk  is unknown 
+get
+ERR: expecting  varname
+cstats
+c0 : { RDY DEF PRE }\
+c1 : { WTR DEF ABL ACT }\
+c2 : { RDY DEF ABL }\
+c3 : { RDY DEF ABL }\
+c4 : { RDY DEF ABL }\
+c5 : { RDY DEF ABL }\
+c6 : { RDY DEF ABL }\
+c7 : { RDY DEF ABL }\
+c8 : { RDY DEF ABL }\
+c9 : { RDY DEF ABL }\
+c10 : { RDY DEF ABL }\
+c11 : { RDY DEF ABL }\
+c12 : { RDY DEF ABL }\
+c13 : { RDY DEF ABL }\
+c14 : { RDY DEF ABL }\
+c15 : { RDY DEF ABL }\
+c16 : { RDY DEF ABL }
+tail
+Ok! {
+[036.389279] frspace 1F400 
+[036.389480] part c[1] 62283776 krnls  1425 megs
+[036.446103] $ set * : {		\
+	info : {		\
+		cfa : 0,	\
+		filter : 0,	\
+		name : "17277",	\
+		basechroma : 1,	\
+		baseei : 13000,	\
+		setup : "Donal_Std_Rad_2000fps" 	\
+	},		\
+	hw : {		\
+		vpix : 3300,	\
+		vpixl : 2800,	\
+		vmemh : 3600,	\
+		vmeml : 3000,	\
+		vresh : 3600,	\
+		vresds : 3000,	\
+		vresl : 500,	\
+		dcblack : 0,	\
+		bbias : 800,	\
+		tbias : 800,	\
+		brbias : 0,	\
+		trbias : 0,	\
+		osr : 62,	\
+		mcode : 5,	\
+		vmlpred : 0,	\
+		prepw : 14,	\
+		presmpd : 0,	\
+		smppw : 2,	\
+		smpvmh [4158 more]
+[036.507843] Settings file /user/settings/settings-8001.0 read and parsed OK
+[036.507900] LOAD UNIT OK
+[036.507993] defc.res 1280 504
+[036.508083] enabled 2 video formats current 1
+[036.509840] reg460_base 0x48749000  phys 4c8000000  size 1000000
+[036.509870] mem460_base 0x48749000  phys 4c8000000  size 1000000
+[036.509879] ddr460_base 0x49749000  phys 4c9000000  size 1000000
+[036.509913] setting PLL to P=4 N=3 M=112
+[036.510001] ADCLK DCM reset
+[036.511218] adpll locked 2
+[036.511249] ACQ 00000000
+[037.341304] LCD 1024 00000000
+[037.342325] SYSMON: temp=00000262 vccint=00000148 vccaux=00000335
+[037.342345] SYSMON: temp=27.21 vccint=0.962 vccaux=2.406
+[037.348525] kernel version is 425
+[037.348670] ph16 version: 14967 fpga version: 840
+[037.348733] part c[1] 33095680 krnls  757 megs
+[037.348764] part c[2] 33095680 krnls  757 megs
+[037.348790] part c[3] 33095680 krnls  757 megs
+[037.348826] part c[4] 33095680 krnls  757 megs
+[037.348853] part c[5] 33095680 krnls  757 megs
+[037.348879] part c[6] 33095680 krnls  757 megs
+[037.348909] part c[7] 33095680 krnls  757 megs
+[037.348935] part c[8] 33095680 krnls  757 megs
+[037.348960] part c[9] 33095680 krnls  757 megs
+[037.348990] part c[10] 33095680 krnls  757 megs
+[037.349016] part c[11] 33095680 krnls  757 megs
+[037.349041] part c[12] 33095680 krnls  757 megs
+[037.349072] part c[13] 33095680 krnls  757 megs
+[037.349097] part c[14] 33095680 krnls  757 megs
+[037.349123] part c[15] 33095680 krnls  757 megs
+[037.349153] part c[16] 33095680 krnls  757 megs
+[037.349178] postconfig: defc 1280x504 membpp 12 frsize 40336
+[037.350238] update hw settings, ver=8001
+[037.350884] SP -1
+[037.350959] SP -1
+[037.352328] Trained 64 channels, rd=36 fd=16 0 errors (0 slips on ch64)
+[037.352416] IFCMD: /sbin/ifconfig eth0:ph 172.23.240.96 netmask 255.255.240.0 up
+[037.373533] ifconfig returns 0 Remote I/O error
+[037.373656] IFCMD: /sbin/route add default gw 172.23.240.254 
+[037.394421] route add returns 0 Remote I/O error
+[037.394709] setting irig offsets 0 0
+[037.396560] year_begin_secs is 1451606400
+[037.396589] setting irig time seconds to 23031325
+[037.396615] 
+[037.396650] MEMORY RANDOM     1048576 1 32
+[037.598211] Errors: 0
+[037.598268] 
+[037.598280] MEMORY RANDOM     1048576 1 32
+[037.798859] Errors: 0
+[037.798907] 
+[037.798919] MEMORY RANDOM     1048576 1 32
+[038.000670] Errors: 0
+[038.575080] bref average 16570
+[039.169240] startonacq is 1
+[039.169304] HW STOP ACQ
+[039.169449] assign_csr_slot - no valid csr for cine 0 
+[039.169486] cine start 475000 cine len 1f90000 limit 1f813b0 lastf 23f63b0 frsize 9d90
+[039.169539] frr = 51851 (for 1080.00)
+[039.169889] video_update_live (0)
+[039.169910] A is live
+[039.169916] video_update_pipe_live 0
+[039.169923] video_update_live (0)
+[039.169930] mode change on A
+[039.169997] video mode is: PAL
+[039.172863] IMAGE WINDOW: dx = 1280  dy =  504
+[039.172877] X(d/m) = 5/9   Y(d/m) = 5/9
+[039.172889] cox =   0 csx = 711   coy =   0  csy = 280
+[039.172901] fox =  44 fsx = 711   foy = 148  fsy = 280
+[039.180060] adj wb gains: 1.321 1.000 1.825
+[039.184336] adj_to_paint: 11405 usecs
+[039.194809] update_paint total: 21879 usecs
+[039.194837] B is live
+[039.194850] video_update_pipe_live 1
+[039.194858] video_update_live (0)
+[039.194866] mode change on B
+[039.194873] source not supported
+[039.194959] PUSH: source not supported
+[039.195382] adj wb gains: 1.321 1.000 1.825
+[039.199855] adj_to_paint: 4870 usecs
+[039.210387] update_paint total: 15403 usecs
+[039.210414] HW_START_MIDI ACQ  00000001
+[039.214879] FT_Init_FreeType SUCCESS
+[039.216504] FONT DroidSansFallback.ttf 4 28 5 37 
+[039.217707] FONT DroidSansFallback.ttf 4 22 5 29 
+[039.218857] FONT DroidSansFallback.ttf 4 34 5 45 
+[039.219195] FONT DejaVuSansV.ttf 32 48 37 56 
+[039.219461] FONT DejaVuSansV.ttf 32 40 37 47 
+[039.253795] SIGACT install OK
+[039.254765] UART PRESCALER 135 00000870
+[039.254868] video_go_live 0 (last:0x0)
+[039.255129] video_update_live (0)
+[039.255149] A is live
+[039.255155] video_update_pipe_live 0
+[039.255161] video_update_live (0)
+[039.255178] B is live
+[039.255190] video_update_pipe_live 1
+[039.255196] video_update_live (0)
+[039.255230] OSDGEOM 800 564
+[039.271828] osd_screen_geom: set_size 56400
+[039.337121] $ set * : {		\
+	info : {		\
+		setup : "Donal_continuous" 	\
+	},		\
+	hw : {		\
+		rtctime : {		\
+			tz : 0 	\
+		} 	\
+	},		\
+	cam : {		\
+		syncimg : 0,	\
+		master : 0,	\
+		tcmode : 0,	\
+		trigpol : 1,	\
+		trigfilt : 1,	\
+		frdelay : 0,	\
+		startonacq : 1,	\
+		aux1mode : 0,	\
+		aux2mode : 0,	\
+		memgateen : 1,	\
+		rtoen : 0,	\
+		membpp : 12,	\
+		tsformat : 1,	\
+		cines : 2,	\
+		battmode : 0,	\
+		wtrarmdelay : 0,	\
+		wtrarmtime : 0,	\
+		poffdelay : 10,	\
+		readygate : 0 	\
+	},		\
+ [2372 more]
+[039.399500] $ set * : {		\
+	info : {		\
+		setup : "Donal-PARTITION 3-Radiography-New" 	\
+	},		\
+	hw : {		\
+		rtctime : {		\
+			tz : 0 	\
+		} 	\
+	},		\
+	cam : {		\
+		syncimg : 0,	\
+		master : 0,	\
+		tcmode : 0,	\
+		trigpol : 1,	\
+		trigfilt : 1,	\
+		frdelay : 0,	\
+		startonacq : 1,	\
+		aux1mode : 0,	\
+		aux2mode : 0,	\
+		memgateen : 1,	\
+		rtoen : 0,	\
+		membpp : 12,	\
+		tsformat : 1,	\
+		cines : 3,	\
+		battmode : 0,	\
+		wtrarmdelay : 0,	\
+		wtrarmtime : 0,	\
+		poffdelay : 10,	\
+		readygate [2386 more]
+[039.461639] $ set * : {		\
+	info : {		\
+		setup : "Speed" 	\
+	},		\
+	hw : {		\
+		rtctime : {		\
+			tz : 0 	\
+		} 	\
+	},		\
+	cam : {		\
+		syncimg : 0,	\
+		master : 0,	\
+		tcmode : 0,	\
+		trigpol : 0,	\
+		trigfilt : 32,	\
+		frdelay : 0,	\
+		startonacq : 1,	\
+		aux1mode : 0,	\
+		memgateen : 1,	\
+		rtoen : 0,	\
+		membpp : 12,	\
+		tsformat : 1,	\
+		cines : 1 	\
+	},		\
+	auto : {		\
+		videoplay : 0,	\
+		flashsave : 0,	\
+		filesave : 0,	\
+		acqrestart : 0,	\
+		bref : 1,	\
+		firstframe : -2147483 [1861 more]
+[039.523663] $ set * : {		\
+	info : {		\
+		setup : "continuous" 	\
+	},		\
+	hw : {		\
+		rtctime : {		\
+			tz : 0 	\
+		} 	\
+	},		\
+	cam : {		\
+		syncimg : 0,	\
+		master : 0,	\
+		tcmode : 0,	\
+		trigpol : 1,	\
+		trigfilt : 1,	\
+		frdelay : 0,	\
+		startonacq : 1,	\
+		aux1mode : 0,	\
+		aux2mode : 0,	\
+		memgateen : 1,	\
+		rtoen : 0,	\
+		membpp : 12,	\
+		tsformat : 1,	\
+		cines : 8,	\
+		battmode : 0,	\
+		wtrarmdelay : 0,	\
+		wtrarmtime : 0,	\
+		poffdelay : 10,	\
+		readygate : 0 	\
+	},		\
+	auto  [2364 more]
+[039.585943] $ set * : {		\
+	info : {		\
+		setup : "Donal_Std_Rad_2000fps" 	\
+	},		\
+	hw : {		\
+		rtctime : {		\
+			tz : 0 	\
+		} 	\
+	},		\
+	cam : {		\
+		syncimg : 0,	\
+		master : 0,	\
+		tcmode : 0,	\
+		trigpol : 1,	\
+		trigfilt : 1,	\
+		frdelay : 0,	\
+		startonacq : 1,	\
+		aux1mode : 0,	\
+		aux2mode : 0,	\
+		memgateen : 1,	\
+		rtoen : 0,	\
+		membpp : 12,	\
+		tsformat : 1,	\
+		cines : 1,	\
+		battmode : 0,	\
+		wtrarmdelay : 0,	\
+		wtrarmtime : 0,	\
+		poffdelay : 10,	\
+		readygate : 0 	\
+	}, [2374 more]
+[039.648202] $ set * : {		\
+	info : {		\
+		setup : "Donal_mod_1_Std" 	\
+	},		\
+	hw : {		\
+		rtctime : {		\
+			tz : 0 	\
+		} 	\
+	},		\
+	cam : {		\
+		syncimg : 0,	\
+		master : 0,	\
+		tcmode : 0,	\
+		trigpol : 1,	\
+		trigfilt : 1,	\
+		frdelay : 0,	\
+		startonacq : 1,	\
+		aux1mode : 0,	\
+		aux2mode : 0,	\
+		memgateen : 1,	\
+		rtoen : 0,	\
+		membpp : 12,	\
+		tsformat : 1,	\
+		cines : 1,	\
+		battmode : 0,	\
+		wtrarmdelay : 0,	\
+		wtrarmtime : 0,	\
+		poffdelay : 10,	\
+		readygate : 0 	\
+	},		\
+	 [2368 more]
+[039.648248] entering main loop
+[039.648262] zzz loop time increased at 393
+[039.663531] 
+
+SERSENT: #sx
+
+[039.663725] CF 0
+[039.669348] CF 2
+[039.673574] SERRCV: #0
+[039.673596] LENSMOUNT: no lens!
+[039.864878] Logical Unit WWN Device Identifier: 5001b44a2077e481
+[039.864998] drive wwn [5001b44a2077e481]
+[040.030925] dev 0 [0MM14149SATAPACK069ллллллллллллллSATAPACKллллллллллллBллллл0100000ллл0ллл256 GB CineFlashллллллллллллллллллллллллллллллллллллллл]
+[040.563654] verifysign -f 5001b44a2077e481FEDCBA9876543210FEDCBA9876543210FEDCBA9876543210 a2d91fe6c770f59dda1a542b2224172f0a63e353772c70b5e29918df8d148c7672228eaab0f053dea5084bf3cb27888031c22692a1e73442b52c2ba53b1c5fe4
+[040.596367] cfmount 1 0
+[040.606252] zzz loop time increased at 771
+[040.627870] CF 4
+[811.864790] basesock readable
+[811.864958] New accepted socket 17 (p:CA75) (from 172.23.23.62), 1 connection(s)
+[892.026922] ERR: name snesor  is unknown 
+[942.324809] ERR: name all  is unknown 
+[044.297493] killing the protocol 0
+[044.297612] There are 0 active connections
+[794.344568] basesock readable
+[794.344663] New accepted socket 17 (p:9856) (from 172.23.100.118), 1 connection(s)
+[275.066192] killing the protocol 0
+[275.066311] There are 0 active connections
+[410.440226] basesock readable
+[410.440318] New accepted socket 17 (p:9918) (from 172.23.100.118), 1 connection(s)
+[497.759587] ERR: name c17  is unknown 
+[521.792577] killing the protocol 0
+[521.792697] There are 0 active connections
+[579.303326] basesock readable
+[579.303414] New accepted socket 17 (p:9932) (from 172.23.100.118), 1 connection(s)
+[661.339598] ERR: name cd  is unknown 
+[921.545595] parse5.c - get_struct - Output truncated!
+[921.545697] parse5.c - get_struct - Output truncated!
+[921.545719] parse5.c - get_struct - Output truncated!
+[929.007676] parse5.c - get_struct - Output truncated!
+[929.007783] parse5.c - get_struct - Output truncated!
+[929.007808] parse5.c - get_struct - Output truncated!
+[946.384833] ERR: name junk  is unknown 
+[952.958088] ERR: expecting  varname
+[033.014863] $ tail
+}
+uls
+{0, "Donal_continuous",\
+1, "Donal-PARTITION 3-Radiography-New",\
+2, "Speed",\
+3, "continuous",\
+4, "Donal_Std_Rad_2000fps",\
+5, "Donal_mod_1_Std" }
+sysmon
+Ok! {\
+"mb: temp 52.7 vccint 0.95 vccaux 2.39"\
+"dev[0]: 1A 00 00 0A 6F 21 70 2D ''",\
+"dev[1]: CF 00 00 0A 6E 73 48 2D ''",\
+"dev[2]: E9 00 00 0A 70 22 14 2D ''",\
+"dev[3]: BD 00 00 0E DB 8B 15 2D ''",\
+"dev[4]: 9A 00 00 0A 6F F9 AF 2D ''",\
+}
+cv fls
+{"c_17277_366.cine", 5315441984, "2016-8-5 14:59:3",\
+"c_17277_367.cine", 5315441984, "2016-8-5 15:0:27",\
+"c_17277_368.cine", 5315441984, "2016-8-5 15:1:50",\
+"c_17277_369.cine", 5315441984, "2016-8-5 15:3:13",\
+"c_17277_370.cine", 661280408, "2016-9-17 16:53:28",\
+"c_17277_371.cine", 661280408, "2016-9-17 17:0:1",\
+"c_17277_372.cine", 661280408, "2016-9-17 17:0:14",\
+"c_17277_373.cine", 661280408, "2016-9-17 17:1:22",\
+"c_17277_374.cine", 661280408, "2016-9-17 17:1:30",\
+"c_17277_375.cine", 661280408, "2016-9-17 17:1:39",\
+"c_17277_376.cine", 661280408, "2016-9-17 17:1:47",\
+"c_17277_377.cine", 661280408, "2016-9-17 17:1:55",\
+"c_17277_378.cine", 661280408, "2016-9-17 17:2:4",\
+"c_17277_379.cine", 661280408, "2016-9-17 17:2:12",\
+"c_17277_380.cine", 661280408, "2016-9-17 17:2:20",\
+"c_17277_381.cine", 661280408, "2016-9-17 17:2:29",\
+"c_17277_382.cine", 661280408, "2016-9-17 17:2:37",\
+"c_17277_383.cine", 661280408, "2016-9-17 17:2:46",\
+"c_17277_384.cine", 661280408, "2016-9-17 17:2:54",\
+"c_17277_385.cine", 661280408, "2016-9-17 17:3:2",\
+"c_17277_386.cine", 661280408, "2016-9-17 17:3:11",\
+"c_17277_387.cine", 661280408, "2016-9-17 17:3:19",\
+"c_17277_388.cine", 661280408, "2016-9-17 17:3:28",\
+"c_17277_389.cine", 661280408, "2016-9-17 17:3:36",\
+"c_17277_390.cine", 661280408, "2016-9-17 17:3:44",\
+"c_17277_391.cine", 661280408, "2016-9-17 17:3:53",\
+"c_17277_392.cine", 661280408, "2016-9-17 17:4:1",\
+"c_17277_393.cine", 661280408, "2016-9-17 17:4:9",\
+"c_17277_394.cine", 661280408, "2016-9-17 17:4:18",\
+"c_17277_395.cine", 661280408, "2016-9-17 17:4:26",\
+"c_17277_396.cine", 661280408, "2016-9-17 17:4:35",\
+"c_17277_397.cine", 661280408, "2016-9-17 17:4:43",\
+"c_17277_398.cine", 661280408, "2016-9-17 17:4:51",\
+"c_17277_399.cine", 661280408, "2016-9-17 17:5:0",\
+"c_17277_400.cine", 661280408, "2016-9-17 17:5:8",\
+"c_17277_401.cine", 661280408, "2016-9-17 17:5:17",\
+"c_17277_402.cine", 661280408, "2016-9-17 17:5:25",\
+"c_17277_403.cine", 661280408, "2016-9-17 17:5:33",\
+"c_17277_404.cine", 661280408, "2016-9-17 17:5:42",\
+"c_17277_405.cine", 661280408, "2016-9-17 17:5:50",\
+"c_17277_406.cine", 661280408, "2016-9-17 17:5:59",\
+"c_17277_407.cine", 661280408, "2016-9-17 17:6:7",\
+"c_17277_408.cine", 661280408, "2016-9-17 17:6:15",\
+"c_17277_409.cine", 661280408, "2016-9-17 17:6:24",\
+"c_17277_410.cine", 661280408, "2016-9-17 17:6:32",\
+"c_17277_411.cine", 661280408, "2016-9-17 17:6:40",\
+"c_17277_412.cine", 661280408, "2016-9-17 17:6:49",\
+"c_17277_413.cine", 661280408, "2016-9-17 17:6:57",\
+"c_17277_414.cine", 661280408, "2016-9-17 17:7:6",\
+"c_17277_415.cine", 661280408, "2016-9-17 17:7:14",\
+"c_17277_416.cine", 661280408, "2016-9-17 17:7:23",\
+"c_17277_417.cine", 661280408, "2016-9-17 17:7:31",\
+"c_17277_418.cine", 661280408, "2016-9-17 17:7:39",\
+"c_17277_419.cine", 661280408, "2016-9-17 17:7:48",\
+"c_17277_420.cine", 661280408, "2016-9-17 17:7:56",\
+"c_17277_421.cine", 661280408, "2016-9-17 17:8:4",\
+"c_17277_422.cine", 661280408, "2016-9-17 17:8:13",\
+"c_17277_423.cine", 661280408, "2016-9-17 17:8:21",\
+"c_17277_424.cine", 661280408, "2016-9-17 17:8:30",\
+"c_17277_425.cine", 661280408, "2016-9-17 17:8:38",\
+"c_17277_426.cine", 661280408, "2016-9-17 17:8:46",\
+"c_17277_427.cine", 661280408, "2016-9-17 17:8:55",\
+"c_17277_428.cine", 661280408, "2016-9-17 17:11:0" }
+get defc.meta.w
+w : 1
+get defc.meta
+meta : {		\
+	ox : -160,	\
+	oy : -120,	\
+	w : 1,	\
+	h : 1,	\
+	ow : 1280,	\
+	oh : 504,	\
+	crop : 0,	\
+	resize : 0 	\
+}
+get defc
+defc : {		\
+	res : 1280 x 504,	\
+	rate : 1080,	\
+	exp : 925482,	\
+	shoff : 0,	\
+	edrexp : 0,	\
+	ptframes : 820,	\
+	bcount : 0,	\
+	bperiod : 307692,	\
+	hqenable : 0,	\
+	frcount : 820,	\
+	ramp : "",	\
+	frsize : 40336,	\
+	decimation : 1,	\
+	aexpmode : 0,	\
+	aexpcomp : -0.1605,	\
+	meta : {		\
+		ox : -160,	\
+		oy : -120,	\
+		w : 1,	\
+		h : 1,	\
+		ow : 1280,	\
+		oh : 504,	\
+		crop : 0,	\
+		resize : 0 	\
+	} 	\
+}
+^]
+
+telnet> quit
+Connection closed.
+]0;bvf81224@cs03r-sc-serv-18:~[bvf81224@cs03r-sc-serv-18 ~]$ exit
+exit
+
+Script done on Fri 23 Sep 2016 15:44:18 BST

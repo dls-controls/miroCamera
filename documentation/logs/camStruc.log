@@ -1,0 +1,33 @@
+cam : {		\
+	syncimg : 0,	\
+	master : 0,	\
+	tcmode : 0,	\
+	trigpol : 1,	\
+	trigfilt : 1,	\
+	frdelay : 0,	\
+	startonacq : 1,	\
+	aux1mode : 0,	\
+	aux2mode : 0,	\
+	memgateen : 1,	\
+	rtoen : 0,	\
+	membpp : 12,	\
+	tsformat : 1,	\
+	longready : 0,	\
+	dark : 0,	\
+	quiet : 0,	\
+	tsetsns : 30,	\
+	tsetcam : 50,	\
+	apoffdis : 0,	\
+	rtotfr : 0,	\
+	cines : 16,	\
+	battarm : 0,	\
+	battmode : 0,	\
+	wtrarmdelay : 0,	\
+	wtrarmtime : 0,	\
+	poffdelay : 10,	\
+	readygate : 0,	\
+	timezone : -3600,	\
+	lang : "en_US",	\
+	occset : "" 	\
+}
+

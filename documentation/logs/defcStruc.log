@@ -1,0 +1,1 @@
+ defc : {			res : 1280 x 504,		rate : 1080,		exp : 925482,		shoff : 0,		edrexp : 0,		ptframes : 820,		bcount : 0,		bperiod : 307692,		hqenable : 0,		frcount : 820,		ramp : "",		frsize : 40336,		decimation : 1,		aexpmode : 0,		aexpcomp : -0.1605,		meta : {				ox : -160,			oy : -120,			w : 1,			h : 1,			ow : 1280,			oh : 504,			crop : 0,			resize : 0 		} 	}

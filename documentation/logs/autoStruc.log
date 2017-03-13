@@ -1,0 +1,26 @@
+auto : {		\
+	videoplay : 0,	\
+	flashsave : 0,	\
+	filesave : 1,	\
+	acqrestart : 1,	\
+	bref : 0,	\
+	firstframe : -2147483648,	\
+	lastframe : 2147483646,	\
+	format : 272,	\
+	loops : 0,	\
+	speed : 0,	\
+	progress : 0,	\
+	bref_progress : 0,	\
+	fseq : 429,	\
+	trigger : {		\
+		x : 0,	\
+		y : -52,	\
+		w : 1280,	\
+		h : 400,	\
+		speed : 1087,	\
+		area : 1,	\
+		threshold : 1,	\
+		mode : 0 	\
+	} 	\
+}
+

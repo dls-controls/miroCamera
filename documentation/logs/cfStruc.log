@@ -1,0 +1,9 @@
+cf : {		\
+	state : 4,	\
+	action : 0,	\
+	size : 246127884,	\
+	used : 61423112,	\
+	progress : 0,	\
+	errcode : 0 	\
+}
+

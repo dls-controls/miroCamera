@@ -1,0 +1,9 @@
+ADAcquire
+ADAcquireTime
+ADManufacturer
+ADModel
+ADNumExposuresCounter
+ADNumImagesCounter
+ADStatus
+ADStatusMessage
+
