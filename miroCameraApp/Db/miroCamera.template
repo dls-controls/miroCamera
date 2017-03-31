@@ -8,6 +8,14 @@
 
 include "ADBase.template"
 
+record(calcout, "$(P)$(R)AcqNotify")
+{
+  field(INPA, "$(P)$(R)Acquire")
+  field(INPB, "$(P)$(R)AcqNotify")
+  field(CALC, "A=1?(B=1?0:1):0")
+  field(SCAN,  "1 second")
+}
+
 ################################################################
 ###
 ### Partition and Cine Count
@@ -525,8 +533,6 @@ record(mbbo, "$(P)$(R)AuxPinMode")
    field(ONVL, "1")
    field(TWST, "MEMGATE")
    field(TWVL, "2")
-   field(THST, "FSYNC")
-   field(THVL, "3")
 }
 
 record(mbbi, "$(P)$(R)AuxPinMode_RBV")
@@ -539,12 +545,20 @@ record(mbbi, "$(P)$(R)AuxPinMode_RBV")
    field(ONVL, "1")
    field(TWST, "MEMGATE")
    field(TWVL, "2")
-   field(THST, "FSYNC")
-   field(THVL, "3")
    field(SCAN, "I/O Intr")
 }
 
 ########## Disable Redundant areaDetector Fields #########
+
+record(ao, "$(P)$(R)AcquireTime")
+{
+  field(PREC, "6")
+}
+
+record(ao, "$(P)$(R)AcquirePeriod")
+{
+  field(PREC, "6")
+}
 
 record(mbbo, "$(P)$(R)DataType")
 {

@@ -25,7 +25,7 @@ TEMPLATE_TOP=$(EPICS_BASE)/templates/makeBaseApp/top
 SUPPORT=/dls_sw/prod/R3.14.12.3/support
 
 ASYN =              $(SUPPORT)/asyn/4-26
-AREADETECTOR =      $(SUPPORT)/ADCore/2-4dls6
+AREADETECTOR =      $(SUPPORT)/ADCore/2-4dls8
 BUSY =              $(SUPPORT)/busy/1-6-1
 
 # EPICS_BASE usually appears last so other apps can override stuff:

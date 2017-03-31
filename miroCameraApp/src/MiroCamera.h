@@ -79,6 +79,7 @@
 // MIRO Command Strings
 #define MIRO_CMD_GET_VALUE    "get"
 #define MIRO_CMD_SET_VALUE    "set"
+#define MIRO_CMD_ABORT        "rec 0"
 #define MIRO_CMD_START_REC    "rec"
 #define MIRO_CMD_DELETE       "del"
 #define MIRO_CMD_RELEASE      "rel"

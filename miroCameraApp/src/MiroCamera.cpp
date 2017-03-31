@@ -1391,7 +1391,8 @@ asynStatus MiroCamera::writeInt32(asynUser *pasynUser, epicsInt32 value)
       // Stop acquiring ( abort any hardware processings )
       epicsEventSignal(this->stopEventId_);
       // Sent the message to the analyser to stop
-      //sendSimpleCommand(MIRO_CMD_ABORT);
+      std::string response = "";
+      sendSimpleCommand(MIRO_CMD_ABORT, &response);
     }
   } else if (function == MIRO_LivePreview_){
     if (value){
@@ -1460,6 +1461,11 @@ asynStatus MiroCamera::writeInt32(asynUser *pasynUser, epicsInt32 value)
   } else if (function == ADSizeX || function == ADSizeY){
     status |= setCameraResolution();
   } else if (function == MIRO_PostTrigCount_){
+    int maxFrameCount = 1;
+    getIntegerParam(MIRO_MaxFrameCount_, &maxFrameCount);
+    if (value > maxFrameCount){
+      value = maxFrameCount;
+    }
     status |= setCameraParameter("defc.ptframes", value);
   } else if (function == MIRO_PerformCSR_){
     status |= performCSR();
@@ -1471,6 +1477,10 @@ asynStatus MiroCamera::writeInt32(asynUser *pasynUser, epicsInt32 value)
     status |= setCameraParameter("defc.edrexp", value);
   }
 
+  // If the status is bad reset the original value
+  if (status){
+    setIntegerParam(function, oldValue);
+  }
   this->lock();
   // Do callbacks so higher layers see any changes
   callParamCallbacks();
@@ -1479,6 +1489,7 @@ asynStatus MiroCamera::writeInt32(asynUser *pasynUser, epicsInt32 value)
     debug(functionName, "Error, status", status);
     debug(functionName, "Error, function", function);
     debug(functionName, "Error, value", value);
+    setIntegerParam(function, oldValue);
   } else {
     debug(functionName, "Function", function);
     debug(functionName, "Value", value);
@@ -2479,59 +2490,72 @@ asynStatus MiroCamera::selectCine(int cine)
   asynStatus status = asynSuccess;
   char command[256];
   std::string param = "";
+  int maxCines = 1;
 
-  // TODO: Verification that the cine index is valid
-
-  // Create the cine string
-  sprintf(command, "c%d", cine);
-  // Read out the cine status
-  status = getCameraDataStruc(command, paramMap_);
-
-  // Now setup the selected cine width, height, frame count, start and end frames
-  sprintf(command, "c%d.res", cine);
-  param = paramMap_[command].getValue();
-  printf("Param command: %s\n", command);
-  printf("Param resp: %s\n", param.c_str());
-  // This will contain a string like 1200 x 800, split by the x
-  if (param.find_first_of("x") != std::string::npos){
-  	int width = 0;
-  	int height = 0;
-    std::string sw = param.substr(0, param.find_first_of("x"));
-    std::string sh = param.substr(param.find_first_of("x")+1);
-    cleanString(sw, " ");
-    cleanString(sh, " ");
-    debug(functionName, "Cine width", sw);
-    debug(functionName, "Cine height", sh);
-    status = stringToInteger(sw, width);
-    setIntegerParam(MIRO_CineWidth_, width);
-    status = stringToInteger(sh, height);
-    setIntegerParam(MIRO_CineHeight_, height);
+  // Get the number of cines available
+  getIntegerParam(MIRO_GetCineCount_, &maxCines);
+  if (cine < 1){
+    setStringParam(ADStatusMessage, "Cannot select cine 0");
+    setIntegerParam(ADStatus, ADStatusError);
+    status = asynError;
+  }
+  if (cine > maxCines){
+    setStringParam(ADStatusMessage, "Invalid cine cannot be selected");
+    setIntegerParam(ADStatus, ADStatusError);
+    status = asynError;
   }
 
-  // Update the cine frame count
-  sprintf(command, "c%d.frcount", cine);
-  std::string sfrCount = paramMap_[command].getValue();
-  int frCount = 0;
-  cleanString(sfrCount, " ");
-  status = stringToInteger(sfrCount, frCount);
-  setIntegerParam(MIRO_CineFrameCount_, frCount);
+  if (status == asynSuccess){
+    // Create the cine string
+    sprintf(command, "c%d", cine);
+    // Read out the cine status
+    status = getCameraDataStruc(command, paramMap_);
 
-  // Update the cine first frame
-  sprintf(command, "c%d.firstfr", cine);
-  std::string sfirstFr = paramMap_[command].getValue();
-  int firstFr = 0;
-  cleanString(sfirstFr, " ");
-  status = stringToInteger(sfirstFr, firstFr);
-  setIntegerParam(MIRO_CineFirstFrame_, firstFr);
+    // Now setup the selected cine width, height, frame count, start and end frames
+    sprintf(command, "c%d.res", cine);
+    param = paramMap_[command].getValue();
+    printf("Param command: %s\n", command);
+    printf("Param resp: %s\n", param.c_str());
+    // This will contain a string like 1200 x 800, split by the x
+    if (param.find_first_of("x") != std::string::npos){
+      int width = 0;
+      int height = 0;
+      std::string sw = param.substr(0, param.find_first_of("x"));
+      std::string sh = param.substr(param.find_first_of("x")+1);
+      cleanString(sw, " ");
+      cleanString(sh, " ");
+      debug(functionName, "Cine width", sw);
+      debug(functionName, "Cine height", sh);
+      status = stringToInteger(sw, width);
+      setIntegerParam(MIRO_CineWidth_, width);
+      status = stringToInteger(sh, height);
+      setIntegerParam(MIRO_CineHeight_, height);
+    }
 
-  // Update the cine last frame
-  sprintf(command, "c%d.lastfr", cine);
-  std::string slastFr = paramMap_[command].getValue();
-  int lastFr = 0;
-  cleanString(slastFr, " ");
-  status = stringToInteger(slastFr, lastFr);
-  setIntegerParam(MIRO_CineLastFrame_, lastFr);
+    // Update the cine frame count
+    sprintf(command, "c%d.frcount", cine);
+    std::string sfrCount = paramMap_[command].getValue();
+    int frCount = 0;
+    cleanString(sfrCount, " ");
+    status = stringToInteger(sfrCount, frCount);
+    setIntegerParam(MIRO_CineFrameCount_, frCount);
 
+    // Update the cine first frame
+    sprintf(command, "c%d.firstfr", cine);
+    std::string sfirstFr = paramMap_[command].getValue();
+    int firstFr = 0;
+    cleanString(sfirstFr, " ");
+    status = stringToInteger(sfirstFr, firstFr);
+    setIntegerParam(MIRO_CineFirstFrame_, firstFr);
+
+    // Update the cine last frame
+    sprintf(command, "c%d.lastfr", cine);
+    std::string slastFr = paramMap_[command].getValue();
+    int lastFr = 0;
+    cleanString(slastFr, " ");
+    status = stringToInteger(slastFr, lastFr);
+    setIntegerParam(MIRO_CineLastFrame_, lastFr);
+  }
 
   return status;
 }
@@ -2542,12 +2566,25 @@ asynStatus MiroCamera::setPartition(int count)
   asynStatus status = asynSuccess;
   char command[256];
   std::string response = "";
+  int cCine = 1;
+
+  // Get the current partition size
+  getIntegerParam(MIRO_SelectedCine_, &cCine);
 
   // Create the cine string
   sprintf(command, "%s %d", MIRO_CMD_PARTITION, count);
   // Read out the cine status
   status = sendSimpleCommand(command, &response);
   debug(functionName, "Response", response);
+
+  if (status == asynSuccess){
+    // If the new partition is less than the selected cine
+    // set a new selected cine
+    if (count < cCine){
+      status = selectCine(count);
+      setIntegerParam(MIRO_SelectedCine_, count);
+    }
+  }
   return status;
 }
 

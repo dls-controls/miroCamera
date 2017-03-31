@@ -3,8 +3,8 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 282
-y 87
+x 427
+y 51
 w 390
 h 820
 font "arial-bold-r-12.0"
@@ -644,13 +644,13 @@ minor 1
 release 1
 x 5
 y 525
-w 90
+w 157
 h 13
 font "arial-medium-r-12.0"
 fgColor index 14
 bgColor index 5
 value {
-  "  Perform CSR   "
+  "  Perform Black Reference   "
 }
 autoSize
 border
@@ -673,8 +673,8 @@ topShadowColor index 1
 botShadowColor index 11
 controlPv "$(P)$(R)PerformCSR"
 pressValue "1"
-onLabel "CSR"
-offLabel "CSR"
+onLabel "Black Ref"
+offLabel "Black Ref"
 3d
 font "arial-bold-r-12.0"
 endObjectProperties
@@ -793,6 +793,67 @@ bgColor index 3
 useDisplayBg
 value {
   "Auto-restart Acquisition"
+}
+autoSize
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 175
+y 790
+w 195
+h 25
+
+beginGroup
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 175
+y 790
+w 195
+h 25
+font "arial-bold-r-12.0"
+fontAlign "center"
+fgColor index 20
+bgColor index 3
+value {
+  "Cine save to flash in progress."
+}
+border
+endObjectProperties
+
+endGroup
+
+visPv "$(P)$(R)CFProgress_RBV"
+visInvert
+visMin "0"
+visMax "1"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 20
+y 665
+w 149
+h 13
+font "arial-bold-r-12.0"
+fgColor index 14
+bgColor index 3
+useDisplayBg
+value {
+  "Next Applied Name Prefix"
 }
 autoSize
 endObjectProperties
