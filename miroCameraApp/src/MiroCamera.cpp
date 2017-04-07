@@ -2839,6 +2839,24 @@ asynStatus MiroCamera::updateDefcStatus()
     status = this->updateIntegerParameter("defc.edrexp", MIRO_EDR_);
   }
 
+  if (status == asynSuccess){
+    // Update the acquire time
+    int exposure = 0;
+    double value = 0.0;
+    stringToInteger(paramMap_["defc.exp"].getValue(), exposure);
+    value = (double)exposure/1000000000.0;
+    setDoubleParam(ADAcquireTime, (double)exposure/1000000000.0);
+  }
+
+  if (status == asynSuccess){
+    // Update the number of frames per second
+    int fps = 0;
+    double value = 0.0;
+    stringToInteger(paramMap_["defc.rate"].getValue(), fps);
+    value = (double)1.0/(double)(fps);
+    setDoubleParam(ADAcquirePeriod, value);
+  }
+
   // Now parse the resolution
   if (status == asynSuccess){
     // Setup the preview cine width and height
