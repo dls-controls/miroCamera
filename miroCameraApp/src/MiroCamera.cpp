@@ -1674,6 +1674,7 @@ asynStatus MiroCamera::readoutPreviewData()
   NDArray *pImage;
   size_t dims[2];
   NDDataType_t dataType;
+  int acquire;
   int nbytes;
   int arrayCallbacks   = 0;
   asynStatus status = asynSuccess;
@@ -1685,7 +1686,13 @@ asynStatus MiroCamera::readoutPreviewData()
   // Flush the data connection
   pasynOctetSyncIO->flush(dataChannel_);
 
-  status = sendSimpleCommand("img {cine:0, start:0, cnt:1, fmt:P10}", &response);
+  // Read in the acquire state and selected cine
+  getIntegerParam(ADAcquire, &acquire);
+  if (acquire){
+    status = sendSimpleCommand("img {cine:-1, start:0, cnt:1, fmt:P10}", &response);
+  } else {
+    status = sendSimpleCommand("img {cine:0, start:0, cnt:1, fmt:P10}", &response);
+  }
   debug(functionName, "Response", response);
 
   this->readFrame(nBytes);
