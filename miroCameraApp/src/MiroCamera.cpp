@@ -2061,6 +2061,10 @@ asynStatus MiroCamera::downloadFlashHeader(const std::string& filename)
     char *ptr = data_;
     for (int count = 0; count < noOfTimes; count++){
       memcpy(&ts, ptr, 8);
+      char locked = ts.frac & 0x01;
+      flashIrigData_.push_back(locked);
+      char event_active = (ts.frac & 0x02) >> 1;
+      flashEventData_.push_back(event_active);
       //printf("tsec: %d\n", ts.secs);
       //printf("tusec: %d\n", (int32_t)round((double)(ts.frac) / 4294.967296));
       ts.frac = (uint32_t)round((double)(ts.frac) / 4294.967296);
@@ -2331,6 +2335,8 @@ asynStatus MiroCamera::downloadFlashImages(const std::string& filename, int star
       pImage->pAttributeList->add("ts_usec", "Timestamp of frames (microseconds)", NDAttrUInt32, (void *)(&tv_usec));
 
       pImage->pAttributeList->add("exp_time", "Exposure time (microseconds)", NDAttrUInt32, (void *)(&(flashExpData_[count])));
+      pImage->pAttributeList->add("irig_sync", "IRIG synchronized", NDAttrInt8, (void *)(&(flashIrigData_[count])));
+      pImage->pAttributeList->add("event_input", "Event Input (1 = open)", NDAttrInt8, (void *)(&(flashEventData_[count])));
 
       // Loop over meta array to create attributes
       for (int mc = 0; mc < (int)metaArray_.size(); mc++){

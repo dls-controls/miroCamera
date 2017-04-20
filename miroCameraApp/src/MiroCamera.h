@@ -746,6 +746,8 @@ class MiroCamera: public ADDriver
     std::vector<short_time_stamp32>    timestampData_;
     std::vector<tagTIME64>             flashTsData_;
     std::vector<uint32_t>              flashExpData_;
+    std::vector<uint8_t>               flashIrigData_;
+    std::vector<uint8_t>               flashEventData_;
     int                                flashTrigSecs_;
     int                                flashTrigUsecs_;
     int                                previewWidth_;
