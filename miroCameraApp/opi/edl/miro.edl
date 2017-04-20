@@ -3,8 +3,8 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 427
-y 51
+x 775
+y 91
 w 390
 h 820
 font "arial-bold-r-12.0"
@@ -269,9 +269,9 @@ major 4
 minor 0
 release 0
 x 5
-y 595
+y 585
 w 380
-h 190
+h 200
 lineColor index 14
 fill
 fillColor index 3
@@ -284,7 +284,7 @@ major 4
 minor 1
 release 1
 x 5
-y 585
+y 575
 w 64
 h 13
 font "arial-medium-r-12.0"
@@ -304,7 +304,7 @@ major 4
 minor 1
 release 1
 x 20
-y 640
+y 620
 w 101
 h 13
 font "arial-bold-r-12.0"
@@ -324,7 +324,7 @@ major 10
 minor 0
 release 0
 x 265
-y 685
+y 660
 w 85
 h 20
 controlPv "$(P)$(R)PostTrigFrames_RBV"
@@ -343,7 +343,7 @@ major 4
 minor 1
 release 1
 x 20
-y 690
+y 665
 w 120
 h 13
 font "arial-bold-r-12.0"
@@ -363,7 +363,7 @@ major 10
 minor 0
 release 0
 x 265
-y 710
+y 685
 w 85
 h 20
 controlPv "$(P)$(R)MaxFrameCount_RBV"
@@ -382,7 +382,7 @@ major 4
 minor 1
 release 1
 x 20
-y 715
+y 690
 w 141
 h 13
 font "arial-bold-r-12.0"
@@ -404,7 +404,7 @@ release 0
 x 185
 y 535
 w 200
-h 40
+h 35
 lineColor index 14
 fill
 fillColor index 3
@@ -417,7 +417,7 @@ major 4
 minor 1
 release 0
 x 195
-y 545
+y 540
 w 75
 h 25
 fgColor index 25
@@ -506,7 +506,7 @@ major 4
 minor 6
 release 0
 x 180
-y 635
+y 615
 w 170
 h 15
 controlPv "$(P)$(R)CineName"
@@ -532,7 +532,7 @@ major 10
 minor 0
 release 0
 x 180
-y 685
+y 660
 w 75
 h 20
 controlPv "$(P)$(R)PostTrigFrames"
@@ -550,7 +550,7 @@ major 10
 minor 0
 release 0
 x 180
-y 660
+y 635
 w 170
 h 20
 controlPv "$(P)$(R)CineName_RBV"
@@ -569,7 +569,7 @@ major 4
 minor 0
 release 0
 x 180
-y 605
+y 590
 w 85
 h 20
 fgColor index 25
@@ -589,7 +589,7 @@ major 10
 minor 0
 release 0
 x 275
-y 605
+y 590
 w 75
 h 20
 controlPv "$(P)$(R)SelectedCine_RBV"
@@ -608,7 +608,7 @@ major 4
 minor 1
 release 1
 x 20
-y 610
+y 595
 w 142
 h 13
 font "arial-bold-r-12.0"
@@ -630,7 +630,7 @@ release 0
 x 5
 y 535
 w 175
-h 40
+h 35
 lineColor index 14
 fill
 fillColor index 3
@@ -663,7 +663,7 @@ major 4
 minor 1
 release 0
 x 15
-y 545
+y 540
 w 75
 h 25
 fgColor index 25
@@ -686,7 +686,7 @@ major 4
 minor 0
 release 0
 x 175
-y 735
+y 710
 w 75
 h 20
 fgColor index 25
@@ -706,7 +706,7 @@ major 10
 minor 0
 release 0
 x 265
-y 735
+y 710
 w 85
 h 20
 controlPv "$(P)$(R)AutoSave_RBV"
@@ -725,7 +725,7 @@ major 4
 minor 1
 release 1
 x 20
-y 740
+y 715
 w 121
 h 13
 font "arial-bold-r-12.0"
@@ -745,7 +745,7 @@ major 4
 minor 0
 release 0
 x 175
-y 760
+y 735
 w 75
 h 20
 fgColor index 25
@@ -765,7 +765,7 @@ major 10
 minor 0
 release 0
 x 265
-y 760
+y 735
 w 85
 h 20
 controlPv "$(P)$(R)AutoRestart_RBV"
@@ -784,7 +784,7 @@ major 4
 minor 1
 release 1
 x 20
-y 765
+y 740
 w 143
 h 13
 font "arial-bold-r-12.0"
@@ -845,7 +845,7 @@ major 4
 minor 1
 release 1
 x 20
-y 665
+y 640
 w 149
 h 13
 font "arial-bold-r-12.0"
@@ -856,5 +856,83 @@ value {
   "Next Applied Name Prefix"
 }
 autoSize
+endObjectProperties
+
+# (Menu Button)
+object activeMenuButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 175
+y 760
+w 75
+h 20
+fgColor index 25
+bgColor index 3
+inconsistentColor index 0
+topShadowColor index 1
+botShadowColor index 11
+controlPv "$(P)$(R)AutoBref"
+indicatorPv "$(P)$(R)AutoBref_RBV"
+font "arial-bold-r-12.0"
+endObjectProperties
+
+# (Textupdate)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 265
+y 760
+w 85
+h 20
+controlPv "$(P)$(R)AutoBref_RBV"
+fgColor index 16
+fgAlarm
+bgColor index 10
+fill
+font "arial-bold-r-12.0"
+fontAlign "center"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 20
+y 765
+w 120
+h 13
+font "arial-bold-r-12.0"
+fgColor index 14
+bgColor index 3
+useDisplayBg
+value {
+  "Auto-black reference"
+}
+autoSize
+endObjectProperties
+
+# (Textupdate)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 95
+y 545
+w 75
+h 20
+controlPv "$(P)$(R)CSRCount_RBV"
+fgColor index 16
+fgAlarm
+bgColor index 10
+fill
+font "arial-bold-r-12.0"
+fontAlign "center"
 endObjectProperties
 

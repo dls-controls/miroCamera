@@ -128,9 +128,15 @@
 
 #define MIRO_SoftwareTriggerString          "MIRO_SOFTWARE_TRIGGER"
 #define MIRO_PerformCSRString               "MIRO_PERFORM_CSR"
+#define MIRO_CSRCountString                 "MIRO_CSR_COUNT"
+
+#define MIRO_SettingsSlotString             "MIRO_SETTINGS_SLOT"
+#define MIRO_SettingsSaveString             "MIRO_SETTINGS_SAVE"
+#define MIRO_SettingsLoadString             "MIRO_SETTINGS_LOAD"
 
 #define MIRO_AutoSaveString                 "MIRO_AUTO_SAVE"
 #define MIRO_AutoRestartString              "MIRO_AUTO_RESTART"
+#define MIRO_AutoCSRString                  "MIRO_AUTO_CSR"
 
 #define MIRO_PostTrigCountString            "MIRO_POST_TRIG_COUNT"
 #define MIRO_TotalFrameCountString          "MIRO_TOTAL_FRAME_COUNT"
@@ -442,6 +448,32 @@
     uint16_t LowestFormatQ;
   } SETUP;
 
+  typedef struct tagINFOBLOCK {
+    uint32_t size;
+    uint16_t type;
+    uint16_t reserved;
+  } INFOBLOCK;
+
+  typedef struct tagTIME64 {
+    uint32_t frac;
+    uint32_t secs;
+  } TIME64;
+
+  struct short_time_stamp32
+  {
+    // cam.tsformat = 1
+    // time from beginning of the year in 1/100 sec units
+    unsigned int csecs;
+    // exposure time in us
+    unsigned short exptime;
+    // bits[15..2]: fractions (us to 10000); b[1]:event; b[0]:lock
+    unsigned short frac;
+    // exposure extension up to 32 bits
+    unsigned short exptime32;
+    // fractions extension up to 32 bits
+    unsigned short frac32;
+  };
+
 typedef enum
 {
   MIROTypeFloat,
@@ -482,6 +514,7 @@ public:
   int size_;
   std::string sval_;
   int ival_;
+  char cval_;
   double dval_;
   void *vPtr_;
 
@@ -499,6 +532,7 @@ public:
         size_(size),
         sval_(""),
         ival_(0),
+        cval_(0),
         dval_(0.0)
   {
     if (size_ > 0){
@@ -509,7 +543,10 @@ public:
   void setStringVal(const std::string& sval)
   {
     sval_ = sval;
-    if (type_ == NDAttrInt32){
+    if (type_ == NDAttrInt8){
+      std::stringstream integerValueStream(sval_);
+      integerValueStream >> cval_;
+    } else if (type_ == NDAttrInt32){
       std::stringstream integerValueStream(sval_);
       integerValueStream >> ival_;
     } else if (type_ == NDAttrFloat64){
@@ -543,6 +580,8 @@ class MiroCamera: public ADDriver
     asynStatus sendSoftwareTrigger();
     asynStatus downloadCineFile(int cine);
     asynStatus saveCineToFlash(int cine);
+    asynStatus saveSettings();
+    asynStatus loadSettings();
     asynStatus formatFlash();
     asynStatus deleteFlashFile();
     asynStatus selectFlashByIndex(int index);
@@ -550,6 +589,7 @@ class MiroCamera: public ADDriver
     asynStatus downloadFlashHeader(const std::string& filename);
     asynStatus downloadFlashImages(const std::string& filename, int start, int end);
     asynStatus convert10BitPacketTo12Bit(void *input, void *output);
+    asynStatus readoutTimestamps(int cine, int start, int end);
     asynStatus readoutDataStream(int cine, int start, int end);
     asynStatus readFrame(int bytes);
     asynStatus updatePreviewCine();
@@ -604,8 +644,13 @@ class MiroCamera: public ADDriver
     int MIRO_AcquireState_;
     int MIRO_SoftwareTrigger_;
     int MIRO_PerformCSR_;
+    int MIRO_CSRCount_;
+    int MIRO_SettingsSlot_;
+    int MIRO_SettingsSave_;
+    int MIRO_SettingsLoad_;
     int MIRO_AutoSave_;
     int MIRO_AutoRestart_;
+    int MIRO_AutoCSR_;
     int MIRO_PostTrigCount_;
     int MIRO_TotalFrameCount_;
     int MIRO_MaxFrameCount_;
@@ -698,6 +743,11 @@ class MiroCamera: public ADDriver
     char                               data_[2048000];
     char                               imgData_[2048000];
     char                               flashData_[2048000];
+    std::vector<short_time_stamp32>    timestampData_;
+    std::vector<tagTIME64>             flashTsData_;
+    std::vector<uint32_t>              flashExpData_;
+    int                                flashTrigSecs_;
+    int                                flashTrigUsecs_;
     int                                previewWidth_;
     int                                previewHeight_;
     std::map<std::string, int>         debugMap_;

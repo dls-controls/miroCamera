@@ -1,0 +1,64 @@
+<hdf5_layout auto_ndattr_default="false">
+  <group name="entry">
+    <attribute name="NX_class" source="constant" value="NXentry" type="string"></attribute>
+    <group name="instrument">
+      <attribute name="NX_class" source="constant" value="NXinstrument" type="string"></attribute>
+      <group name="detector">
+        <attribute name="NX_class" source="constant" value="NXdetector" type="string"></attribute>
+        <dataset name="data" source="detector" det_default="true">
+          <attribute name="NX_class" source="constant" value="SDS" type="string"></attribute>
+          <attribute name="signal" source="constant" value="1" type="int"></attribute>
+          <attribute name="exposure" source="ndattribute" ndattribute="exposure"></attribute>
+          <attribute name="rate" source="ndattribute" ndattribute="rate"></attribute>
+          <attribute name="trigger_secs" source="ndattribute" ndattribute="trigger_secs"></attribute>
+          <attribute name="trigger_usecs" source="ndattribute" ndattribute="trigger_usecs"></attribute>
+          <attribute name="trigger_polarity" source="ndattribute" ndattribute="trigger_polarity"></attribute>
+          <attribute name="trigger_filter" source="ndattribute" ndattribute="trigger_filter"></attribute>
+          <attribute name="fsync" source="ndattribute" ndattribute="fsync"></attribute>
+          <attribute name="roi_width" source="ndattribute" ndattribute="roi_width"></attribute>
+          <attribute name="roi_height" source="ndattribute" ndattribute="roi_height"></attribute>
+          <attribute name="label" source="ndattribute" ndattribute="label"></attribute>
+          <attribute name="aux1mode" source="ndattribute" ndattribute="aux1_mode"></attribute>
+          <attribute name="first_frame" source="ndattribute" ndattribute="first_frame"></attribute>
+          <attribute name="frame_count" source="ndattribute" ndattribute="frame_count"></attribute>
+          <attribute name="post_trig_frames" source="ndattribute" ndattribute="post_trig_frames"></attribute>
+          <attribute name="rec_first_frame" source="ndattribute" ndattribute="rec_first_frame"></attribute>
+          <attribute name="rec_frame_count" source="ndattribute" ndattribute="rec_frame_count"></attribute>
+          <attribute name="partition" source="ndattribute" ndattribute="partition"></attribute>
+          <attribute name="filename" source="ndattribute" ndattribute="filename"></attribute>
+        </dataset>
+        <group name="NDAttributes">
+          <attribute name="NX_class" source="constant" value="NXcollection" type="string"></attribute>
+          <dataset name="ColorMode" source="ndattribute" ndattribute="ColorMode">
+          </dataset>
+        </group>          <!-- end group NDAttribute -->
+      </group>            <!-- end group detector -->
+      <group name="NDAttributes">
+        <attribute name="NX_class" source="constant" value="NXcollection" type="string"></attribute>
+        <dataset name="ts_sec" source="ndattribute" ndattribute="ts_sec">
+        </dataset>
+        <dataset name="ts_usec" source="ndattribute" ndattribute="ts_usec">
+        </dataset>
+        <dataset name="irig_sync" source="ndattribute" ndattribute="irig_sync">
+        </dataset>
+        <dataset name="event_input" source="ndattribute" ndattribute="event_input">
+        </dataset>
+        <dataset name="exp_time" source="ndattribute" ndattribute="exp_time">
+        </dataset>
+        <dataset name="time_from_trigger" source="ndattribute" ndattribute="tft">
+        </dataset>
+        <dataset name="inter_frame_time" source="ndattribute" ndattribute="ift">
+        </dataset>
+        <dataset name="frame_number" source="ndattribute" ndattribute="number">
+        </dataset>
+      </group>            <!-- end group NDAttribute (default) -->
+      <group name="performance">
+        <dataset name="timestamp"></dataset>
+      </group>            <!-- end group performance -->
+    </group>              <!-- end group instrument -->
+    <group name="data">
+      <attribute name="NX_class" source="constant" value="NXdata" type="string"></attribute>
+      <hardlink name="data" target="/entry/instrument/detector/data"></hardlink>
+    </group>              <!-- end group data -->
+  </group>                <!-- end group entry -->
+</hdf5_layout>

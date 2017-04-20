@@ -482,8 +482,13 @@ MiroCamera::MiroCamera(const char *portName, const char *ctrlPort, const char *d
   createParam(MIRO_AcquireStateString,             asynParamInt32,         &MIRO_AcquireState_);
   createParam(MIRO_SoftwareTriggerString,          asynParamInt32,         &MIRO_SoftwareTrigger_);
   createParam(MIRO_PerformCSRString,               asynParamInt32,         &MIRO_PerformCSR_);
+  createParam(MIRO_CSRCountString,                 asynParamInt32,         &MIRO_CSRCount_);
+  createParam(MIRO_SettingsSlotString,             asynParamInt32,         &MIRO_SettingsSlot_);
+  createParam(MIRO_SettingsSaveString,             asynParamInt32,         &MIRO_SettingsSave_);
+  createParam(MIRO_SettingsLoadString,             asynParamInt32,         &MIRO_SettingsLoad_);
   createParam(MIRO_AutoSaveString,                 asynParamInt32,         &MIRO_AutoSave_);
   createParam(MIRO_AutoRestartString,              asynParamInt32,         &MIRO_AutoRestart_);
+  createParam(MIRO_AutoCSRString,                  asynParamInt32,         &MIRO_AutoCSR_);
   createParam(MIRO_PostTrigCountString,            asynParamInt32,         &MIRO_PostTrigCount_);
   createParam(MIRO_TotalFrameCountString,          asynParamInt32,         &MIRO_TotalFrameCount_);
   createParam(MIRO_MaxFrameCountString,            asynParamInt32,         &MIRO_MaxFrameCount_);
@@ -564,13 +569,23 @@ MiroCamera::MiroCamera(const char *portName, const char *ctrlPort, const char *d
   setIntegerParam(MIRO_SelectedCine_, 1);
   setStringParam(ADManufacturer,  "Vision Research");
   setStringParam(MIRO_CFFileName_,  "");
+  setIntegerParam(MIRO_SettingsSlot_,  1);
 
   // Initialise meta data to save
   metaArray_.push_back(new MiroMeta("exposure", "Camera exposure time", "c%d.exp", NDAttrInt32, 0x674, 4));
   metaArray_.push_back(new MiroMeta("rate", "Camera frame rate", "c%d.rate", NDAttrInt32, 0x354, 4));
   metaArray_.push_back(new MiroMeta("trigger_secs", "Trigger time (seconds since 1970)", "c%d.trigtime.secs", NDAttrInt32, 0x028, 4));
   metaArray_.push_back(new MiroMeta("trigger_usecs", "Trigger time fraction (micro seconds)", "c%d.trigtime.frac", NDAttrInt32, 0x024, 4));
-  metaArray_.push_back(new MiroMeta("name", "Name of data capture", "c%d.meta.name", NDAttrString, 0x1B9C, 256));
+  metaArray_.push_back(new MiroMeta("label", "Label of data capture", "c%d.meta.name", NDAttrString, 0x1B9C, 256));
+  metaArray_.push_back(new MiroMeta("trigger_polarity", "1 = Rising Edge, 0 = Falling Edge", "c%d.cam.trigpol", NDAttrInt32, 0x1690, 4));
+  metaArray_.push_back(new MiroMeta("trigger_filter", "Trigger filter time (us)", "c%d.cam.trigfilt", NDAttrInt32, 0x1694, 4));
+  metaArray_.push_back(new MiroMeta("fsync", "Frame sync mode", "c%d.cam.syncimg", NDAttrInt32, 0x065, 1));
+  metaArray_.push_back(new MiroMeta("roi_width", "Region of interest pixel width", "c%d.meta.vw", NDAttrInt32, 0x030, 4));
+  metaArray_.push_back(new MiroMeta("roi_height", "Region of interest pixel height", "c%d.meta.vh", NDAttrInt32, 0x034, 4));
+  metaArray_.push_back(new MiroMeta("aux1_mode", "Auxiliary mode 1", "c%d.cam.aux1mode", NDAttrInt32, 0x0, 0));
+  metaArray_.push_back(new MiroMeta("first_frame", "First frame number", "c%d.firstfr", NDAttrInt32, 0x010, 4));
+  metaArray_.push_back(new MiroMeta("frame_count", "Total frame count", "c%d.frcount", NDAttrInt32, 0x014, 4));
+//  metaArray_.push_back(new MiroMeta("post_trig_frames", "Post trigger frame count", "c%d.lastfr", NDAttrInt32, 0x0, 0));
 
   if (status == asynSuccess){
     debug(functionName, "Starting up polling task....");
@@ -956,7 +971,7 @@ void MiroCamera::miroStatusTask()
 
   debug(functionName, "Starting thread...");
   while (1){
-    epicsThreadSleep(1.0);
+    epicsThreadSleep(0.25);
     this->lock();
 
     // Read out the preview cine status
@@ -1417,6 +1432,10 @@ asynStatus MiroCamera::writeInt32(asynUser *pasynUser, epicsInt32 value)
     }
   } else if (function == MIRO_CineSaveCF_){
     status |= saveCineToFlash(value);
+  } else if (function == MIRO_SettingsSave_){
+    status |= saveSettings();
+  } else if (function == MIRO_SettingsLoad_){
+    status |= loadSettings();
   } else if (function == MIRO_SelectedCine_){
     // Set up the selected cine
     status |= selectCine(value);
@@ -1473,6 +1492,8 @@ asynStatus MiroCamera::writeInt32(asynUser *pasynUser, epicsInt32 value)
     status |= setCameraParameter("auto.filesave", value);
   } else if (function == MIRO_AutoRestart_){
     status |= setCameraParameter("auto.acqrestart", value);
+  } else if (function == MIRO_AutoCSR_){
+    status |= setCameraParameter("auto.bref", value);
   } else if (function == MIRO_EDR_){
     status |= setCameraParameter("defc.edrexp", value);
   }
@@ -1760,6 +1781,9 @@ asynStatus MiroCamera::downloadCineFile(int cine)
   // Attach to the correct port
   //status = attachToPort("dataPort");
 
+  // Download the timestamp information
+  status = readoutTimestamps(cine, start, end);
+
   // Download the data and process arrays
   status = readoutDataStream(cine, start, end);
 
@@ -1785,6 +1809,36 @@ asynStatus MiroCamera::saveCineToFlash(int cine)
     status = sendSimpleCommand(command, &response);
   }
 
+  return status;
+}
+
+asynStatus MiroCamera::saveSettings()
+{
+  const char * functionName = "MiroCamera::saveSettings";
+  char command[MIRO_MAX_STRING];
+  std::string response = "";
+  int slot = 1;
+  asynStatus status = asynSuccess;
+
+  getIntegerParam(MIRO_SettingsSlot_, &slot);
+  sprintf(command, "%s { slot: %d }", MIRO_CMD_USERSAVE, slot);
+  status = sendSimpleCommand(command, &response);
+  debug(functionName, response.c_str());
+  return status;
+}
+
+asynStatus MiroCamera::loadSettings()
+{
+  const char * functionName = "MiroCamera::loadSettings";
+  char command[MIRO_MAX_STRING];
+  std::string response = "";
+  int slot = 1;
+  asynStatus status = asynSuccess;
+
+  getIntegerParam(MIRO_SettingsSlot_, &slot);
+  sprintf(command, "%s { slot: %d }", MIRO_CMD_USERLOAD, slot);
+  status = sendSimpleCommand(command, &response);
+  debug(functionName, response.c_str());
   return status;
 }
 
@@ -1911,10 +1965,17 @@ asynStatus MiroCamera::downloadFlashHeader(const std::string& filename)
   const char * functionName = "MiroCamera::downloadFlashHeader";
   char command[MIRO_MAX_STRING];
   std::string response;
+  short setupLength = 0;
+  int noOfTimes = 0;
+  int ofsBlock = 0;
+  INFOBLOCK block;
   asynStatus status = asynSuccess;
 
   // Attach to the correct port
   //status = attachToPort("dataPort");
+  // Clear out timestamp data
+  flashTsData_.clear();
+  flashExpData_.clear();
 
   if (status == asynSuccess){
     // Flush the data connection
@@ -1965,6 +2026,102 @@ asynStatus MiroCamera::downloadFlashHeader(const std::string& filename)
     setIntegerParam(MIRO_CFSLastFrame_, cineHeader_.FirstImageNo + cineHeader_.TotalImageCount);
   }
 
+  // Read in the setup length
+  if (status == asynSuccess){
+    sprintf(command, "cfread {filename: \"%s\", offset: 226, count:2 }", filename.c_str());
+    status = sendSimpleCommand(command, &response);
+    debug(functionName, "Response", response);
+  }
+  if (status == asynSuccess){
+    status = this->readFrame(2);
+    memcpy(&setupLength, data_, 2);
+    //printf("SETUP length: %d\n", setupLength);
+    // Now read in the first tagged information block header
+    ofsBlock = 84 + setupLength;
+    sprintf(command, "cfread {filename: \"%s\", offset: %d, count:8 }", filename.c_str(), ofsBlock);
+    status = sendSimpleCommand(command, &response);
+    debug(functionName, "Response", response);
+  }
+  if (status == asynSuccess){
+    status = this->readFrame(8);
+    memcpy(&block, data_, 8);
+    //printf("BLOCK size: %d\n", block.size);
+    //printf("BLOCK type: %d\n", block.type);
+    noOfTimes = (block.size - 8) / 8;
+    //printf("BLOCK number of times: %d\n", noOfTimes);
+    // Read out the data block and record the time values
+    ofsBlock += 8;
+    sprintf(command, "cfread {filename: \"%s\", offset: %d, count:%d }", filename.c_str(), ofsBlock, (block.size-8));
+    status = sendSimpleCommand(command, &response);
+    debug(functionName, "Response", response);
+  }
+  if (status == asynSuccess){
+    tagTIME64 ts;
+    status = this->readFrame(block.size-8);
+    char *ptr = data_;
+    for (int count = 0; count < noOfTimes; count++){
+      memcpy(&ts, ptr, 8);
+      //printf("tsec: %d\n", ts.secs);
+      //printf("tusec: %d\n", (int32_t)round((double)(ts.frac) / 4294.967296));
+      ts.frac = (uint32_t)round((double)(ts.frac) / 4294.967296);
+      flashTsData_.push_back(ts);
+      ptr+= 8;
+    }
+  }
+  if (status == asynSuccess){
+    // Now read in the second tagged information block header
+    ofsBlock += (block.size - 16);
+    sprintf(command, "cfread {filename: \"%s\", offset: %d, count:8 }", filename.c_str(), ofsBlock);
+    status = sendSimpleCommand(command, &response);
+    debug(functionName, "Response", response);
+  }
+  if (status == asynSuccess){
+    status = this->readFrame(8);
+    memcpy(&block, data_, 8);
+    //printf("BLOCK offset: %d\n", ofsBlock);
+    //printf("BLOCK size: %d\n", block.size);
+    //printf("BLOCK type: %d\n", block.type);
+    noOfTimes = (block.size - 8) / 4;
+    //printf("BLOCK number of exposures: %d\n", noOfTimes);
+    // Read out the data block and record the time values
+    ofsBlock += 8;
+    sprintf(command, "cfread {filename: \"%s\", offset: %d, count:%d }", filename.c_str(), ofsBlock, (block.size-8));
+    status = sendSimpleCommand(command, &response);
+    debug(functionName, "Response", response);
+  }
+  if (status == asynSuccess){
+    status = this->readFrame(block.size-8);
+    uint32_t *exp = (uint32_t *)data_;
+    for (int count = 0; count < noOfTimes; count++){
+      flashExpData_.push_back((uint32_t)round((double)(*exp) / 4294.967296));
+      exp++;
+      //printf("%d  %x\n", count, ptr[count]);
+      //memcpy(&exp, ptr, 4);
+      //printf("Raw: %u\n", exp);
+      //printf("Exposure: %d\n", (uint32_t)round((double)(exp) / 4294.967296));
+      //printf("tusec: %d\n", (int32_t)round((double)(ts.frac) / 4294.967296));
+      //ts.frac = (uint32_t)round((double)(ts.frac) / 4294.967296);
+      //flashTsData_.push_back(ts);
+      //ptr+= 4;
+    }
+  }
+  /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  /*if (status == asynSuccess){
+    // Now read in the second tagged information block header
+    ofsBlock += (block.size - 32);
+    sprintf(command, "cfread {filename: \"%s\", offset: %d, count: 256 }", filename.c_str(), ofsBlock);
+    status = sendSimpleCommand(command, &response);
+    debug(functionName, "Response", response);
+  }
+  if (status == asynSuccess){
+    printf("BLOCK offset: %d\n", ofsBlock);
+    status = this->readFrame(256);
+    unsigned char *ch = (unsigned char *)data_;
+    for (int count = 0; count < 256; count++){
+      printf("%d  %x\n", count, ch[count]);
+    }
+  }*/
+
   // Loop over meta array to read values
   for (int mc = 0; mc < (int)metaArray_.size(); mc++){
     if (metaArray_[mc]->offset_ > 0){
@@ -1979,8 +2136,13 @@ asynStatus MiroCamera::downloadFlashHeader(const std::string& filename)
           uint32_t uival = (uint32_t)*ival;
           double timeVal = (double)(uival) / 4294.967296;
           int32_t tival = (int32_t)round(timeVal);
+          flashTrigUsecs_ = tival;
           memcpy(metaArray_[mc]->vPtr_, &tival, 4);
           ival = (int32_t *)metaArray_[mc]->vPtr_;
+        }
+        if (metaArray_[mc]->name_ == "trigger_secs"){
+          uint32_t uival = (uint32_t)*ival;
+          flashTrigSecs_ = uival;
         }
         //printf("%s: %d\n", metaArray_[mc]->name_.c_str(), *ival);
       }
@@ -2064,15 +2226,23 @@ asynStatus MiroCamera::downloadFlashImages(const std::string& filename, int star
   int arrayCallbacks   = 0;
   int recordCount = 0;
   int metaFrame = 0;
+  int frames = end - start + 1;
+  int firstfr = 0;
+  int postTrig = 0;
+  int first_tv_sec = 0;
+  int first_tv_usec = 0;
   asynStatus status = asynSuccess;
-
-
 
   // Attach to the correct port
   //status = attachToPort("dataPort");
 
   // Flush the data connection
   pasynOctetSyncIO->flush(dataChannel_);
+
+  // Obtain the post trig count
+  postTrig = cineHeader_.FirstImageNo + cineHeader_.TotalImageCount;
+  // Obtain the first frame number
+  firstfr = start + cineHeader_.FirstImageNo;
 
   sprintf(command, "cfread {filename: \"%s\", offset:%d, count:%d }", filename.c_str(), cineHeader_.OffImageOffsets, (8*cineHeader_.TotalImageCount) );
   status = sendSimpleCommand(command, &response);
@@ -2092,6 +2262,8 @@ asynStatus MiroCamera::downloadFlashImages(const std::string& filename, int star
   debug(functionName, "Height", height);
   debug(functionName, "nBytes", nBytes);
 
+  first_tv_sec = flashTsData_[start].secs;
+  first_tv_usec = flashTsData_[start].frac;
   recordCount = 0;
   for (int count = start; count <= end; count++){
     metaFrame = count + cineHeader_.FirstImageNo;
@@ -2142,9 +2314,32 @@ asynStatus MiroCamera::downloadFlashImages(const std::string& filename, int star
       pImage->dims[1].size = dims[1];
       // Add the frame number attribute
       pImage->pAttributeList->add("number", "Frame number", NDAttrInt32, (void *)(&metaFrame));
+      // Add the download start frame
+      pImage->pAttributeList->add("rec_first_frame", "First frame of recording", NDAttrInt32, (void *)(&firstfr));
+      // Add the download frame count
+      pImage->pAttributeList->add("rec_frame_count", "Frame count of recording", NDAttrInt32, (void *)(&frames));
+      // Add the flash filename
+      char sval[256];
+      strncpy(sval, (char *)filename.c_str(), 256);
+      pImage->pAttributeList->add("filename", "Flash file name", NDAttrString, (void *)(sval));
+      // Add the post trigger frame count
+      pImage->pAttributeList->add("post_trig_frames", "Post trigger frame count", NDAttrInt32, (void *)(&postTrig));
+
+      int tv_sec = flashTsData_[count].secs;
+      pImage->pAttributeList->add("ts_sec", "Timestamp of frames (seconds since 1970)", NDAttrUInt32, (void *)(&tv_sec));
+      int tv_usec = flashTsData_[count].frac;
+      pImage->pAttributeList->add("ts_usec", "Timestamp of frames (microseconds)", NDAttrUInt32, (void *)(&tv_usec));
+
+      pImage->pAttributeList->add("exp_time", "Exposure time (microseconds)", NDAttrUInt32, (void *)(&(flashExpData_[count])));
+
       // Loop over meta array to create attributes
       for (int mc = 0; mc < (int)metaArray_.size(); mc++){
-        if (metaArray_[mc]->type_ == NDAttrInt32){
+        if (metaArray_[mc]->type_ == NDAttrInt8){
+          pImage->pAttributeList->add(metaArray_[mc]->name_.c_str(),
+              metaArray_[mc]->desc_.c_str(),
+              NDAttrInt8,
+              metaArray_[mc]->vPtr_);
+        } else if (metaArray_[mc]->type_ == NDAttrInt32){
           pImage->pAttributeList->add(metaArray_[mc]->name_.c_str(),
               metaArray_[mc]->desc_.c_str(),
               NDAttrInt32,
@@ -2163,6 +2358,25 @@ asynStatus MiroCamera::downloadFlashImages(const std::string& filename, int star
               (void *)(sval));
         }
       }
+      int tfts = tv_sec - flashTrigSecs_;
+      int tftus = tv_usec - flashTrigUsecs_;
+      if (tftus < 0){
+        tfts--;
+        tftus += 1000000;
+      }
+      int tft = (tfts * 1000000) + tftus;
+      pImage->pAttributeList->add("tft", "Time from trigger (microseconds)", NDAttrInt32, (void *)(&tft));
+
+      int ifts = tv_sec - first_tv_sec;
+      int iftus = tv_usec - first_tv_usec;
+      if (iftus < 0){
+        ifts--;
+        iftus += 1000000;
+      }
+      int ift = (ifts * 1000000) + iftus;
+      pImage->pAttributeList->add("ift", "Inter frame time (microseconds)", NDAttrInt32, (void *)(&ift));
+      first_tv_sec = tv_sec;
+      first_tv_usec = tv_usec;
 
       getIntegerParam(NDArrayCallbacks, &arrayCallbacks);
       if (arrayCallbacks){
@@ -2222,6 +2436,48 @@ asynStatus MiroCamera::convert10BitPacketTo12Bit(void *input, void *output)
   return status;
 }
 
+asynStatus MiroCamera::readoutTimestamps(int cine, int start, int end)
+{
+  const char * functionName = "MiroCamera::readoutTimestamps";
+  char command[MIRO_MAX_STRING];
+  int nBytes = 0;
+  std::string response;
+  int frames = end - start + 1;
+  short_time_stamp32 ts;
+  asynStatus status = asynSuccess;
+
+
+  // Flush the data connection
+  pasynOctetSyncIO->flush(dataChannel_);
+  // Clear any old timestamp data out
+  timestampData_.clear();
+
+  sprintf(command, "time {cine:%d, start:%d, cnt:%d}", cine, start, frames);
+  status = sendSimpleCommand(command, &response);
+  debug(functionName, "Response", response);
+
+  // Read back all of the timestamps in one go
+  nBytes = frames * 12;
+  status = this->readFrame(nBytes);
+  char *dPtr = data_;
+  for (int frame = 0; frame < frames; frame++){
+    memcpy(&ts, dPtr, 12);
+    // time from beginning of the year in 1/100 sec units
+    printf("Time sec 1/100: %u\n", ntohl(ts.csecs));
+    // exposure time in us
+    printf("Exp time us: %d\n", ts.exptime);
+    // bits[15..2]: fractions (us to 10000); b[1]:event; b[0]:lock
+    printf("Fractions us to 10000: %u\n", ntohs(ts.frac)>>2);
+    // exposure extension up to 32 bits
+    printf("Exposure extension: %d\n", ts.exptime32);
+    // fractions extension up to 32 bits
+    printf("Fractions extension: %d\n", ts.frac32);
+    dPtr+=12;
+    timestampData_.push_back(ts);
+  }
+
+  return status;
+}
 
 asynStatus MiroCamera::readoutDataStream(int cine, int start, int end)
 {
@@ -2241,6 +2497,12 @@ asynStatus MiroCamera::readoutDataStream(int cine, int start, int end)
   int metaExposure = 0;
   int metaRate = 0;
   int metaFrame = 0;
+  int lastfr = 0;
+  int irigYear = 0;
+  int trigSecs = 0;
+  int trigUSecs = 0;
+  unsigned int first_tv_sec = 0;
+  unsigned int first_tv_usec = 0;
   asynStatus status = asynSuccess;
 
   // Read the meta data
@@ -2248,6 +2510,16 @@ asynStatus MiroCamera::readoutDataStream(int cine, int start, int end)
   status = stringToInteger(paramMap_[command].getValue(), metaRate);
   sprintf(command, "c%d.exp", cine);
   status = stringToInteger(paramMap_[command].getValue(), metaExposure);
+  sprintf(command, "c%d.lastfr", cine);
+  status = stringToInteger(paramMap_[command].getValue(), lastfr);
+  lastfr++;
+
+  status = getCameraDataStruc("irig", paramMap_);
+  status = stringToInteger(paramMap_["irig.yearbegin"].getValue(), irigYear);
+  sprintf(command, "c%d.trigtime.secs", cine);
+  status = stringToInteger(paramMap_[command].getValue(), trigSecs);
+  sprintf(command, "c%d.trigtime.frac", cine);
+  status = stringToInteger(paramMap_[command].getValue(), trigUSecs);
 
   // Loop over meta array to read values
   for (int mc = 0; mc < (int)metaArray_.size(); mc++){
@@ -2272,6 +2544,12 @@ asynStatus MiroCamera::readoutDataStream(int cine, int start, int end)
   sprintf(command, "img {cine:%d, start:%d, cnt:%d, fmt:P10}", cine, start, frames);
   status = sendSimpleCommand(command, &response);
   debug(functionName, "Response", response);
+
+  if (frame == 0){
+    short_time_stamp32 tss = timestampData_[0];
+    first_tv_sec = (ntohl(tss.csecs) / 100) + irigYear;
+    first_tv_usec = ((ntohl(tss.csecs) % 100) * 10000) + (ntohs(tss.frac) >> 2);
+  }
 
   //for (int frame = 0; frame < frames; frame++){
   while ((frame < frames) && (status == asynSuccess)){
@@ -2302,9 +2580,22 @@ asynStatus MiroCamera::readoutDataStream(int cine, int start, int end)
       pImage->dims[1].size = dims[1];
       // Add the frame number attribute
       pImage->pAttributeList->add("number", "Frame number", NDAttrInt32, (void *)(&metaFrame));
+      // Add the download start frame
+      pImage->pAttributeList->add("rec_first_frame", "First frame of recording", NDAttrInt32, (void *)(&start));
+      // Add the download frame count
+      pImage->pAttributeList->add("rec_frame_count", "Frame count of recording", NDAttrInt32, (void *)(&frames));
+      // Add the partition number
+      pImage->pAttributeList->add("partition", "Partition number", NDAttrInt32, (void *)(&cine));
+      // Add the post trigger frame count
+      pImage->pAttributeList->add("post_trig_frames", "Post trigger frame count", NDAttrInt32, (void *)(&lastfr));
       // Loop over meta array to create attributes
       for (int mc = 0; mc < (int)metaArray_.size(); mc++){
-        if (metaArray_[mc]->type_ == NDAttrInt32){
+        if (metaArray_[mc]->type_ == NDAttrInt8){
+          pImage->pAttributeList->add(metaArray_[mc]->name_.c_str(),
+              metaArray_[mc]->desc_.c_str(),
+              NDAttrInt8,
+              (void *)(&metaArray_[mc]->cval_));
+        } else if (metaArray_[mc]->type_ == NDAttrInt32){
           pImage->pAttributeList->add(metaArray_[mc]->name_.c_str(),
               metaArray_[mc]->desc_.c_str(),
               NDAttrInt32,
@@ -2323,6 +2614,38 @@ asynStatus MiroCamera::readoutDataStream(int cine, int start, int end)
               (void *)(sval));
         }
       }
+
+      // Add the timing attributes
+      short_time_stamp32 ts = timestampData_[frame-1];
+      unsigned int tv_sec = (ntohl(ts.csecs) / 100) + irigYear;
+      pImage->pAttributeList->add("ts_sec", "Timestamp of frames (seconds since 1970)", NDAttrUInt32, (void *)(&tv_sec));
+      unsigned int tv_usec = ((ntohl(ts.csecs) % 100) * 10000) + (ntohs(ts.frac) >> 2);
+      pImage->pAttributeList->add("ts_usec", "Timestamp of frames (microseconds)", NDAttrUInt32, (void *)(&tv_usec));
+      char locked = ntohs(ts.frac) & 0x01;
+      pImage->pAttributeList->add("irig_sync", "IRIG synchronized", NDAttrInt8, (void *)(&locked));
+      char event_active = (ntohs(ts.frac) & 0x02) >> 1;
+      pImage->pAttributeList->add("event_input", "Event Input (1 = open)", NDAttrInt8, (void *)(&event_active));
+      unsigned int exp_time = ntohs(ts.exptime);
+      pImage->pAttributeList->add("exp_time", "Exposure time (microseconds)", NDAttrUInt32, (void *)(&exp_time));
+      int tfts = tv_sec - trigSecs;
+      int tftus = tv_usec - trigUSecs;
+      if (tftus < 0){
+        tfts--;
+        tftus += 1000000;
+      }
+      int tft = (tfts * 1000000) + tftus;
+      pImage->pAttributeList->add("tft", "Time from trigger (microseconds)", NDAttrInt32, (void *)(&tft));
+
+      int ifts = tv_sec - first_tv_sec;
+      int iftus = tv_usec - first_tv_usec;
+      if (iftus < 0){
+        ifts--;
+        iftus += 1000000;
+      }
+      int ift = (ifts * 1000000) + iftus;
+      pImage->pAttributeList->add("ift", "Inter frame time (microseconds)", NDAttrInt32, (void *)(&ift));
+      first_tv_sec = tv_sec;
+      first_tv_usec = tv_usec;
 
       getIntegerParam(NDArrayCallbacks, &arrayCallbacks);
       if (arrayCallbacks){
@@ -2750,6 +3073,14 @@ asynStatus MiroCamera::updateAutoStatus()
   if (status == asynSuccess){
     // Update the sensor temperature
     status = this->updateIntegerParameter("auto.acqrestart", MIRO_AutoRestart_);
+  }
+  if (status == asynSuccess){
+    // Update the sensor temperature
+    status = this->updateIntegerParameter("auto.bref", MIRO_AutoCSR_);
+  }
+  if (status == asynSuccess){
+    // Update the sensor temperature
+    status = this->updateIntegerParameter("auto.bref_progress", MIRO_CSRCount_);
   }
   return status;
 }

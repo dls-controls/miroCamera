@@ -119,6 +119,23 @@ record(bi, "$(P)$(R)AutoRestart_RBV")
    field(SCAN, "I/O Intr")
 }
 
+record(bo, "$(P)$(R)AutoBref")
+{
+   field(DTYP, "asynInt32")
+   field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))MIRO_AUTO_CSR")
+   field(ZNAM, "Off")
+   field(ONAM, "On")
+}
+
+record(bi, "$(P)$(R)AutoBref_RBV")
+{
+   field(DTYP, "asynInt32")
+   field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))MIRO_AUTO_CSR")
+   field(ZNAM, "Off")
+   field(ONAM, "On")
+   field(SCAN, "I/O Intr")
+}
+
 ################################################################
 ###
 ### Cine Data
@@ -346,6 +363,67 @@ record(longout, "$(P)$(R)PerformCSR")
   field(DESC, "Perform a CSR")
   field(DTYP, "asynInt32")
   field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))MIRO_PERFORM_CSR")
+}
+
+record(longin, "$(P)$(R)CSRCount_RBV")
+{
+  field(DESC, "Bref counter")
+  field(DTYP, "asynInt32")
+  field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))MIRO_CSR_COUNT")
+  field(SCAN, "I/O Intr")
+}
+
+################################################################
+###
+### User settings
+###
+record(longout, "$(P)$(R)SettingsSave")
+{
+  field(DESC, "Save User Settings")
+  field(DTYP, "asynInt32")
+  field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))MIRO_SETTINGS_SAVE")
+}
+
+record(longout, "$(P)$(R)SettingsLoad")
+{
+  field(DESC, "Load User Settings")
+  field(DTYP, "asynInt32")
+  field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))MIRO_SETTINGS_LOAD")
+}
+
+record(mbbo, "$(P)$(R)SettingsSlot")
+{
+  field(DESC, "Settings slot")
+  field(DTYP, "asynInt32")
+  field(OUT,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))MIRO_SETTINGS_SLOT")
+  field(ZRST, "1")
+  field(ZRVL, "1")
+  field(ONST, "2")
+  field(ONVL, "2")
+  field(TWST, "3")
+  field(TWVL, "3")
+  field(THST, "4")
+  field(THVL, "4")
+  field(FRST, "5")
+  field(FRVL, "5")
+}
+
+record(mbbi, "$(P)$(R)SettingsSlot_RBV")
+{
+  field(DESC, "Settings slot")
+  field(DTYP, "asynInt32")
+  field(INP,  "@asyn($(PORT),$(ADDR),$(TIMEOUT))MIRO_SETTINGS_SLOT")
+  field(ZRST, "1")
+  field(ZRVL, "1")
+  field(ONST, "2")
+  field(ONVL, "2")
+  field(TWST, "3")
+  field(TWVL, "3")
+  field(THST, "4")
+  field(THVL, "4")
+  field(FRST, "5")
+  field(FRVL, "5")
+  field(SCAN, "I/O Intr")
 }
 
 ################################################################
