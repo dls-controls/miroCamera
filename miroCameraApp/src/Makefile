@@ -24,6 +24,8 @@ miro_LIBS += asyn
 miro_LIBS += ADBase
 miro_LIBS += busy
 
+DATA += miro_hdf5.xml
+
 # We need to link against the EPICS Base libraries
 miro_LIBS += $(EPICS_BASE_IOC_LIBS)
 
