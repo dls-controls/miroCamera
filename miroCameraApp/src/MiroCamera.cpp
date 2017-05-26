@@ -642,15 +642,6 @@ MiroCamera::MiroCamera(const char *portName, const char *ctrlPort, const char *d
   if (status == asynSuccess){
     // Attempt connection
     status |= makeConnection();
-/*  // Failed connection is not terminal here
-    //if (status != asynSuccess){
-    //  setIntegerParam(ADStatus, ADStatusError);
-    //  setStringParam(ADStatusMessage, "Not connected to Miro camera");
-    //  callParamCallbacks();
-    //  status = asynSuccess;
-    //}
-
-*/
 
     if (status == asynSuccess){
       int sens_width = 0;
@@ -690,24 +681,6 @@ asynStatus MiroCamera::makeConnection()
   if (status == asynSuccess){
     debug(functionName, "Connected OK");
     if (firstConnect_ == true){
-      // This is our first connection attempt
-      // Read in the device name
-//      if (status == asynSuccess){
-//        status = readDeviceVisibleName();
-//      }
-
-      // Setup all of the available parameters obtained from the hardware
-      if (status == asynSuccess){
-//        status = setupEPICSParameters();
-      }
-
-      // 
-      if (status == asynSuccess){
-
-      }
-
-      //int lport = getLocalPortNum(driverPort_);
-      //std::cout << "lport = " << lport << '\n';
       // Publish any updates necessary
       callParamCallbacks();
 
@@ -780,9 +753,7 @@ asynStatus MiroCamera::disconnect()
 }
 
 /** 
- *  Task to listen to the MIRO prodigy application and update the higher level software.
- *
- *  This function runs the polling thread.
+ *  This function runs the acquisition thread.
  *  It is started in the class constructor and must not return until the IOC stops.
  *
 */ 
@@ -946,15 +917,8 @@ void MiroCamera::miroCameraTask()
       callParamCallbacks();
       getIntegerParam(ADAcquire, &acquire);
 
-      // If we are acquiring then sleep for the acquire period minus elapsed time.
+      // If we are acquiring then check for a stop event
       if (acquire){
-        //epicsTimeGetCurrent(&endTime);
-//        elapsedTime = epicsTimeDiffInSeconds(&endTime, &startTime);
-//        delay = acquirePeriod - elapsedTime;
-//        if (delay >= 0.0){
-//          debug(functionName, "Delay", delay);
-//          // We set the status to indicate we are in the period delay
-//        setIntegerParam(ADStatus, ADStatusWaiting);
         callParamCallbacks();
         this->unlock();
         status = epicsEventWaitWithTimeout(this->stopEventId_, 0.1);
@@ -968,6 +932,11 @@ void MiroCamera::miroStatusTask()
 {
   static const char *functionName = "MiroCamera::miroStatusTask";
   int status = asynSuccess;
+  int cine = 0;
+  char command[MIRO_MAX_STRING];
+  std::string cineStr;
+  int frameCount = 0;
+  int acquire = 0;
 
   debug(functionName, "Starting thread...");
   while (1){
@@ -1008,6 +977,23 @@ void MiroCamera::miroStatusTask()
     updateCine(14);
     updateCine(15);
     updateCine(16);
+
+    getIntegerParam(ADAcquire, &acquire);
+    // If we are not acquiring update the cine frame count
+    if (!acquire){
+      // Read in the selected cine
+      getIntegerParam(MIRO_SelectedCine_, &cine);
+      // Create the cine string
+      sprintf(command, "c%d", cine);
+      cineStr.assign(command);
+      // Read out the cine status and counter
+      getCameraDataStruc(cineStr, paramMap_);
+      status = stringToInteger(paramMap_[cineStr + ".frcount"].getValue(), frameCount);
+      // Set a bit of areadetector image/frame statistics...
+      setIntegerParam(MIRO_TotalFrameCount_, frameCount);
+      callParamCallbacks();
+    }
+
     this->unlock();
   }
 }
@@ -1403,11 +1389,11 @@ asynStatus MiroCamera::writeInt32(asynUser *pasynUser, epicsInt32 value)
       epicsEventSignal(this->startEventId_);
     }
     if (!value && (adstatus != ADStatusIdle)){
-      // Stop acquiring ( abort any hardware processings )
-      epicsEventSignal(this->stopEventId_);
-      // Sent the message to the analyser to stop
+      // Sent the message to the miro to stop
       std::string response = "";
       sendSimpleCommand(MIRO_CMD_ABORT, &response);
+      // Stop acquiring ( abort any hardware processing )
+      epicsEventSignal(this->stopEventId_);
     }
   } else if (function == MIRO_LivePreview_){
     if (value){
@@ -1968,6 +1954,7 @@ asynStatus MiroCamera::downloadFlashHeader(const std::string& filename)
   short setupLength = 0;
   int noOfTimes = 0;
   int ofsBlock = 0;
+  int defaultExposure = 0;
   INFOBLOCK block;
   asynStatus status = asynSuccess;
 
@@ -1995,15 +1982,7 @@ asynStatus MiroCamera::downloadFlashHeader(const std::string& filename)
     char stype[3];
     strncpy(stype, (char *)&(cineHeader_.Type), 2);
     stype[2] = 0;
-    //printf("Type: %s\n", stype);
-    //printf("Header size: %d\n", cineHeader_.Headersize);
-    //printf("Compression: %d\n", cineHeader_.Compression);
-    //printf("Version: %d\n", cineHeader_.Version);
-    //printf("First movie image: %d\n", cineHeader_.FirstMovieImage);
-    //printf("Total Image Count: %d\n", cineHeader_.TotalImageCount);
-    //printf("First image number: %d\n", cineHeader_.FirstImageNo);
-    //printf("Image Count: %d\n", cineHeader_.ImageCount);
-    //printf("OffImageOffsets: %d\n", cineHeader_.OffImageOffsets);
+    debug(functionName, "OffImageOffsets", (int)cineHeader_.OffImageOffsets);
   }
 
   if (status == asynSuccess){
@@ -2015,15 +1994,22 @@ asynStatus MiroCamera::downloadFlashHeader(const std::string& filename)
   if (status == asynSuccess){
     status = this->readFrame(40);
     memcpy(&cineBitmapHeader_, data_, 40);
-    //printf("Size: %d\n", cineBitmapHeader_.biSize);
-    //printf("Width: %d\n", cineBitmapHeader_.biWidth);
-    //printf("Height: %d\n", cineBitmapHeader_.biHeight);
-    //printf("Image Size: %d\n", cineBitmapHeader_.biSizeImage);
     setIntegerParam(MIRO_CFSWidth_, cineBitmapHeader_.biWidth);
     setIntegerParam(MIRO_CFSHeight_, cineBitmapHeader_.biHeight);
     setIntegerParam(MIRO_CFSFrameCount_, cineHeader_.TotalImageCount);
     setIntegerParam(MIRO_CFSFirstFrame_, cineHeader_.FirstImageNo);
     setIntegerParam(MIRO_CFSLastFrame_, cineHeader_.FirstImageNo + cineHeader_.TotalImageCount);
+  }
+
+  // Read in the default exposure time ns
+  if (status == asynSuccess){
+    sprintf(command, "cfread {filename: \"%s\", offset: 1652, count:4 }", filename.c_str());
+    status = sendSimpleCommand(command, &response);
+    debug(functionName, "Response", response);
+  }
+  if (status == asynSuccess){
+    status = this->readFrame(4);
+    memcpy(&defaultExposure, data_, 4);
   }
 
   // Read in the setup length
@@ -2035,7 +2021,6 @@ asynStatus MiroCamera::downloadFlashHeader(const std::string& filename)
   if (status == asynSuccess){
     status = this->readFrame(2);
     memcpy(&setupLength, data_, 2);
-    //printf("SETUP length: %d\n", setupLength);
     // Now read in the first tagged information block header
     ofsBlock = 84 + setupLength;
     sprintf(command, "cfread {filename: \"%s\", offset: %d, count:8 }", filename.c_str(), ofsBlock);
@@ -2045,10 +2030,7 @@ asynStatus MiroCamera::downloadFlashHeader(const std::string& filename)
   if (status == asynSuccess){
     status = this->readFrame(8);
     memcpy(&block, data_, 8);
-    //printf("BLOCK size: %d\n", block.size);
-    //printf("BLOCK type: %d\n", block.type);
     noOfTimes = (block.size - 8) / 8;
-    //printf("BLOCK number of times: %d\n", noOfTimes);
     // Read out the data block and record the time values
     ofsBlock += 8;
     sprintf(command, "cfread {filename: \"%s\", offset: %d, count:%d }", filename.c_str(), ofsBlock, (block.size-8));
@@ -2082,11 +2064,7 @@ asynStatus MiroCamera::downloadFlashHeader(const std::string& filename)
   if (status == asynSuccess){
     status = this->readFrame(8);
     memcpy(&block, data_, 8);
-    //printf("BLOCK offset: %d\n", ofsBlock);
-    //printf("BLOCK size: %d\n", block.size);
-    //printf("BLOCK type: %d\n", block.type);
     noOfTimes = (block.size - 8) / 4;
-    //printf("BLOCK number of exposures: %d\n", noOfTimes);
     // Read out the data block and record the time values
     ofsBlock += 8;
     sprintf(command, "cfread {filename: \"%s\", offset: %d, count:%d }", filename.c_str(), ofsBlock, (block.size-8));
@@ -2097,34 +2075,14 @@ asynStatus MiroCamera::downloadFlashHeader(const std::string& filename)
     status = this->readFrame(block.size-8);
     uint32_t *exp = (uint32_t *)data_;
     for (int count = 0; count < noOfTimes; count++){
-      flashExpData_.push_back((uint32_t)round((double)(*exp) / 4294.967296));
+      if (*exp == 0){
+        flashExpData_.push_back((uint32_t)defaultExposure);
+      } else {
+        flashExpData_.push_back((uint32_t)round((double)(*exp) / 4294.967296));
+      }
       exp++;
-      //printf("%d  %x\n", count, ptr[count]);
-      //memcpy(&exp, ptr, 4);
-      //printf("Raw: %u\n", exp);
-      //printf("Exposure: %d\n", (uint32_t)round((double)(exp) / 4294.967296));
-      //printf("tusec: %d\n", (int32_t)round((double)(ts.frac) / 4294.967296));
-      //ts.frac = (uint32_t)round((double)(ts.frac) / 4294.967296);
-      //flashTsData_.push_back(ts);
-      //ptr+= 4;
     }
   }
-  /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-  /*if (status == asynSuccess){
-    // Now read in the second tagged information block header
-    ofsBlock += (block.size - 32);
-    sprintf(command, "cfread {filename: \"%s\", offset: %d, count: 256 }", filename.c_str(), ofsBlock);
-    status = sendSimpleCommand(command, &response);
-    debug(functionName, "Response", response);
-  }
-  if (status == asynSuccess){
-    printf("BLOCK offset: %d\n", ofsBlock);
-    status = this->readFrame(256);
-    unsigned char *ch = (unsigned char *)data_;
-    for (int count = 0; count < 256; count++){
-      printf("%d  %x\n", count, ch[count]);
-    }
-  }*/
 
   // Loop over meta array to read values
   for (int mc = 0; mc < (int)metaArray_.size(); mc++){
@@ -2148,70 +2106,10 @@ asynStatus MiroCamera::downloadFlashHeader(const std::string& filename)
           uint32_t uival = (uint32_t)*ival;
           flashTrigSecs_ = uival;
         }
-        //printf("%s: %d\n", metaArray_[mc]->name_.c_str(), *ival);
       }
     }
   }
 
-  /*
-  if (status == asynSuccess){
-    sprintf(command, "cfread {filename: \"%s\", offset: 84, count:10000 }", filename.c_str());
-    status = sendSimpleCommand(command, &response);
-    debug(functionName, "Response", response);
-  }
-
-  if (status == asynSuccess){
-    status = this->readFrame(10000);
-    memcpy(&cineSetupHeader_, data_, 10000);
-    printf("FrameRate16: %d\n", cineSetupHeader_.FrameRate16);
-    printf("Image Width: %d\n", cineSetupHeader_.ImWidth);
-    char *ptr = (char *)&(cineSetupHeader_.Mark);
-    printf("Image Mark: %c %c\n", ptr[0], ptr[1]);
-    printf("Image Length: %d\n", cineSetupHeader_.Length);
-    printf("Camera Version: %d\n", cineSetupHeader_.CameraVersion);
-    printf("Software Version: %d\n", cineSetupHeader_.SoftwareVersion);
-    printf("Firmware Version: %d\n", cineSetupHeader_.FirmwareVersion);
-    printf("lFirstImage: %d\n", cineSetupHeader_.lFirstImage);
-    printf("CineName: %s\n", cineSetupHeader_.CineName);
-    printf("strlen(GpsInfo): %d\n", strlen(cineSetupHeader_.GpsInfo));
-    //printf("GpsInfo: %s\n", cineSetupHeader_.GpsInfo);
-    printf("strlen(Uuid): %d\n", strlen(cineSetupHeader_.Uuid));
-    //printf("Uuid: %s\n", cineSetupHeader_.Uuid);
-  }
-
-  sprintf(command, "cfread {filename: \"%s\", offset: 821, count:2 }", filename.c_str());
-  status = sendSimpleCommand(command, &response);
-  status = this->readFrame(2);
-  int16_t tw = 0;
-  memcpy(&tw, data_, 2);
-  printf("TEST Image Width: %d\n", tw);
-
-  sprintf(command, "cfread {filename: \"%s\", offset: 884, count:4 }", filename.c_str());
-  status = sendSimpleCommand(command, &response);
-  status = this->readFrame(4);
-  int32_t tl = 0;
-  memcpy(&tl, data_, 4);
-  printf("TEST Software Version: %d\n", tl);
-
-  sprintf(command, "cfread {filename: \"%s\", offset: 7068, count:256 }", filename.c_str());
-  status = sendSimpleCommand(command, &response);
-  status = this->readFrame(256);
-  char tname[256];
-  strncpy(tname, (char *)data_, 256);
-  printf("TEST Name: %s\n", tname);
-
-  sprintf(command, "cfread {filename: \"%s\", offset: 9684, count:256 }", filename.c_str());
-  status = sendSimpleCommand(command, &response);
-  status = this->readFrame(256);
-  strncpy(tname, (char *)data_, 256);
-  printf("TEST UUID: %s\n", tname);
-
-  printf("SETUP Size: %d\n", sizeof(SETUP));
-  SETUP testSetup;
-  printf("Address : %d\n", &testSetup.FrameRate16);
-  printf("Address : %d\n", &testSetup.ImWidth);
-  printf("Size : %d\n", &testSetup.ImWidth - &testSetup.FrameRate16 + 2);
-*/
   return status;
 }
 
@@ -2850,8 +2748,6 @@ asynStatus MiroCamera::selectCine(int cine)
     // Now setup the selected cine width, height, frame count, start and end frames
     sprintf(command, "c%d.res", cine);
     param = paramMap_[command].getValue();
-    printf("Param command: %s\n", command);
-    printf("Param resp: %s\n", param.c_str());
     // This will contain a string like 1200 x 800, split by the x
     if (param.find_first_of("x") != std::string::npos){
       int width = 0;

@@ -3,8 +3,8 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 284
-y 207
+x 286
+y 233
 w 390
 h 470
 font "arial-bold-r-12.0"
@@ -1133,25 +1133,6 @@ major 4
 minor 1
 release 1
 x 205
-y 230
-w 80
-h 20
-font "arial-bold-r-12.0"
-fgColor index 14
-bgColor index 3
-useDisplayBg
-value {
-  "Trigger Mode"
-}
-endObjectProperties
-
-# (Static Text)
-object activeXTextClass
-beginObjectProperties
-major 4
-minor 1
-release 1
-x 205
 y 355
 w 120
 h 20
@@ -1241,25 +1222,6 @@ bgColor index 3
 useDisplayBg
 value {
   "State"
-}
-endObjectProperties
-
-# (Static Text)
-object activeXTextClass
-beginObjectProperties
-major 4
-minor 1
-release 1
-x 205
-y 205
-w 80
-h 20
-font "arial-bold-r-12.0"
-fgColor index 14
-bgColor index 3
-useDisplayBg
-value {
-  "Image Mode"
 }
 endObjectProperties
 
@@ -2041,86 +2003,6 @@ endObjectProperties
 endGroup
 
 visPv "$(P)$(R)AcquirePeriod.DISA"
-visMin "0"
-visMax "1"
-endObjectProperties
-
-# (Group)
-object activeGroupClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 285
-y 205
-w 95
-h 20
-
-beginGroup
-
-# (Menu Button)
-object activeMenuButtonClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 285
-y 205
-w 95
-h 20
-fgColor index 25
-bgColor index 3
-inconsistentColor index 0
-topShadowColor index 1
-botShadowColor index 11
-controlPv "$(P)$(R)ImageMode"
-indicatorPv "$(P)$(R)ImageMode_RBV"
-font "arial-bold-r-12.0"
-endObjectProperties
-
-endGroup
-
-visPv "$(P)$(R)ImageMode.DISA"
-visMin "0"
-visMax "1"
-endObjectProperties
-
-# (Group)
-object activeGroupClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 285
-y 230
-w 95
-h 20
-
-beginGroup
-
-# (Menu Button)
-object activeMenuButtonClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 285
-y 230
-w 95
-h 20
-fgColor index 25
-bgColor index 3
-inconsistentColor index 0
-topShadowColor index 1
-botShadowColor index 11
-controlPv "$(P)$(R)TriggerMode"
-indicatorPv "$(P)$(R)TriggerMode_RBV"
-font "arial-bold-r-12.0"
-endObjectProperties
-
-endGroup
-
-visPv "$(P)$(R)TriggerMode.DISA"
 visMin "0"
 visMax "1"
 endObjectProperties
