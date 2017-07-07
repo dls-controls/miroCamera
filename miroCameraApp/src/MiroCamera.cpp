@@ -2232,7 +2232,7 @@ asynStatus MiroCamera::downloadFlashImages(const std::string& filename, int star
       int tv_usec = flashTsData_[count].frac;
       pImage->pAttributeList->add("ts_usec", "Timestamp of frames (microseconds)", NDAttrUInt32, (void *)(&tv_usec));
 
-      pImage->pAttributeList->add("exp_time", "Exposure time (microseconds)", NDAttrUInt32, (void *)(&(flashExpData_[count])));
+      pImage->pAttributeList->add("exp_time", "Exposure time (nanoseconds)", NDAttrUInt32, (void *)(&(flashExpData_[count])));
       pImage->pAttributeList->add("irig_sync", "IRIG synchronized", NDAttrInt8, (void *)(&(flashIrigData_[count])));
       pImage->pAttributeList->add("event_input", "Event Input (1 = open)", NDAttrInt8, (void *)(&(flashEventData_[count])));
 
@@ -2367,15 +2367,17 @@ asynStatus MiroCamera::readoutTimestamps(int cine, int start, int end)
   for (int frame = 0; frame < frames; frame++){
     memcpy(&ts, dPtr, 12);
     // time from beginning of the year in 1/100 sec units
-    printf("Time sec 1/100: %u\n", ntohl(ts.csecs));
+    //printf("Time sec 1/100: %u\n", ntohl(ts.csecs));
     // exposure time in us
-    printf("Exp time us: %d\n", ts.exptime);
+    //printf("Exp time us: %d\n", ts.exptime);
     // bits[15..2]: fractions (us to 10000); b[1]:event; b[0]:lock
-    printf("Fractions us to 10000: %u\n", ntohs(ts.frac)>>2);
+    //printf("Fractions us to 10000: %u\n", ntohs(ts.frac)>>2);
     // exposure extension up to 32 bits
-    printf("Exposure extension: %d\n", ts.exptime32);
+    //printf("Exposure extension: %d\n", ts.exptime32);
+    //uint32_t ns_exp = (ntohs(ts.exptime)*1000) + (int)(floor((double)ntohs(ts.exptime32)/65535.0*1000.0 + 0.5));
+    //printf("Total Exposure ns: %d\n", ns_exp);
     // fractions extension up to 32 bits
-    printf("Fractions extension: %d\n", ts.frac32);
+    //printf("Fractions extension: %d\n", ts.frac32);
     dPtr+=12;
     timestampData_.push_back(ts);
   }
@@ -2529,8 +2531,9 @@ asynStatus MiroCamera::readoutDataStream(int cine, int start, int end)
       pImage->pAttributeList->add("irig_sync", "IRIG synchronized", NDAttrInt8, (void *)(&locked));
       char event_active = (ntohs(ts.frac) & 0x02) >> 1;
       pImage->pAttributeList->add("event_input", "Event Input (1 = open)", NDAttrInt8, (void *)(&event_active));
-      unsigned int exp_time = ntohs(ts.exptime);
-      pImage->pAttributeList->add("exp_time", "Exposure time (microseconds)", NDAttrUInt32, (void *)(&exp_time));
+      //unsigned int exp_time = ntohs(ts.exptime);
+      unsigned int exp_time = (ntohs(ts.exptime)*1000) + (int)(floor((double)ntohs(ts.exptime32)/65535.0*1000.0 + 0.5));
+      pImage->pAttributeList->add("exp_time", "Exposure time (nanoseconds)", NDAttrUInt32, (void *)(&exp_time));
       int tfts = tv_sec - trigSecs;
       int tftus = tv_usec - trigUSecs;
       if (tftus < 0){
