@@ -1998,7 +1998,7 @@ asynStatus MiroCamera::downloadFlashHeader(const std::string& filename)
     setIntegerParam(MIRO_CFSHeight_, cineBitmapHeader_.biHeight);
     setIntegerParam(MIRO_CFSFrameCount_, cineHeader_.TotalImageCount);
     setIntegerParam(MIRO_CFSFirstFrame_, cineHeader_.FirstImageNo);
-    setIntegerParam(MIRO_CFSLastFrame_, cineHeader_.FirstImageNo + cineHeader_.TotalImageCount);
+    setIntegerParam(MIRO_CFSLastFrame_, cineHeader_.FirstImageNo + cineHeader_.ImageCount - 1);
   }
 
   // Read in the default exposure time ns
