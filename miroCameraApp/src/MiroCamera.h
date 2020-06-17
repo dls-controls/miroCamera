@@ -617,6 +617,7 @@ class MiroCamera: public ADDriver
     asynStatus cineStates(const std::string& states, int &mask);
     bool checkState(const std::string &state, const std::string &item);
     asynStatus stringToInteger(const std::string& name, int &value);
+    asynStatus stringToDouble(const std::string& name, double &value);
     asynStatus readIntegerData(std::map<std::string, std::string> data, const std::string& name, int &value);
     asynStatus readDoubleData(std::map<std::string, std::string> data, const std::string& name, double &value);
     asynStatus readRunModes();

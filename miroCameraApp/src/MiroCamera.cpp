@@ -655,12 +655,12 @@ MiroCamera::MiroCamera(const char *portName, const char *ctrlPort, const char *d
     }
     if (status == asynSuccess){
       int exp_nano = 0;
-      int fps = 0;
+      double fps = 0;
       getCameraDataStruc("defc", paramMap_);
       stringToInteger(paramMap_["defc.exp"].getValue(), exp_nano);
       setDoubleParam(ADAcquireTime, (double)exp_nano/1000000000.0);
-      stringToInteger(paramMap_["defc.rate"].getValue(), fps);
-      setDoubleParam(ADAcquirePeriod, (double)1.0/(double)fps);
+      stringToDouble(paramMap_["defc.rate"].getValue(), fps);
+      setDoubleParam(ADAcquirePeriod, (double)1.0/fps);
     }
   // Check if the status is bad.  If it is do our best to set the status record and message
   else if (status != asynSuccess){
@@ -1520,7 +1520,7 @@ asynStatus MiroCamera::writeFloat64(asynUser *pasynUser, epicsFloat64 value)
   double oldValue;
   char command[MIRO_MAX_STRING];
   int exposure = 0;
-  int fps = 0;
+  double fps = 0;
   std::string response;
 
   // parameters for functions
@@ -1542,12 +1542,12 @@ asynStatus MiroCamera::writeFloat64(asynUser *pasynUser, epicsFloat64 value)
     setDoubleParam(function, (double)exposure/1000000000.0);
   } else if (function == ADAcquirePeriod){
     // Number of frames per second
-    fps = (int)(1.0 / value);
+    fps = (double)(1.0 / value);
     // Create the command
-    sprintf(command, "set defc.rate %d", fps);
+    sprintf(command, "set defc.rate %f", fps);
     sendSimpleCommand(command, &response);
     getCameraDataStruc("defc", paramMap_);
-    stringToInteger(paramMap_["defc.rate"].getValue(), fps);
+    stringToDouble(paramMap_["defc.rate"].getValue(), fps);
     value = (double)1.0/(double)(fps);
     setDoubleParam(function, value);
   }
@@ -3093,9 +3093,9 @@ asynStatus MiroCamera::updateDefcStatus()
 
   if (status == asynSuccess){
     // Update the number of frames per second
-    int fps = 0;
+    double fps = 0;
     double value = 0.0;
-    stringToInteger(paramMap_["defc.rate"].getValue(), fps);
+    stringToDouble(paramMap_["defc.rate"].getValue(), fps);
     value = (double)1.0/(double)(fps);
     setDoubleParam(ADAcquirePeriod, value);
   }
@@ -3372,6 +3372,20 @@ asynStatus MiroCamera::stringToInteger(const std::string& name, int &value)
   if (integerValueStream.fail()){
     status = asynError;
     debug(functionName, "Failed to decode stream into integer", integerValueStream.str());
+  }
+  return status;
+}
+
+asynStatus MiroCamera::stringToDouble(const std::string& name, double &value)
+{
+  const char * functionName = "MiroCamera::stringToDouble";
+  asynStatus status = asynSuccess;
+
+  std::stringstream doubleValueStream(name);
+  doubleValueStream >> value;
+  if (doubleValueStream.fail()){
+    status = asynError;
+    debug(functionName, "Failed to decode stream into integer", doubleValueStream.str());
   }
   return status;
 }
