@@ -540,6 +540,7 @@ MiroCamera::MiroCamera(const char *portName, const char *ctrlPort, const char *d
   createParam(MIRO_CamTriggerFilterString,         asynParamInt32,         &MIRO_CamTriggerFilter_);
   createParam(MIRO_CamReadySignalString,           asynParamInt32,         &MIRO_CamReadySignal_);
   createParam(MIRO_CamAuxPinString,                asynParamInt32,         &MIRO_CamAuxPin_);
+  createParam(MIRO_SyncClockString,                asynParamInt32,         &MIRO_SyncClock);
   for (index = 0; index < MIRO_NUMBER_OF_CINES; index++){
     createParam(MIRO_CnNameString[index],            asynParamOctet,         &MIRO_CnName_[index]);
     createParam(MIRO_CnWidthString[index],           asynParamInt32,         &MIRO_CnWidth_[index]);
@@ -669,6 +670,7 @@ MiroCamera::MiroCamera(const char *portName, const char *ctrlPort, const char *d
     }
   }
   callParamCallbacks();
+
 }
 
 asynStatus MiroCamera::makeConnection()
@@ -1482,6 +1484,11 @@ asynStatus MiroCamera::writeInt32(asynUser *pasynUser, epicsInt32 value)
     status |= setCameraParameter("auto.bref", value);
   } else if (function == MIRO_EDR_){
     status |= setCameraParameter("defc.edrexp", value);
+  } else if (function == MIRO_SyncClock){
+    char command[MIRO_MAX_STRING];
+    std::string response;
+    sprintf(command, "setrtc %d", std::time(NULL));
+    sendSimpleCommand(command, &response);
   }
 
   // If the status is bad reset the original value

@@ -15,6 +15,7 @@
 #include <locale>
 #include <map>
 #include <algorithm>
+#include <ctime>
 
 // EPICS includes
 #include <epicsThread.h>
@@ -195,6 +196,7 @@
 #define MIRO_CamAuxPinString                "MIRO_AUX_PIN"
 
 #define MIRO_LivePreviewString              "MIRO_LIVE_PREVIEW"
+#define MIRO_SyncClockString                "MIRO_SYNC_CLOCK"
 
 #define OLDMAXFILENAME 65 // maximum file path size for the continuous recording
 // to keep compatibility with old setup files
@@ -718,6 +720,7 @@ class MiroCamera: public ADDriver
     int MIRO_CfFileSize_[MIRO_NUMBER_OF_FLASH_FILES];
     int MIRO_CfFileDate_[MIRO_NUMBER_OF_FLASH_FILES];
     int MIROConnected_;
+    int MIRO_SyncClock;
     #define LAST_MIRO_PARAM MIROConnected_
 
   private:

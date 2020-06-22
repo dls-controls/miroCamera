@@ -626,6 +626,12 @@ record(mbbi, "$(P)$(R)AuxPinMode_RBV")
    field(SCAN, "I/O Intr")
 }
 
+record(bo, "$(P)$(R)SyncClock")
+{
+  field(DTYP, "asynInt32")
+  field(OUT, "@asyn($(PORT),$(ADDR),$(TIMEOUT))MIRO_SYNC_CLOCK")
+}
+
 ########## Disable Redundant areaDetector Fields #########
 
 record(ao, "$(P)$(R)AcquireTime")
