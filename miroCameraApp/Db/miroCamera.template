@@ -2,9 +2,11 @@
 #% macro, P, Device Prefix
 #% macro, R, Device Suffix
 #% macro, PORT, Asyn Port name
+#% macro, ADDR, Addr
+#% macro, TIMEOUT, TIMEOUT
 
 # This associates the template with an edm screen
-# % gui, $(PORT), edmtab, miro.edl, P=$(P),R=$(R)
+# % gui, $(PORT), edmtab, miroTop.edl, P=$(P),R=$(R)
 
 include "ADBase.template"
 
@@ -739,35 +741,4 @@ record(bi, "$(P)$(R)CONNECTED_RBV")
 
 include "miroFlash.template"
 
-substitute "CINE=1"
-include "miroCine.template"
-substitute "CINE=2"
-include "miroCine.template"
-substitute "CINE=3"
-include "miroCine.template"
-substitute "CINE=4"
-include "miroCine.template"
-substitute "CINE=5"
-include "miroCine.template"
-substitute "CINE=6"
-include "miroCine.template"
-substitute "CINE=7"
-include "miroCine.template"
-substitute "CINE=8"
-include "miroCine.template"
-substitute "CINE=9"
-include "miroCine.template"
-substitute "CINE=10"
-include "miroCine.template"
-substitute "CINE=11"
-include "miroCine.template"
-substitute "CINE=12"
-include "miroCine.template"
-substitute "CINE=13"
-include "miroCine.template"
-substitute "CINE=14"
-include "miroCine.template"
-substitute "CINE=15"
-include "miroCine.template"
-substitute "CINE=16"
-include "miroCine.template"
+

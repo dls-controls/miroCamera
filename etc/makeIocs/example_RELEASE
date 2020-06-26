@@ -1,5 +1,9 @@
 # Place any example specific dependencies here
-FFMPEGSERVER= $(SUPPORT)/ffmpegServer/2-1-1dls7
-DEVIOCSTATS = $(SUPPORT)/devIocStats/3-1-5dls5
-AUTOSAVE =    $(SUPPORT)/autosave/5-0dls1
 
+ADBINARIES   = $(SUPPORT)/ADBinaries/2-2dls2
+ADCORE       = $(SUPPORT)/ADCore/2-4dls8
+ADUTIL       = $(SUPPORT)/adUtil/2-11
+ASYN         = $(SUPPORT)/asyn/4-26
+BUSY         = $(SUPPORT)/busy/1-6-1
+CALC         = $(SUPPORT)/calc/3-1
+FFMPEGSERVER = $(SUPPORT)/ffmpegServer/3-0dls0-11
