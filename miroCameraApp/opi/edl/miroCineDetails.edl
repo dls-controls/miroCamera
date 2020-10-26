@@ -747,8 +747,8 @@ topShadowColor index 1
 botShadowColor index 11
 controlPv "$(P)$(R)SaveToCF"
 pressValue "$(cine)"
-onLabel "Save"
-offLabel "Save"
+onLabel "Flash"
+offLabel "Flash"
 3d
 font "arial-bold-r-12.0"
 endObjectProperties
