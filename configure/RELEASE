@@ -22,15 +22,15 @@
 TEMPLATE_TOP=$(EPICS_BASE)/templates/makeBaseApp/top
 
 #SUPPORT=/home/pbt/VBI/trunk/src/epics/R3.14.12.5/modules
-SUPPORT=/dls_sw/prod/R3.14.12.3/support
+SUPPORT=/dls_sw/prod/R3.14.12.7/support
 
-ASYN =              $(SUPPORT)/asyn/4-26
-AREADETECTOR =      $(SUPPORT)/ADCore/2-4dls8
-BUSY =              $(SUPPORT)/busy/1-6-1
+ASYN =              $(SUPPORT)/asyn/4-39
+AREADETECTOR =      $(SUPPORT)/ADCore/3-9dls2
+BUSY =              $(SUPPORT)/busy/1-7-2dls3
 
 # EPICS_BASE usually appears last so other apps can override stuff:
 #EPICS_BASE=/home/pbt/VBI/trunk/src/epics/R3.14.12.5/base
-EPICS_BASE=/dls_sw/epics/R3.14.12.3/base
+EPICS_BASE=/dls_sw/epics/R3.14.12.7/base
 
 # Set RULES here if you want to take build rules from somewhere
 # other than EPICS_BASE:
