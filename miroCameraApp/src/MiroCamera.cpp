@@ -848,17 +848,13 @@ void MiroCamera::miroCameraTask()
     // Decode the frame count
     status = stringToInteger(paramMap_[cineStr + ".frcount"].getValue(), frameCount);
     status = stringToInteger(paramMap_[cineStr + ".firstfr"].getValue(), firstFrame);
-    // std::cout<<"firstFrame: "<<firstFrame<<std::endl;
     status = stringToInteger(paramMap_[cineStr + ".lastfr"].getValue(), lastFrame);
-    std::cout<<"lastFrame: "<<lastFrame<<std::endl;
     if (lastFrame > 0){
       imageCounter = lastFrame+1;
     } else {
       imageCounter = 0;
     }
     numImagesCounter = imageCounter;
-
-    std::cout<<"numImagesCounter: "<<numImagesCounter<<std::endl;
 
     // Set a bit of areadetector image/frame statistics...
     getIntegerParam(ADNumImages, &numImages);
@@ -2467,14 +2463,12 @@ asynStatus MiroCamera::readoutDataStream(int cine, int start, int end)
     first_tv_sec = (ntohl(tss.csecs) / 100) + irigYear;
     first_tv_usec = ((ntohl(tss.csecs) % 100) * 10000) + (ntohs(tss.frac) >> 2);
   }
-
+  std::cout<<"Start of Download"<<std::endl;
   //for (int frame = 0; frame < frames; frame++){
   while ((frame < frames) && (status == asynSuccess)){
     metaFrame = start+frame;
     frame++;
     setIntegerParam(MIRO_CineRecordCount_, frame);
-    std::cout<<"frame: "<<frame<<std::endl;
-    pImage->uniqueId = frame;
     callParamCallbacks();
     status = this->readFrame(nBytes);
 
@@ -2716,7 +2710,6 @@ asynStatus MiroCamera::updateCine(int cine)
     std::string sfirstFr = paramMap_[cmd].getValue();
     cleanString(sfirstFr, " ");
     status = stringToInteger(sfirstFr, firstFr);
-    // std::cout<<"firstFr:"<<firstFr<<std::endl;
     setIntegerParam(MIRO_CnFirstFrame_[cine], firstFr);
   }
 
@@ -2792,11 +2785,11 @@ asynStatus MiroCamera::selectCine(int cine)
     // Update the cine first frame
     sprintf(command, "c%d.firstfr", cine);
     std::string sfirstFr = paramMap_[command].getValue();
-    std::cout<<"sfirstFr: "<<sfirstFr<<std::endl;
+    //std::cout<<"sfirstFr: "<<sfirstFr<<std::endl;
     int firstFr = 0;
     cleanString(sfirstFr, " ");
     status = stringToInteger(sfirstFr, firstFr);
-    std::cout<<"Setting MIRO_CineFirstFrame_ to "<<firstFr<<std::endl;
+    //std::cout<<"Setting MIRO_CineFirstFrame_ to "<<firstFr<<std::endl;
     setIntegerParam(MIRO_CineFirstFrame_, firstFr);
 
     // Update the cine last frame
