@@ -2463,7 +2463,6 @@ asynStatus MiroCamera::readoutDataStream(int cine, int start, int end)
     first_tv_sec = (ntohl(tss.csecs) / 100) + irigYear;
     first_tv_usec = ((ntohl(tss.csecs) % 100) * 10000) + (ntohs(tss.frac) >> 2);
   }
-  std::cout<<"Start of Download"<<std::endl;
   //for (int frame = 0; frame < frames; frame++){
   while ((frame < frames) && (status == asynSuccess)){
     metaFrame = start+frame;
@@ -2501,7 +2500,9 @@ asynStatus MiroCamera::readoutDataStream(int cine, int start, int end)
       pImage->pAttributeList->add("partition", "Partition number", NDAttrInt32, (void *)(&cine));
       // Add the post trigger frame count
       pImage->pAttributeList->add("post_trig_frames", "Post trigger frame count", NDAttrInt32, (void *)(&lastfr));
-      // Loop over meta array to create attributes
+      // Add the image UniqueID
+      pImage->pAttributeList->add("NDArrayUniqueId", "uniqueId", NDAttrInt32, (void *)(&frame));      // Loop over meta array to create attributes
+      pImage->uniqueId = frame;
       for (int mc = 0; mc < (int)metaArray_.size(); mc++){
         if (metaArray_[mc]->type_ == NDAttrInt8){
           pImage->pAttributeList->add(metaArray_[mc]->name_.c_str(),
