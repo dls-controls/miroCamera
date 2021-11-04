@@ -630,7 +630,7 @@ record(mbbi, "$(P)$(R)AuxPinMode_RBV")
 
 record(longout, "$(P)$(R)SyncClock")
 {
-  field(DESC,  "Sync the Miro Clock with the server clock")
+  field(DESC,  "Sync Miro Clock with server")
   field(DTYP,  "asynInt32")
   field(OUT,   "@asyn($(PORT),$(ADDR),$(TIMEOUT))MIRO_SYNC_CLOCK")
 }
