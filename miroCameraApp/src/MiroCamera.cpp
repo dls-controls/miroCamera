@@ -1409,12 +1409,36 @@ asynStatus MiroCamera::writeInt32(asynUser *pasynUser, epicsInt32 value)
     sendSoftwareTrigger();
   } else if (function == MIRO_CineRecord_){
     int preview = 0;
+    bool rangeValid = false;
+    int cine;
+    epicsInt32 record_start;
+    epicsInt32 record_end;
+    epicsInt32 first_frame;
+    epicsInt32 last_frame;
+    getIntegerParam(MIRO_SelectedCine_, &cine);
     getIntegerParam(MIRO_LivePreview_, &preview);
+    getIntegerParam(MIRO_CineRecordStart_, &record_start);
+    getIntegerParam(MIRO_CineRecordEnd_, &record_end);
+    getIntegerParam(MIRO_CnFirstFrame_[cine], &first_frame);
+    getIntegerParam(MIRO_CnLastFrame_[cine], &last_frame);
+
+    if (record_start < first_frame || record_start > last_frame) {
+      rangeValid=false;
+      setStringParam(ADStatusMessage, "record_start value invalid");
+    } else if(record_end < first_frame || record_end > last_frame) {
+      rangeValid=false;
+      setStringParam(ADStatusMessage, "record_end value invalid");
+    } else if (record_end < record_start) {
+      rangeValid=false;
+      setStringParam(ADStatusMessage, "record_end can't be less than record_start");
+    } else
+      rangeValid=true;
+
     if (preview){
       setStringParam(ADStatusMessage, "Cannot download while live previewing");
       setIntegerParam(ADStatus, ADStatusError);
       status |= asynError;
-    } else {
+    } else if (rangeValid) {
       status |= downloadCineFile(value);
     }
   } else if (function == MIRO_CineSaveCF_){
