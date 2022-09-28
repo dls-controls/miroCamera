@@ -1,5 +1,0 @@
-# Place any example specific dependencies here
-
-# ADBINARIES   = $(SUPPORT)/ADBinaries/2-2dls2
-ADUTIL       = $(SUPPORT)/adUtil/2-28-4
-FFMPEGSERVER = $(SUPPORT)/ffmpegServer/3-1dls6-4

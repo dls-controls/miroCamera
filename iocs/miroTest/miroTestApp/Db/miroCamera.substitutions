@@ -1,4 +1,0 @@
-file miroCamera.template {
-pattern{ P, R , PORT, ADDR, TIMEOUT}
-{ "test:", "ioc:" , "MIRO", 0, 1}
-}
