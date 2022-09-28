@@ -856,7 +856,6 @@ void MiroCamera::miroCameraTask()
     }
     numImagesCounter = imageCounter;
 
-
     // Set a bit of areadetector image/frame statistics...
     getIntegerParam(ADNumImages, &numImages);
     getIntegerParam(ADImageMode, &imageMode);
@@ -1410,12 +1409,36 @@ asynStatus MiroCamera::writeInt32(asynUser *pasynUser, epicsInt32 value)
     sendSoftwareTrigger();
   } else if (function == MIRO_CineRecord_){
     int preview = 0;
+    bool rangeValid = false;
+    int cine;
+    epicsInt32 record_start;
+    epicsInt32 record_end;
+    epicsInt32 first_frame;
+    epicsInt32 last_frame;
+    getIntegerParam(MIRO_SelectedCine_, &cine);
     getIntegerParam(MIRO_LivePreview_, &preview);
+    getIntegerParam(MIRO_CineRecordStart_, &record_start);
+    getIntegerParam(MIRO_CineRecordEnd_, &record_end);
+    getIntegerParam(MIRO_CnFirstFrame_[cine], &first_frame);
+    getIntegerParam(MIRO_CnLastFrame_[cine], &last_frame);
+
+    if (record_start < first_frame || record_start > last_frame) {
+      rangeValid=false;
+      setStringParam(ADStatusMessage, "record_start value invalid");
+    } else if(record_end < first_frame || record_end > last_frame) {
+      rangeValid=false;
+      setStringParam(ADStatusMessage, "record_end value invalid");
+    } else if (record_end < record_start) {
+      rangeValid=false;
+      setStringParam(ADStatusMessage, "record_end can't be less than record_start");
+    } else
+      rangeValid=true;
+
     if (preview){
       setStringParam(ADStatusMessage, "Cannot download while live previewing");
       setIntegerParam(ADStatus, ADStatusError);
       status |= asynError;
-    } else {
+    } else if (rangeValid) {
       status |= downloadCineFile(value);
     }
   } else if (function == MIRO_CineSaveCF_){
@@ -2005,6 +2028,7 @@ asynStatus MiroCamera::downloadFlashHeader(const std::string& filename)
     setIntegerParam(MIRO_CFSHeight_, cineBitmapHeader_.biHeight);
     setIntegerParam(MIRO_CFSFrameCount_, cineHeader_.TotalImageCount);
     setIntegerParam(MIRO_CFSFirstFrame_, cineHeader_.FirstImageNo);
+    std::cout<<"cineHeader_.FirstImageNo: "<<cineHeader_.FirstImageNo<<std::endl;
     setIntegerParam(MIRO_CFSLastFrame_, cineHeader_.FirstImageNo + cineHeader_.ImageCount - 1);
   }
 
@@ -2463,7 +2487,6 @@ asynStatus MiroCamera::readoutDataStream(int cine, int start, int end)
     first_tv_sec = (ntohl(tss.csecs) / 100) + irigYear;
     first_tv_usec = ((ntohl(tss.csecs) % 100) * 10000) + (ntohs(tss.frac) >> 2);
   }
-
   //for (int frame = 0; frame < frames; frame++){
   while ((frame < frames) && (status == asynSuccess)){
     metaFrame = start+frame;
@@ -2501,7 +2524,9 @@ asynStatus MiroCamera::readoutDataStream(int cine, int start, int end)
       pImage->pAttributeList->add("partition", "Partition number", NDAttrInt32, (void *)(&cine));
       // Add the post trigger frame count
       pImage->pAttributeList->add("post_trig_frames", "Post trigger frame count", NDAttrInt32, (void *)(&lastfr));
-      // Loop over meta array to create attributes
+      // Add the image UniqueID
+      pImage->pAttributeList->add("NDArrayUniqueId", "uniqueId", NDAttrInt32, (void *)(&frame));      // Loop over meta array to create attributes
+      pImage->uniqueId = frame;
       for (int mc = 0; mc < (int)metaArray_.size(); mc++){
         if (metaArray_[mc]->type_ == NDAttrInt8){
           pImage->pAttributeList->add(metaArray_[mc]->name_.c_str(),
@@ -2785,9 +2810,11 @@ asynStatus MiroCamera::selectCine(int cine)
     // Update the cine first frame
     sprintf(command, "c%d.firstfr", cine);
     std::string sfirstFr = paramMap_[command].getValue();
+    //std::cout<<"sfirstFr: "<<sfirstFr<<std::endl;
     int firstFr = 0;
     cleanString(sfirstFr, " ");
     status = stringToInteger(sfirstFr, firstFr);
+    //std::cout<<"Setting MIRO_CineFirstFrame_ to "<<firstFr<<std::endl;
     setIntegerParam(MIRO_CineFirstFrame_, firstFr);
 
     // Update the cine last frame
