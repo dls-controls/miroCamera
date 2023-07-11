@@ -10,3 +10,5 @@ lib
 .idea
 auto_settings.sav*
 envPaths
+*.swp
+

@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display typeId="org.csstudio.opibuilder.Display" version="1.0">
+  <x>335</x>
+  <y>145</y>
+  <width>446</width>
+  <height>196</height>
+  <font>
+    <fontdata fontName="arial" height="12" pixels="true" style="1"/>
+  </font>
+  <foreground_color>
+    <color blue="0" green="0" red="0"/>
+  </foreground_color>
+  <background_color>
+    <color blue="0" green="0" red="0"/>
+  </background_color>
+  <show_grid>true</show_grid>
+  <grid_space>5</grid_space>
+  <widget typeId="org.csstudio.opibuilder.widgets.Rectangle" version="1.0">
+    <background_color>
+      <color blue="0" green="0" red="0"/>
+    </background_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <height>196</height>
+    <line_color>
+      <color blue="0" green="0" red="0"/>
+    </line_color>
+    <line_style>0</line_style>
+    <line_width>1</line_width>
+    <name>EDM Rectangle</name>
+    <transparent>false</transparent>
+    <visible>true</visible>
+    <width>446</width>
+    <x>0</x>
+    <y>0</y>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.Rectangle" version="1.0">
+    <background_color>
+      <color blue="0" green="0" red="0"/>
+    </background_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <height>166</height>
+    <line_color>
+      <color blue="0" green="0" red="0"/>
+    </line_color>
+    <line_style>0</line_style>
+    <line_width>1</line_width>
+    <name>EDM Rectangle</name>
+    <transparent>false</transparent>
+    <visible>true</visible>
+    <width>426</width>
+    <x>10</x>
+    <y>20</y>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0">
+    <auto_size>true</auto_size>
+    <background_color>
+      <color blue="0" green="0" red="0"/>
+    </background_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <border_color>
+      <color blue="0" green="0" red="0"/>
+    </border_color>
+    <border_style>1</border_style>
+    <font>
+      <fontdata fontName="arial" height="12" pixels="true" style="0"/>
+    </font>
+    <foreground_color>
+      <color blue="0" green="0" red="0"/>
+    </foreground_color>
+    <height>13</height>
+    <horizontal_alignment>0</horizontal_alignment>
+    <name>EDM Label</name>
+    <text>  Format Flash Drive   </text>
+    <transparent>false</transparent>
+    <width>121</width>
+    <x>10</x>
+    <y>10</y>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.ActionButton" version="1.0">
+    <actions hook="true" hook_all="true">
+      <action type="WRITE_PV">
+        <pv_name>$(pv_name)</pv_name>
+        <value>1</value>
+      </action>
+    </actions>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <font>
+      <fontdata fontName="arial" height="24" pixels="true" style="1"/>
+    </font>
+    <foreground_color>
+      <color blue="0" green="0" red="0"/>
+    </foreground_color>
+    <height>41</height>
+    <name>EDM Message Button</name>
+    <pv_name>$(P)$(R)CFFormat</pv_name>
+    <rules>
+      <rule name="OnOffBackgroundRule" out_exp="false" prop_id="background_color">
+        <exp bool_exp="widget.getValue() == 1">
+          <value>
+            <color blue="0" green="0" name="" red="0"/>
+          </value>
+        </exp>
+        <exp bool_exp="true">
+          <value>
+            <color blue="0" green="0" name="" red="0"/>
+          </value>
+        </exp>
+        <pv trig="true">$(P)$(R)CFFormat</pv>
+      </rule>
+    </rules>
+    <text>Format</text>
+    <width>111</width>
+    <x>60</x>
+    <y>125</y>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.ActionButton" version="1.0">
+    <actions hook="false" hook_all="false">
+      <action type="EXECUTE_JAVASCRIPT">
+        <embedded>true</embedded>
+        <scriptText>importPackage(Packages.org.csstudio.opibuilder.scriptUtil);ScriptUtil.closeAssociatedOPI(widget);</scriptText>
+      </action>
+    </actions>
+    <background_color>
+      <color blue="0" green="0" red="0"/>
+    </background_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <font>
+      <fontdata fontName="arial" height="24" pixels="true" style="1"/>
+    </font>
+    <foreground_color>
+      <color blue="0" green="0" red="0"/>
+    </foreground_color>
+    <height>41</height>
+    <name>EDM Exit Button</name>
+    <text>Cancel</text>
+    <width>111</width>
+    <x>265</x>
+    <y>125</y>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0">
+    <auto_size>true</auto_size>
+    <background_color>
+      <color blue="0" green="0" red="0"/>
+    </background_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <border_color>
+      <color blue="0" green="0" red="0"/>
+    </border_color>
+    <border_style>0</border_style>
+    <font>
+      <fontdata fontName="arial" height="12" pixels="true" style="1"/>
+    </font>
+    <foreground_color>
+      <color blue="0" green="0" red="0"/>
+    </foreground_color>
+    <height>52</height>
+    <horizontal_alignment>0</horizontal_alignment>
+    <name>EDM Label</name>
+    <text>Are you sure you want to format the flash drive on the MIRO camera?&#13;All data will be lost.  Formatting can take several minutes and the &#13;camera will not be responsive to commands during this time.&#13;Select "Format" to confirm formatting or "Cancel" to abort.</text>
+    <transparent>true</transparent>
+    <width>406</width>
+    <x>20</x>
+    <y>40</y>
+  </widget>
+</display>
